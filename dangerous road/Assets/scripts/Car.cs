@@ -1,11 +1,16 @@
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Car: MonoBehaviour
 {
     [SerializeField] private float _motorForce;
-    [SerializeField] private WheelCollider[] _wheels;
-    [SerializeField] private UIManager _UIManager;
+    [SerializeField] private WheelCollider[] _frontWheels;
+    [SerializeField] private WheelCollider[] _backWheels;
+    [SerializeField] private UIManager _uIManager;
+
+    [SerializeField] private float _maxSteer = 30;
+    [SerializeField] private Transform _com;
 
     private Rigidbody _rigidbody;
 
@@ -16,14 +21,17 @@ public class Car: MonoBehaviour
 
     private void Start()
     {
+        _rigidbody.centerOfMass = _com.localPosition;
         Move(_motorForce);
     }
 
-    private void Move(float force)
+    private void FixedUpdate()
     {
-        foreach (WheelCollider wheel in _wheels)
+        var steer = Input.GetAxis("Horizontal");
+
+        foreach (WheelCollider col in _frontWheels)
         {
-            wheel.motorTorque = force;
+            col.steerAngle = steer * _maxSteer; 
         }
     }
 
@@ -33,10 +41,10 @@ public class Car: MonoBehaviour
         {
             _rigidbody.isKinematic = true;
 
-            if (!_UIManager)
+            if (!_uIManager)
                 Debug.LogError("you must assign UIManager on the inspector");
             else
-                _UIManager.loseDisplay.gameObject.SetActive(true);
+                _uIManager.loseDisplay.gameObject.SetActive(true);
         }
     }
 
@@ -45,10 +53,18 @@ public class Car: MonoBehaviour
         if (other.CompareTag("finish"))
         {
             _rigidbody.isKinematic = true;
-            if (!_UIManager)
+            if (!_uIManager)
                 Debug.LogError("you must assign UIManager on the inspector");
             else
-                _UIManager.winDisplay.gameObject.SetActive(true);
+                _uIManager.winDisplay.gameObject.SetActive(true);
+        }
+    }
+
+    private void Move(float force)
+    {
+        foreach (WheelCollider wheel in _backWheels)
+        {
+            wheel.motorTorque = force;
         }
     }
 }
