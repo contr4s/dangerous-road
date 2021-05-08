@@ -1,16 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
-[RequireComponent(typeof(Rigidbody))]
 public class Car: MonoBehaviour
 {
-    [SerializeField] private float _motorForce;
-    [SerializeField] private WheelCollider[] _frontWheels;
-    [SerializeField] private WheelCollider[] _backWheels;
+    [SerializeField] private float _acceleration;
+    [SerializeField] private float _maxSpeed;
+
+    [SerializeField] private float _turnSpeed;
+
+
     [SerializeField] private UIManager _uIManager;
 
-    [SerializeField] private float _maxSteer = 30;
-    [SerializeField] private Transform _com;
+    private Vector3 _curreneAccceleration = new Vector3();
 
     private Rigidbody _rigidbody;
 
@@ -19,20 +21,13 @@ public class Car: MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
     }
 
-    private void Start()
-    {
-        _rigidbody.centerOfMass = _com.localPosition;
-        Move(_motorForce);
-    }
-
     private void FixedUpdate()
     {
-        var steer = Input.GetAxis("Horizontal");
+        _curreneAccceleration.z = _acceleration;
+        if (_rigidbody.velocity.z > _maxSpeed)
+            _curreneAccceleration.z = 0;
 
-        foreach (WheelCollider col in _frontWheels)
-        {
-            col.steerAngle = steer * _maxSteer; 
-        }
+        _rigidbody.AddForce(_curreneAccceleration, ForceMode.VelocityChange);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -60,11 +55,16 @@ public class Car: MonoBehaviour
         }
     }
 
-    private void Move(float force)
+    public void TurnButton(bool turningRight)
     {
-        foreach (WheelCollider wheel in _backWheels)
-        {
-            wheel.motorTorque = force;
-        }
+        if (turningRight)
+            Turn(_turnSpeed);
+        else
+            Turn(-_turnSpeed);
+    }
+
+    private void Turn(float coef)
+    {
+        _rigidbody.AddForce(coef, 0, 0, ForceMode.VelocityChange);
     }
 }
