@@ -2,12 +2,14 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Obstacle: MonoBehaviour
+public class Obstacle: MonoBehaviour, IDestroyable
 {
     [SerializeField] private float _swipeTime = 0.1f;
     [SerializeField] private float _swipeForceScale = 20;
     [SerializeField] private float _maxDistToSwipe = 150;
     [SerializeField] private float _minDistToSwipe = 15;
+
+    [SerializeField] private float _fallTime = 10f;
 
     [SerializeField] private UIManager _uIManager;
 
@@ -38,14 +40,17 @@ public class Obstacle: MonoBehaviour
         _rigidbody.AddForce((newPosition - _cashedPosition) * _swipeForceScale / distToCam, ForceMode.Impulse);
         if (!_hasBeenSwipedAway)
         {
-            _hasBeenSwipedAway = true;
+            _hasBeenSwipedAway = true;            
 
             if (!_uIManager)
             {
-                Debug.LogWarning("you must assign UIManager on the inspector");
-                yield break;
+                Debug.LogWarning("you must assign UIManager on the inspector");               
             }
-            _uIManager.Score++;
+            else
+                _uIManager.Score++;
+
+            yield return new WaitForSeconds(_fallTime);
+            DestroyMe();
         }
     }
 
@@ -54,5 +59,10 @@ public class Obstacle: MonoBehaviour
         Vector3 mPos = Input.mousePosition;
         mPos.z = Vector3.Distance(_mainCam.transform.position, transform.position);
         return _mainCam.ScreenToWorldPoint(mPos);
+    }
+
+    public void DestroyMe()
+    {
+        gameObject.SetActive(false);
     }
 }

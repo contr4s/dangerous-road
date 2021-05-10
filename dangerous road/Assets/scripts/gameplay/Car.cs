@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Car: MonoBehaviour
 {
+    public float passedDist;
+
     [SerializeField] private float _acceleration;
     [SerializeField] private float _maxSpeed;
 
@@ -19,6 +21,11 @@ public class Car: MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+    }
+
+    private void Update()
+    {
+        passedDist = transform.position.z;
     }
 
     private void FixedUpdate()

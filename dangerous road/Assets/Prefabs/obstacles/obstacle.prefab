@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9099557589500092283
 Transform:
   m_ObjectHideFlags: 0
@@ -113,6 +113,7 @@ MonoBehaviour:
   _swipeForceScale: 500
   _maxDistToSwipe: 150
   _minDistToSwipe: 15
+  _fallTime: 10
   _uIManager: {fileID: 0}
 --- !u!54 &606867167
 Rigidbody:
