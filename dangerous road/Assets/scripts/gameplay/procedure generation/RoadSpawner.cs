@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoadSpawner: Spawner<MeshCollider>
+public class RoadSpawner: Spawner<MeshRenderer>
 {
     [SerializeField] private RoadPool _roadPool;
 
@@ -12,16 +12,21 @@ public class RoadSpawner: Spawner<MeshCollider>
 
     private int multiplier = 1;
 
-    private void Update()
+    private void OnEnable()
     {
-        if (_car.passedDist > _distToCover * multiplier)
-        {
-            SpawnObjects(_lastSpawnedPos, _lastSpawnedPos + _distToCover, _startStep);
-            multiplier++;
-        }           
+        _car.passedHundredMeters += () => SpawnObjects(_lastSpawnedPos, _lastSpawnedPos + Car.hundredMeters, _startStep);
     }
 
-    protected override ObjectPool<MeshCollider> GetObjectPool()
+    //private void Update()
+    //{
+    //    if (_car.passedDist > _distToCover * multiplier)
+    //    {
+    //        SpawnObjects(_lastSpawnedPos, _lastSpawnedPos + _distToCover, _startStep);
+    //        multiplier++;
+    //    }           
+    //}
+
+    protected override ObjectPool<MeshRenderer> GetObjectPool()
     {
         return _roadPool;
     }    

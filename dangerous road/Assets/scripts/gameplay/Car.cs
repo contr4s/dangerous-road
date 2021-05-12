@@ -1,9 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Car: MonoBehaviour
 {
+    public const int hundredMeters = 100;
+
+    public Action passedHundredMeters;
     public float passedDist;
 
     [SerializeField] private float _acceleration;
@@ -15,7 +20,7 @@ public class Car: MonoBehaviour
     [SerializeField] private UIManager _uIManager;
 
     private Vector3 _curreneAccceleration = new Vector3();
-
+    private int _multiplier = 1;
     private Rigidbody _rigidbody;
 
     private void Awake()
@@ -24,8 +29,15 @@ public class Car: MonoBehaviour
     }
 
     private void Update()
-    {
+    {       
         passedDist = transform.position.z;
+
+        if (passedDist > hundredMeters * _multiplier)
+        {
+            passedHundredMeters?.Invoke();
+            _uIManager.Dist += 0.1f;
+            _multiplier++;
+        }
     }
 
     private void FixedUpdate()

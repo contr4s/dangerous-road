@@ -11,8 +11,6 @@ public class Obstacle: MonoBehaviour, IDestroyable
 
     [SerializeField] private float _fallTime = 10f;
 
-    [SerializeField] private UIManager _uIManager;
-
     private bool _hasBeenSwipedAway = false;
     private Vector3 _cashedPosition;
 
@@ -23,6 +21,12 @@ public class Obstacle: MonoBehaviour, IDestroyable
     {
         _rigidbody = GetComponent<Rigidbody>();
         _mainCam = Camera.main;
+    }
+
+    private void OnEnable()
+    {
+        _rigidbody.velocity = Vector3.zero;
+        transform.rotation = Quaternion.identity;
     }
 
     private void OnMouseEnter()
@@ -41,13 +45,6 @@ public class Obstacle: MonoBehaviour, IDestroyable
         if (!_hasBeenSwipedAway)
         {
             _hasBeenSwipedAway = true;            
-
-            if (!_uIManager)
-            {
-                Debug.LogWarning("you must assign UIManager on the inspector");               
-            }
-            else
-                _uIManager.Score++;
 
             yield return new WaitForSeconds(_fallTime);
             DestroyMe();

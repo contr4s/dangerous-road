@@ -3,21 +3,21 @@ using UnityEngine;
 
 public class UIManager: MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _scoreDisplay;
+    [SerializeField] private TextMeshProUGUI _distDisplay;
     [SerializeField] public TextMeshProUGUI winDisplay;
     [SerializeField] public TextMeshProUGUI loseDisplay;
 
-    private int _score = 0;
+    private float _dist = 0;
 
-    public int Score
+    public float Dist
     {
-        get => _score;
+        get => _dist;
         set
         {
             if (value < 0)
-                Debug.LogError("score can't be less than 0");
-            _score = value;
-            _scoreDisplay.text = string.Format("Score: {0}", _score);
+                Debug.LogError("dist can't be less than 0");
+            _dist = value;
+            _distDisplay.text = string.Format("Dist: {0}km", _dist);
         }
     }
 }
