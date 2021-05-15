@@ -109,12 +109,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2909538269a58694bb0c537ba2a29ebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _swipeSO: {fileID: 11400000, guid: 65e40c922576e8f4ab740906009dffe2, type: 2}
   _swipeTime: 0.1
   _swipeForceScale: 500
   _maxDistToSwipe: 150
   _minDistToSwipe: 15
   _fallTime: 10
-  _uIManager: {fileID: 0}
 --- !u!54 &606867167
 Rigidbody:
   m_ObjectHideFlags: 0

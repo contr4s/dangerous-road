@@ -6,20 +6,13 @@ public class TerrainSpawner: Spawner<Terrain>
 {
     [SerializeField] TerrainPool[] _terrainPools;
 
-
     [SerializeField] private float _distToCover;
 
     [SerializeField] private Car _car;
 
-    private int multiplier = 1;
-
-    private void Update()
+    private void OnEnable()
     {
-        if (_car.passedDist > _distToCover * multiplier)
-        {
-            SpawnObjects(_lastSpawnedPos, _lastSpawnedPos + _distToCover, _startStep);
-            multiplier++;
-        }
+        _car.passedOneKilometer += () => SpawnObjects(_lastSpawnedPos, _lastSpawnedPos + Car.kilometer, _startStep);
     }
 
     protected override ObjectPool<Terrain> GetObjectPool()

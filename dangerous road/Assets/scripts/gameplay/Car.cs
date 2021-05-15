@@ -7,8 +7,10 @@ using UnityEngine;
 public class Car: MonoBehaviour
 {
     public const int hundredMeters = 100;
+    public const int kilometer = 1000;
 
     public Action passedHundredMeters;
+    public Action passedOneKilometer;
     public float passedDist;
 
     [SerializeField] private float _acceleration;
@@ -35,6 +37,8 @@ public class Car: MonoBehaviour
         if (passedDist > hundredMeters * _multiplier)
         {
             passedHundredMeters?.Invoke();
+            if (_multiplier % 10 == 0)
+                passedOneKilometer?.Invoke();
             _uIManager.Dist += 0.1f;
             _multiplier++;
         }
@@ -58,7 +62,7 @@ public class Car: MonoBehaviour
             if (!_uIManager)
                 Debug.LogError("you must assign UIManager on the inspector");
             else
-                _uIManager.loseDisplay.gameObject.SetActive(true);
+                _uIManager.SetupLoseDisplay();
         }
     }
 

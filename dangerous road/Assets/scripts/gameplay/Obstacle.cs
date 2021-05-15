@@ -4,10 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Obstacle: MonoBehaviour, IDestroyable
 {
-    [SerializeField] private float _swipeTime = 0.1f;
-    [SerializeField] private float _swipeForceScale = 20;
-    [SerializeField] private float _maxDistToSwipe = 150;
-    [SerializeField] private float _minDistToSwipe = 15;
+    [SerializeField] private SwipeSO _swipeSO;
 
     [SerializeField] private float _fallTime = 10f;
 
@@ -32,8 +29,8 @@ public class Obstacle: MonoBehaviour, IDestroyable
     private void OnMouseEnter()
     {
         var distToCam = transform.position.z - _mainCam.transform.position.z;
-        if (distToCam < _maxDistToSwipe && distToCam > _minDistToSwipe)
-            StartCoroutine(Swipe(_swipeTime, distToCam));
+        if (distToCam < _swipeSO.maxDistToSwipe && distToCam > _swipeSO.minDistToSwipe)
+            StartCoroutine(Swipe(_swipeSO.swipeTime, distToCam));
     }
 
     private IEnumerator Swipe(float swipeTime, float distToCam)
@@ -41,7 +38,7 @@ public class Obstacle: MonoBehaviour, IDestroyable
         _cashedPosition = CalulateMousePosition();
         yield return new WaitForSeconds(swipeTime);
         Vector3 newPosition = CalulateMousePosition();
-        _rigidbody.AddForce((newPosition - _cashedPosition) * _swipeForceScale / distToCam, ForceMode.Impulse);
+        _rigidbody.AddForce((newPosition - _cashedPosition) * _swipeSO.swipeForceScale / distToCam, ForceMode.Impulse);
         if (!_hasBeenSwipedAway)
         {
             _hasBeenSwipedAway = true;            

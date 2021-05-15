@@ -53,7 +53,6 @@ public abstract class Spawner<T> : MonoBehaviour where T : Component
 
     private void SpawnObstacle(Vector3 position)
     {
-        //var obstacle = _obstaclePools[Random.Range(0, _obstaclePools.Length)].GetAvailableObject();
         var obstacle = GetObjectPool().GetAvailableObject();
 
         obstacle.transform.position = position;
