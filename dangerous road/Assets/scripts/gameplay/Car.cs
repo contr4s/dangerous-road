@@ -59,11 +59,17 @@ public class Car: MonoBehaviour
         if (collision.gameObject.CompareTag(obstacleTag))
         {
             _rigidbody.isKinematic = true;
-
+            _rigidbody.detectCollisions = false;
+            
             if (!_uIManager)
                 Debug.LogError("you must assign UIManager on the inspector");
             else
+            {
                 _uIManager.SetupLoseDisplay();
+                GameManager.S.Money += _uIManager.Money;
+                SaveGameManager.Save();
+            }
+                
         }
     }
 

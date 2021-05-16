@@ -22,6 +22,7 @@ public abstract class Spawner<T> : MonoBehaviour where T : Component
 
     protected virtual void Start()
     {
+        LevelManager.UnPause();
         SpawnObjects(_startPosition.z, _distanceToCam, _startStep);       
     }
 

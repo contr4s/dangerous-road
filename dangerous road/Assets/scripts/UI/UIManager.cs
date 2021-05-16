@@ -5,12 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class UIManager: MonoBehaviour
 {
-    public const string gameplayScene = "gameplay";
-
     [SerializeField] private TextMeshProUGUI _distDisplay;
     [SerializeField] private TextMeshProUGUI _moneyDisplay;
     [SerializeField] public TextMeshProUGUI winDisplay;
     [SerializeField] private GameObject _loseDisplay;
+    [SerializeField] private GameObject _pauseOverlay;
 
     NumberFormatInfo nfi = new CultureInfo("en-US", false).NumberFormat;
 
@@ -28,8 +27,8 @@ public class UIManager: MonoBehaviour
         }
     }
 
-    private float _money = 0;
-    public float Money
+    private int _money = 0;
+    public int Money
     {
         get => _money;
         set
@@ -44,10 +43,6 @@ public class UIManager: MonoBehaviour
     public void SetupLoseDisplay()
     {
         _loseDisplay.SetActive(true);
-    }
-
-    public void PlayAgain()
-    {
-        SceneManager.LoadScene(gameplayScene);
+        _pauseOverlay.SetActive(true);
     }
 }
