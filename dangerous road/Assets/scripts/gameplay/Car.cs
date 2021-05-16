@@ -6,9 +6,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Car: MonoBehaviour
 {
+    public const string obstacleTag = "obstacle";
     public const int hundredMeters = 100;
     public const int kilometer = 1000;
-
+    
     public Action passedHundredMeters;
     public Action passedOneKilometer;
     public float passedDist;
@@ -46,16 +47,16 @@ public class Car: MonoBehaviour
 
     private void FixedUpdate()
     {
-        _curreneAccceleration.z = _acceleration;
         if (_rigidbody.velocity.z > _maxSpeed)
-            _curreneAccceleration.z = 0;
+            return;
 
+        _curreneAccceleration.z = _acceleration;
         _rigidbody.AddForce(_curreneAccceleration, ForceMode.VelocityChange);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("obstacle"))
+        if (collision.gameObject.CompareTag(obstacleTag))
         {
             _rigidbody.isKinematic = true;
 
@@ -64,6 +65,15 @@ public class Car: MonoBehaviour
             else
                 _uIManager.SetupLoseDisplay();
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out Coin coin))
+        {
+            _uIManager.Money += coin.Value;
+            coin.DestroyMe();
+        }           
     }
 
     private void OnTriggerExit(Collider other)

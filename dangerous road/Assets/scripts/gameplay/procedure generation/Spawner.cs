@@ -11,7 +11,7 @@ public abstract class Spawner<T> : MonoBehaviour where T : Component
     [SerializeField] protected Vector3 _startPosition;
     [SerializeField] protected float _startStep;
 
-    [SerializeField] protected float _lastSpawnedPos;
+    protected float _lastSpawnedPos;
 
     private Camera _mainCam;
 
