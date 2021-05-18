@@ -31,7 +31,7 @@ public abstract class Spawner<T> : MonoBehaviour where T : Component
         float zPos = startPos;
         for (; zPos < lastPos; zPos += step)
         {
-            SpawnObstacle(zPos);
+            SpawnObject(zPos);
         }
         _lastSpawnedPos = zPos;
     }
@@ -42,17 +42,17 @@ public abstract class Spawner<T> : MonoBehaviour where T : Component
     {
         while (true)
         {
-            SpawnObstacle(_mainCam.transform.position.z + _distanceToCam);
+            SpawnObject(_mainCam.transform.position.z + _distanceToCam);
             yield return new WaitForSeconds(_timeBetweenSpawning);
         }
     }
 
-    private void SpawnObstacle(float zPos)
+    private void SpawnObject(float zPos)
     {
-        SpawnObstacle(new Vector3(GetRandomXPos(), _startPosition.y, zPos));
+        SpawnObject(new Vector3(GetRandomXPos(), _startPosition.y, zPos));
     }
 
-    private void SpawnObstacle(Vector3 position)
+    private void SpawnObject(Vector3 position)
     {
         var obstacle = GetObjectPool().GetAvailableObject();
 
