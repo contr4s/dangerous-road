@@ -10,9 +10,11 @@ public class Car: MonoBehaviour
     public const int hundredMeters = 100;
     public const int kilometer = 1000;
 
-    public Action passedHundredMeters;
-    public Action passedOneKilometer;
-    public float passedDist;
+    public bool isLosed;
+
+    public static Action passedHundredMeters;
+    public static Action passedOneKilometer;
+    private float _passedDist;
 
     [SerializeField] private float _acceleration;
     [SerializeField] private float _maxSpeed;
@@ -37,9 +39,9 @@ public class Car: MonoBehaviour
 
     private void Update()
     {
-        passedDist = transform.position.z;
+        _passedDist = transform.position.z;
 
-        if (passedDist > hundredMeters * _multiplier)
+        if (_passedDist > hundredMeters * _multiplier)
         {
             passedHundredMeters?.Invoke();
             if (_multiplier % 10 == 0)
@@ -51,6 +53,9 @@ public class Car: MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (isLosed)
+            return;
+
         if (_rigidbody.velocity.z > _maxSpeed)
             return;
 
@@ -60,10 +65,13 @@ public class Car: MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (isLosed)
+            return;
+
         if (collision.gameObject.CompareTag(obstacleTag))
         {
-            _rigidbody.isKinematic = true;
-            _rigidbody.detectCollisions = false;
+            _rigidbody.AddForce(Vector3.back * _maxSpeed, ForceMode.VelocityChange);
+            isLosed = true;
 
             if (!_uIManager)
                 Debug.LogError("you must assign UIManager on the inspector");
@@ -83,18 +91,6 @@ public class Car: MonoBehaviour
         {
             _uIManager.Money += coin.Value;
             coin.DestroyMe();
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("finish"))
-        {
-            _rigidbody.isKinematic = true;
-            if (!_uIManager)
-                Debug.LogError("you must assign UIManager on the inspector");
-            else
-                _uIManager.winDisplay.gameObject.SetActive(true);
         }
     }
 

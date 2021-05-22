@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: default swipe
   m_EditorClassIdentifier: 
   swipeTime: 0.1
-  swipeForceScale: 500
+  swipeForceScale: 2000
   maxDistToSwipe: 150
   minDistToSwipe: 15

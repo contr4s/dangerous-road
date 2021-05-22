@@ -8,15 +8,23 @@ public class TerrainSpawner: Spawner<Terrain>
 
     [SerializeField] private float _distToCover;
 
-    [SerializeField] private Car _car;
-
     private void OnEnable()
     {
-        _car.passedOneKilometer += () => SpawnObjects(_lastSpawnedPos, _lastSpawnedPos + Car.kilometer, _startStep);
+        Car.passedOneKilometer += Spawn;
+    }
+
+    private void OnDisable()
+    {
+        Car.passedOneKilometer -= Spawn;
     }
 
     protected override ObjectPool<Terrain> GetObjectPool()
     {
         return _terrainPools[Random.Range(0, _terrainPools.Length)];
+    }
+
+    void Spawn()
+    {
+        SpawnObjects(_lastSpawnedPos, _lastSpawnedPos + Car.kilometer, _startStep);
     }
 }

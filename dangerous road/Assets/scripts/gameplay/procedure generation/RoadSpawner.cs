@@ -8,15 +8,23 @@ public class RoadSpawner: Spawner<MeshRenderer>
 
     [SerializeField] private float _distToCover;
 
-    [SerializeField] private Car _car;
-
     private void OnEnable()
     {
-        _car.passedHundredMeters += () => SpawnObjects(_lastSpawnedPos, _lastSpawnedPos + Car.hundredMeters, _startStep);
+        Car.passedHundredMeters += Spawn;
+    }
+
+    private void OnDisable()
+    {
+        Car.passedHundredMeters -= Spawn;
     }
 
     protected override ObjectPool<MeshRenderer> GetObjectPool()
     {
         return _roadPool;
-    }    
+    }
+
+    private void Spawn()
+    {
+        SpawnObjects(_lastSpawnedPos, _lastSpawnedPos + Car.hundredMeters, _startStep);
+    }
 }

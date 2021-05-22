@@ -2,16 +2,17 @@ using System.Globalization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager: MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _distDisplay;
     [SerializeField] private TextMeshProUGUI _moneyDisplay;
-    [SerializeField] public TextMeshProUGUI winDisplay;
     [SerializeField] private GameObject _loseDisplay;
     [SerializeField] private GameObject _pauseOverlay;
+    [SerializeField] private Button[] _gameplayButtons;
 
-    NumberFormatInfo nfi = new CultureInfo("en-US", false).NumberFormat;
+    NumberFormatInfo _nfi = new CultureInfo("en-US", false).NumberFormat;
 
     private float _dist = 0;
 
@@ -36,7 +37,7 @@ public class UIManager: MonoBehaviour
             if (value < 0)
                 Debug.LogError("collected money can't be less than 0");
             _money = value;
-            _moneyDisplay.text = string.Format("Money: {0}", _money.ToString("C", nfi));
+            _moneyDisplay.text = string.Format("Money: {0}", _money.ToString("C", _nfi));
         }
     }
 
@@ -44,5 +45,7 @@ public class UIManager: MonoBehaviour
     {
         _loseDisplay.SetActive(true);
         _pauseOverlay.SetActive(true);
+        foreach (var button in _gameplayButtons)
+            button.gameObject.SetActive(false);
     }
 }
