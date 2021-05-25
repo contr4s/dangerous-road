@@ -10,6 +10,7 @@ public class Car: MonoBehaviour
     public const int hundredMeters = 100;
     public const int kilometer = 1000;
 
+    public static Action gameOver;
     public bool isLosed;
 
     public static Action passedHundredMeters;
@@ -27,6 +28,7 @@ public class Car: MonoBehaviour
     private Coroutine _turnCoroutine;
 
     [SerializeField] private UIManager _uIManager;
+    [SerializeField] private SandStorm _storm;
 
     private Vector3 _curreneAccceleration = new Vector3();
     private int _multiplier = 1;
@@ -72,12 +74,14 @@ public class Car: MonoBehaviour
         {
             _rigidbody.AddForce(Vector3.back * _maxSpeed, ForceMode.VelocityChange);
             isLosed = true;
+            gameOver?.Invoke();
+            _storm.StartStorm();
 
             if (!_uIManager)
                 Debug.LogError("you must assign UIManager on the inspector");
             else
             {
-                _uIManager.SetupLoseDisplay();
+                _uIManager.BlockButtons();
                 GameManager.S.Money += _uIManager.Money;
                 SaveGameManager.Save();
             }

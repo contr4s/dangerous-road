@@ -9,12 +9,24 @@ public class ObstacleSpawner: Spawner<Obstacle>
     [Range(0, 100)]
     public float complexityPercentage2 = 10;
 
+    private int _hundredMetersCounter = 1;
+    private int _kilometerCounter = 1;
+
     [SerializeField] private ObstaclePool[] _obstaclePools;
 
     private void OnEnable()
     {
-        Car.passedHundredMeters += () => _timeBetweenSpawning *= 1 - complexityPercentage1 / 100;
-        Car.passedOneKilometer += () => _timeBetweenSpawning *= 1 - complexityPercentage2 / 100;
+        Car.passedHundredMeters += () =>
+        {
+            _timeBetweenSpawning *= 1 - complexityPercentage1 / 100 / _hundredMetersCounter;
+            _hundredMetersCounter++;
+        };
+
+        Car.passedOneKilometer += () =>
+        {
+            _timeBetweenSpawning *= 1 - complexityPercentage2 / 100 / _kilometerCounter;
+            _kilometerCounter++;
+        };
     }
 
     protected override void Start()

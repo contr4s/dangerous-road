@@ -12,7 +12,7 @@ public class UIManager: MonoBehaviour
     [SerializeField] private GameObject _pauseOverlay;
     [SerializeField] private Button[] _gameplayButtons;
 
-    NumberFormatInfo _nfi = new CultureInfo("en-US", false).NumberFormat;
+    readonly NumberFormatInfo _nfi = new CultureInfo("en-US", false).NumberFormat;
 
     private float _dist = 0;
 
@@ -41,10 +41,24 @@ public class UIManager: MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        SandStorm.stormReachedDestination += SetupLoseDisplay;
+    }
+
+    private void OnDisable()
+    {
+        SandStorm.stormReachedDestination -= SetupLoseDisplay;
+    }
+
     public void SetupLoseDisplay()
     {
         _loseDisplay.SetActive(true);
-        _pauseOverlay.SetActive(true);
+        _pauseOverlay.SetActive(true);        
+    }
+
+    public void BlockButtons()
+    {
         foreach (var button in _gameplayButtons)
             button.gameObject.SetActive(false);
     }
