@@ -72,7 +72,8 @@ public class Car: MonoBehaviour
 
         if (collision.gameObject.CompareTag(obstacleTag))
         {
-            _rigidbody.AddForce(Vector3.back * _maxSpeed, ForceMode.VelocityChange);
+            if (_rigidbody.velocity.z > _maxSpeed - _acceleration)
+                _rigidbody.AddForce(Vector3.back * _maxSpeed, ForceMode.VelocityChange);
             isLosed = true;
             gameOver?.Invoke();
             _storm.StartStorm();
