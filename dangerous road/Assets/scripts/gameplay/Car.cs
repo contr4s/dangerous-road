@@ -30,7 +30,6 @@ public class Car: MonoBehaviour
     [SerializeField] private UIManager _uIManager;
     [SerializeField] private SandStorm _storm;
 
-    private Vector3 _curreneAccceleration = new Vector3();
     private int _multiplier = 1;
     private Rigidbody _rigidbody;
 
@@ -56,13 +55,25 @@ public class Car: MonoBehaviour
     private void FixedUpdate()
     {
         if (isLosed)
-            return;
+            Brake();
+        else
+            Accelerate();
+    }
 
+    private void Accelerate()
+    {
         if (_rigidbody.velocity.z > _maxSpeed)
             return;
 
-        _curreneAccceleration.z = _acceleration;
-        _rigidbody.AddForce(_curreneAccceleration, ForceMode.VelocityChange);
+        _rigidbody.AddForce(Vector3.forward * _acceleration, ForceMode.VelocityChange);
+    }
+
+    private void Brake()
+    {
+        if (_rigidbody.velocity.z < _acceleration)
+            return;
+
+        _rigidbody.AddForce(Vector3.back * _acceleration, ForceMode.VelocityChange);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -72,8 +83,6 @@ public class Car: MonoBehaviour
 
         if (collision.gameObject.CompareTag(obstacleTag))
         {
-            if (_rigidbody.velocity.z > _maxSpeed - _acceleration)
-                _rigidbody.AddForce(Vector3.back * _maxSpeed, ForceMode.VelocityChange);
             isLosed = true;
             gameOver?.Invoke();
             _storm.StartStorm();

@@ -8,6 +8,16 @@ public class Coin : MonoBehaviour, IDestroyable
 
     public int Value { get => _value; private set => _value = value; }
 
+    public void OnEnable()
+    {
+        CoinRotator.allCoins.Add(this);
+    }
+
+    public void OnDisable()
+    {
+        CoinRotator.allCoins.Remove(this);
+    }
+
     public void DestroyMe()
     {
         gameObject.SetActive(false);
