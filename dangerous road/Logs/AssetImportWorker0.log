@@ -15,11 +15,11 @@ E:/unity projects/dangerous-road/dangerous road
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-59117
+49728
 Successfully changed project path to: E:/unity projects/dangerous-road/dangerous road
 E:/unity projects/dangerous-road/dangerous road
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 44.80 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 46.15 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.7f1 (dd97f2c94397)
 [Subsystems] Discovering subsystems at path E:/programs/Unity Hub/2020.3.7f1/Editor/Data/Resources/UnitySubsystems
@@ -37,829 +37,630 @@ Initialize mono
 Mono path[0] = 'E:/programs/Unity Hub/2020.3.7f1/Editor/Data/Managed'
 Mono path[1] = 'E:/programs/Unity Hub/2020.3.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'E:/programs/Unity Hub/2020.3.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56528
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56784
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: E:/programs/Unity Hub/2020.3.7f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: E:/programs/Unity Hub/2020.3.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002368 seconds.
+Registered in 0.001886 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 45.62 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 47.39 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.978 seconds
+- Completed reload, in  2.929 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.000724 seconds.
+Registered in 0.001720 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 55.60 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 45.48 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.652 seconds
+- Completed reload, in  1.694 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 0.48 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 0.45 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1377 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 96.8 MB.
-System memory in use after: 96.7 MB.
+Unloading 1378 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 96.9 MB.
+System memory in use after: 96.8 MB.
 
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 1869.
-Total: 2.660942 ms (FindLiveObjects: 0.248227 ms CreateObjectMapping: 0.078388 ms MarkObjects: 1.952275 ms  DeleteObjects: 0.380286 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/textures & materials/obstacles/broken car/Car.png
-  artifactKey: Guid(ba61756ce08ce51468948beea82d6ea1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/Car.png using Guid(ba61756ce08ce51468948beea82d6ea1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c93377c4781fb208c4341f82f4a2490e') in 0.150257 seconds
-  Import took 0.154998 seconds .
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 1870.
+Total: 2.761957 ms (FindLiveObjects: 0.184319 ms CreateObjectMapping: 0.100634 ms MarkObjects: 2.109779 ms  DeleteObjects: 0.365460 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000486 seconds.
-  path: Assets/textures & materials/obstacles/broken car/tires.png
-  artifactKey: Guid(ea80f6363882e6546ace6c45f6eb75b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/tires.png using Guid(ea80f6363882e6546ace6c45f6eb75b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ed28c4e9d5e4fc1da3d22f24df299ed') in 0.029086 seconds
-  Import took 0.034597 seconds .
+  path: Assets/Prefabs/obstacles/TrafficCone2.prefab
+  artifactKey: Guid(ca996cfa9ec49df40b839be202af3ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/obstacles/TrafficCone2.prefab using Guid(ca996cfa9ec49df40b839be202af3ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '696284b4647184a5b8db0c845979504f') in 0.165896 seconds
+  Import took 0.169197 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000433 seconds.
-  path: Assets/textures & materials/obstacles/broken car/volvo.obj
-  artifactKey: Guid(04c27a44edb4ad440970f7da16898a36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/volvo.obj using Guid(04c27a44edb4ad440970f7da16898a36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ad16caef4c1417d6e38cd29cc585d28') in 0.716752 seconds
-  Import took 0.721974 seconds .
+  Time since last request: 0.000372 seconds.
+  path: Assets/Prefabs/obstacles/TrafficCone1.prefab
+  artifactKey: Guid(efaa767e14f230344ac6b636a16b869e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/obstacles/TrafficCone1.prefab using Guid(efaa767e14f230344ac6b636a16b869e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '060b9f21c36880cc89cfd78a975c87c0') in 0.015017 seconds
+  Import took 0.018016 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000431 seconds.
-  path: Assets/textures & materials/obstacles/broken car
-  artifactKey: Guid(a5a0ade0414989941a4273fbd902007f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car using Guid(a5a0ade0414989941a4273fbd902007f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b53b40903d0f2eb7895c7c6ba2ca8c63') in 0.005591 seconds
-  Import took 0.009804 seconds .
+  Time since last request: 0.000367 seconds.
+  path: Assets/Prefabs/obstacles/Road-Blocker.prefab
+  artifactKey: Guid(bf5bc7161ae2d344fa5e94c04fb23a75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/obstacles/Road-Blocker.prefab using Guid(bf5bc7161ae2d344fa5e94c04fb23a75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f7d2a9cb4ac811be56de97623e271b6') in 0.136005 seconds
+  Import took 0.139055 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000376 seconds.
-  path: Assets/textures & materials/obstacles/broken car/Glass.png
-  artifactKey: Guid(a07e9d7218e245a498ed1d48d12488e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/Glass.png using Guid(a07e9d7218e245a498ed1d48d12488e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc35db6edd4d1aa45e11041cb8b8dfa9') in 0.020193 seconds
-  Import took 0.024894 seconds .
+  Time since last request: 0.000270 seconds.
+  path: Assets/Prefabs/obstacles/jeep.prefab
+  artifactKey: Guid(c2fadad0ca993c54faf7302eda9e8ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/obstacles/jeep.prefab using Guid(c2fadad0ca993c54faf7302eda9e8ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cf41cbc25d8b8157616a5e7437edc47') in 0.032147 seconds
+  Import took 0.035129 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000375 seconds.
-  path: Assets/textures & materials/obstacles/broken car/rear_lights.png
-  artifactKey: Guid(06e60aaf98d16b54eb7a98a06cc122b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/rear_lights.png using Guid(06e60aaf98d16b54eb7a98a06cc122b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0ea44e102a64bc0dc0b80092531f866') in 0.014702 seconds
-  Import took 0.017641 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000802 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.49 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.480 seconds
-Platform modules already initialized, skipping
-Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.49 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1325 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 93.6 MB.
-System memory in use after: 93.5 MB.
-
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1916.
-Total: 2.995325 ms (FindLiveObjects: 0.241519 ms CreateObjectMapping: 0.076975 ms MarkObjects: 2.364693 ms  DeleteObjects: 0.310373 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Import Request.
-  Time since last request: 646.130854 seconds.
-  path: Assets/textures & materials/obstacles/broken car/Textures.txt
-  artifactKey: Guid(a56703194918a9541a4bcac8efc7929d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/Textures.txt using Guid(a56703194918a9541a4bcac8efc7929d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f4b69e6933d8226b2af95bb8b78923a') in 0.031909 seconds
-  Import took 0.038240 seconds .
+  Time since last request: 0.000248 seconds.
+  path: Assets/Prefabs/obstacles/broken_truck.prefab
+  artifactKey: Guid(6a561a122137c2b498dfa998e918904b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/obstacles/broken_truck.prefab using Guid(6a561a122137c2b498dfa998e918904b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a99b8e1af92ef97cbe7d9b8463a49352') in 0.022679 seconds
+  Import took 0.025972 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 42.320081 seconds.
-  path: Assets/textures & materials/obstacles/broken car/volvo.mtl
-  artifactKey: Guid(730f8a2a9b99ce14982c985a233704f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/volvo.mtl using Guid(730f8a2a9b99ce14982c985a233704f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd436475644398b8ff1b6f0678a47249a') in 0.008279 seconds
-  Import took 0.013233 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 59.692836 seconds.
-  path: Assets/textures & materials/obstacles/broken car/car.mat
-  artifactKey: Guid(91d8f7f85cbce8b4198bb2260e57c585) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/car.mat using Guid(91d8f7f85cbce8b4198bb2260e57c585) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3783585f507256cfe846debe5db8bf91') in 0.086594 seconds
-  Import took 0.090013 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 42.232472 seconds.
-  path: Assets/textures & materials/obstacles/broken car/volvo.obj
-  artifactKey: Guid(04c27a44edb4ad440970f7da16898a36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/volvo.obj using Guid(04c27a44edb4ad440970f7da16898a36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54d107faf639a16bb61b1e50a86cf200') in 0.481714 seconds
-  Import took 0.488064 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.965045 seconds.
-  path: Assets/textures & materials/obstacles/broken car/volvo.obj
-  artifactKey: Guid(04c27a44edb4ad440970f7da16898a36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/volvo.obj using Guid(04c27a44edb4ad440970f7da16898a36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2a0931e0f09c93cc4be92458e866957') in 0.475417 seconds
-  Import took 0.481076 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 71.919248 seconds.
-  path: Assets/textures & materials/obstacles/broken car/volvo.obj
-  artifactKey: Guid(04c27a44edb4ad440970f7da16898a36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/volvo.obj using Guid(04c27a44edb4ad440970f7da16898a36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c17919627f3f16385edabbe5a234d04') in 0.284838 seconds
-  Import took 0.289888 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 213.548040 seconds.
-  path: Assets/textures & materials/obstacles/broken car/rear_lights.png
-  artifactKey: Guid(06e60aaf98d16b54eb7a98a06cc122b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/rear_lights.png using Guid(06e60aaf98d16b54eb7a98a06cc122b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49f0d4febb245b5a296ce72d2aa1e5d2') in 0.026074 seconds
-  Import took 0.030327 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 85.409204 seconds.
-  path: Assets/textures & materials/obstacles/broken car/Glass.mat
-  artifactKey: Guid(7d18bbee5cec2d4418ddcd32c4bc25ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/Glass.mat using Guid(7d18bbee5cec2d4418ddcd32c4bc25ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66b0ede883ec3e19aea718feca743d03') in 0.016448 seconds
-  Import took 0.020067 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 132.956323 seconds.
-  path: Assets/textures & materials/obstacles/broken car/tire.mat
-  artifactKey: Guid(4ef22e2e809c6bf428df693d9d1fbe7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/tire.mat using Guid(4ef22e2e809c6bf428df693d9d1fbe7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8f851dd816353b611162a01520bc78b') in 0.013323 seconds
-  Import took 0.017633 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 337.163454 seconds.
-  path: Assets/Prefabs/obstacles/volvo.prefab
-  artifactKey: Guid(f128d725d4426cb44af5960b84793e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/volvo.prefab using Guid(f128d725d4426cb44af5960b84793e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a890e6873902b75c0e21e00e002c2619') in 0.341943 seconds
-  Import took 0.350580 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000894 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.48 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.576 seconds
-Platform modules already initialized, skipping
-Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.49 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1325 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 93.9 MB.
-System memory in use after: 93.8 MB.
-
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1922.
-Total: 2.477331 ms (FindLiveObjects: 0.179020 ms CreateObjectMapping: 0.071679 ms MarkObjects: 1.975580 ms  DeleteObjects: 0.249640 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Import Request.
-  Time since last request: 171.891687 seconds.
-  path: Assets/Prefabs/obstacles/volvo.prefab
-  artifactKey: Guid(f128d725d4426cb44af5960b84793e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/volvo.prefab using Guid(f128d725d4426cb44af5960b84793e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff2774f9eb30bd33c4c746f4584080a1') in 0.120935 seconds
-  Import took 0.124690 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.386114 seconds.
-  path: Assets/Prefabs/obstacles/volvo.prefab
-  artifactKey: Guid(f128d725d4426cb44af5960b84793e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/volvo.prefab using Guid(f128d725d4426cb44af5960b84793e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff2774f9eb30bd33c4c746f4584080a1') in 0.054236 seconds
-  Import took 0.058046 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001078 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.49 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.453 seconds
-Platform modules already initialized, skipping
-Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.48 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1325 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 93.9 MB.
-System memory in use after: 93.8 MB.
-
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1926.
-Total: 2.504520 ms (FindLiveObjects: 0.181492 ms CreateObjectMapping: 0.069913 ms MarkObjects: 1.997119 ms  DeleteObjects: 0.253877 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Import Request.
-  Time since last request: 106.480464 seconds.
-  path: Assets/Prefabs/obstacles/volvo.prefab
-  artifactKey: Guid(f128d725d4426cb44af5960b84793e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/volvo.prefab using Guid(f128d725d4426cb44af5960b84793e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2be5995ce6fabf043127df4512e87b77') in 0.147831 seconds
-  Import took 0.151560 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000780 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.49 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.514 seconds
-Platform modules already initialized, skipping
-Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.48 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1325 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 93.9 MB.
-System memory in use after: 93.8 MB.
-
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1930.
-Total: 2.759456 ms (FindLiveObjects: 0.201619 ms CreateObjectMapping: 0.076622 ms MarkObjects: 2.200856 ms  DeleteObjects: 0.278241 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Import Request.
-  Time since last request: 491.998698 seconds.
-  path: Assets/Prefabs/obstacles/broken car.prefab
-  artifactKey: Guid(f128d725d4426cb44af5960b84793e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/broken car.prefab using Guid(f128d725d4426cb44af5960b84793e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a207522b9a1d125e14407545289494ed') in 0.141459 seconds
-  Import took 0.147868 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 281.170115 seconds.
+  Time since last request: 0.000229 seconds.
   path: Assets/Prefabs/obstacles/broken car1.prefab
   artifactKey: Guid(f128d725d4426cb44af5960b84793e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/broken car1.prefab using Guid(f128d725d4426cb44af5960b84793e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1de7582ab745994a2f8fabc5aa6ff94f') in 0.071110 seconds
-  Import took 0.077098 seconds .
+Start importing Assets/Prefabs/obstacles/broken car1.prefab using Guid(f128d725d4426cb44af5960b84793e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eebe657cfbad6e36e0003612554440ee') in 0.075794 seconds
+  Import took 0.079205 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 38.749121 seconds.
-  path: Assets/Prefabs/obstacles/broken_car.blend
-  artifactKey: Guid(97f9845d7c77b794290a1e3cb5b67666) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/broken_car.blend using Guid(97f9845d7c77b794290a1e3cb5b67666) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6277abcd73ea7368ed79ab4e589046a4') in 0.005795 seconds
-  Import took 0.008673 seconds .
+  Time since last request: 0.003140 seconds.
+  path: Assets/Prefabs/obstacles/broken car1.prefab
+  artifactKey: Guid(f128d725d4426cb44af5960b84793e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/obstacles/broken car1.prefab using Guid(f128d725d4426cb44af5960b84793e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eebe657cfbad6e36e0003612554440ee') in 0.055133 seconds
+  Import took 0.058587 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000727 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.552 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.70 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1326 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 93.3 MB.
+System memory in use after: 93.2 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1880.
+Total: 3.712505 ms (FindLiveObjects: 0.195971 ms CreateObjectMapping: 0.099221 ms MarkObjects: 2.981939 ms  DeleteObjects: 0.432902 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001076 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.517 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1326 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 93.3 MB.
+System memory in use after: 93.2 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1883.
+Total: 4.790170 ms (FindLiveObjects: 0.296605 ms CreateObjectMapping: 0.164192 ms MarkObjects: 3.835031 ms  DeleteObjects: 0.491870 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000765 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.439 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1326 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 93.4 MB.
+System memory in use after: 93.3 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1886.
+Total: 2.613654 ms (FindLiveObjects: 0.167017 ms CreateObjectMapping: 0.074857 ms MarkObjects: 2.122138 ms  DeleteObjects: 0.248230 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000822 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.577 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.47 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1326 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 93.4 MB.
+System memory in use after: 93.3 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1889.
+Total: 3.155312 ms (FindLiveObjects: 0.175844 ms CreateObjectMapping: 0.070620 ms MarkObjects: 2.389788 ms  DeleteObjects: 0.516234 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000747 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.465 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1326 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 93.4 MB.
+System memory in use after: 93.3 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1892.
+Total: 2.588231 ms (FindLiveObjects: 0.184319 ms CreateObjectMapping: 0.070973 ms MarkObjects: 2.036334 ms  DeleteObjects: 0.294133 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 677.450830 seconds.
+  path: Assets/Prefabs/obstacles/TrafficCone2.prefab
+  artifactKey: Guid(ca996cfa9ec49df40b839be202af3ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/obstacles/TrafficCone2.prefab using Guid(ca996cfa9ec49df40b839be202af3ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57a901a30da72d808a3ac1641e059608') in 0.115441 seconds
+  Import took 0.122176 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.009289 seconds.
-  path: Assets/Prefabs/obstacles/broken_car.blend
-  artifactKey: Guid(97f9845d7c77b794290a1e3cb5b67666) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/broken_car.blend using Guid(97f9845d7c77b794290a1e3cb5b67666) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6277abcd73ea7368ed79ab4e589046a4') in 0.003268 seconds
-  Import took 0.005557 seconds .
+  Time since last request: 0.000528 seconds.
+  path: Assets/Prefabs/obstacles/TrafficCone1.prefab
+  artifactKey: Guid(efaa767e14f230344ac6b636a16b869e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/obstacles/TrafficCone1.prefab using Guid(efaa767e14f230344ac6b636a16b869e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e45e3613628f4c9b0937c2785e128f5') in 0.015499 seconds
+  Import took 0.020362 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 46.873329 seconds.
-  path: Assets/Prefabs/obstacles/new_jeep_dl.blend
-  artifactKey: Guid(315ba1085abba3a479ef2c28e35f5288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/new_jeep_dl.blend using Guid(315ba1085abba3a479ef2c28e35f5288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b940293ab09fffabcaa6e08395b1955') in 0.006923 seconds
-  Import took 0.012114 seconds .
+  Time since last request: 0.000477 seconds.
+  path: Assets/Prefabs/obstacles/Road-Blocker.prefab
+  artifactKey: Guid(bf5bc7161ae2d344fa5e94c04fb23a75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/obstacles/Road-Blocker.prefab using Guid(bf5bc7161ae2d344fa5e94c04fb23a75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd605c4c4174c4f9073ad0c4240f268a') in 0.087145 seconds
+  Import took 0.090281 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.002151 seconds.
-  path: Assets/Prefabs/obstacles/new_jeep_dl.blend
-  artifactKey: Guid(315ba1085abba3a479ef2c28e35f5288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/new_jeep_dl.blend using Guid(315ba1085abba3a479ef2c28e35f5288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b940293ab09fffabcaa6e08395b1955') in 0.004921 seconds
-  Import took 0.008393 seconds .
+  Time since last request: 0.000258 seconds.
+  path: Assets/Prefabs/obstacles/jeep.prefab
+  artifactKey: Guid(c2fadad0ca993c54faf7302eda9e8ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/obstacles/jeep.prefab using Guid(c2fadad0ca993c54faf7302eda9e8ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1def0350a06f6ced587bf22a81d2cf74') in 0.039049 seconds
+  Import took 0.042476 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 724.657646 seconds.
-  path: Assets/Prefabs/obstacles/new_jeep_dl.blend
-  artifactKey: Guid(315ba1085abba3a479ef2c28e35f5288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/new_jeep_dl.blend using Guid(315ba1085abba3a479ef2c28e35f5288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bcef8f0bf227119ecfd37ed6ab9413a') in 0.084949 seconds
-  Import took 0.089877 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 39.977206 seconds.
-  path: Assets/textures & materials/obstacles/broken car/Materials/Glass.mat
-  artifactKey: Guid(5faf0e4dcc8928f46aac8df51e922017) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/Materials/Glass.mat using Guid(5faf0e4dcc8928f46aac8df51e922017) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f679ec930c8fb0b4eba77aa90c047cbc') in 0.011515 seconds
-  Import took 0.015155 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000295 seconds.
-  path: Assets/textures & materials/obstacles/broken car/Materials/tires.mat
-  artifactKey: Guid(b8283cfff5d72bb4cb9da823bb453c95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/Materials/tires.mat using Guid(b8283cfff5d72bb4cb9da823bb453c95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a5bc30312b752373222dbdea66bf373') in 0.011035 seconds
-  Import took 0.015297 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000330 seconds.
-  path: Assets/textures & materials/obstacles/broken car/Materials/rear_lights.mat
-  artifactKey: Guid(d34bc88677259bf40bb5e71ee1600d1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/Materials/rear_lights.mat using Guid(d34bc88677259bf40bb5e71ee1600d1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '581d7b3c04ff51266f70f36bf37d85c3') in 0.045623 seconds
-  Import took 0.048708 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000369 seconds.
-  path: Assets/textures & materials/obstacles/broken car/Glass.mat
-  artifactKey: Guid(7d18bbee5cec2d4418ddcd32c4bc25ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/Glass.mat using Guid(7d18bbee5cec2d4418ddcd32c4bc25ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a924b832687ccf2d6ea540665d669c48') in 0.023464 seconds
-  Import took 0.026892 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000307 seconds.
-  path: Assets/textures & materials/obstacles/broken car/tire.mat
-  artifactKey: Guid(4ef22e2e809c6bf428df693d9d1fbe7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/tire.mat using Guid(4ef22e2e809c6bf428df693d9d1fbe7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09c3e4f6b518ff87d0c0479688821a46') in 0.024140 seconds
-  Import took 0.027404 seconds .
+  Time since last request: 0.000309 seconds.
+  path: Assets/Prefabs/obstacles/broken_truck.prefab
+  artifactKey: Guid(6a561a122137c2b498dfa998e918904b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/obstacles/broken_truck.prefab using Guid(6a561a122137c2b498dfa998e918904b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93788a3b238d214ad5f550c3008efc89') in 0.017638 seconds
+  Import took 0.020712 seconds .
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000314 seconds.
-  path: Assets/textures & materials/obstacles/broken car/Materials/Glass.mat
-  artifactKey: Guid(5faf0e4dcc8928f46aac8df51e922017) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/Materials/Glass.mat using Guid(5faf0e4dcc8928f46aac8df51e922017) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f679ec930c8fb0b4eba77aa90c047cbc') in 0.011111 seconds
-  Import took 0.014226 seconds .
+  path: Assets/Prefabs/obstacles/broken car1.prefab
+  artifactKey: Guid(f128d725d4426cb44af5960b84793e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/obstacles/broken car1.prefab using Guid(f128d725d4426cb44af5960b84793e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c6436215750adbb696387355f2501d9') in 0.058329 seconds
+  Import took 0.061739 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000277 seconds.
-  path: Assets/textures & materials/obstacles/broken car/Materials/material14.mat
-  artifactKey: Guid(633bb06d31b18e549845b9842fb85902) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/Materials/material14.mat using Guid(633bb06d31b18e549845b9842fb85902) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae27c9041db978979ca37a33b084395e') in 0.016840 seconds
-  Import took 0.019625 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 26.107325 seconds.
-  path: Assets/textures & materials/obstacles/broken car/Materials/BlueRustedMetal.mat
-  artifactKey: Guid(b4913c1966f526845a2ed9cb210333f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/Materials/BlueRustedMetal.mat using Guid(b4913c1966f526845a2ed9cb210333f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85133cc717639d78b6e4eafc5844d7c1') in 0.018010 seconds
-  Import took 0.022300 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000588 seconds.
-  path: Assets/textures & materials/obstacles/broken car/Materials/Car.mat
-  artifactKey: Guid(ffac4b611bbd53441b9bf968aa8a8549) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/Materials/Car.mat using Guid(ffac4b611bbd53441b9bf968aa8a8549) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15a56b8631b41cfcf2b967139461f027') in 0.017152 seconds
-  Import took 0.021896 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000493 seconds.
-  path: Assets/textures & materials/obstacles/broken car/car.mat
-  artifactKey: Guid(91d8f7f85cbce8b4198bb2260e57c585) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/car.mat using Guid(91d8f7f85cbce8b4198bb2260e57c585) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b71418b551ec09c686c189334110d5f6') in 0.036899 seconds
-  Import took 0.040671 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 156.217321 seconds.
-  path: Assets/Prefabs/obstacles/new_jeep_dl.blend1
-  artifactKey: Guid(615e645ae760f9f4c802b22fafceaf7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/new_jeep_dl.blend1 using Guid(615e645ae760f9f4c802b22fafceaf7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71105fd2607b0fec9ba0f923dc80f737') in 0.010176 seconds
-  Import took 0.016479 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 40.859429 seconds.
-  path: Assets/Prefabs/obstacles/broken_car.blend
-  artifactKey: Guid(97f9845d7c77b794290a1e3cb5b67666) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/broken_car.blend using Guid(97f9845d7c77b794290a1e3cb5b67666) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4291c3a0a5bd185ed7027a82394256c') in 0.096409 seconds
-  Import took 0.100003 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 68.572622 seconds.
-  path: Assets/Prefabs/obstacles/new_jeep_dl.blend
-  artifactKey: Guid(315ba1085abba3a479ef2c28e35f5288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/new_jeep_dl.blend using Guid(315ba1085abba3a479ef2c28e35f5288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f8ebf143b336521bb561a3a0261f3bf') in 0.020948 seconds
-  Import took 0.024514 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001839 seconds.
-  path: Assets/Prefabs/obstacles/new_jeep_dl.blend
-  artifactKey: Guid(315ba1085abba3a479ef2c28e35f5288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/new_jeep_dl.blend using Guid(315ba1085abba3a479ef2c28e35f5288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f8ebf143b336521bb561a3a0261f3bf') in 0.018918 seconds
-  Import took 0.022325 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 37.447535 seconds.
-  path: Assets/Prefabs/obstacles/Materials/Material.001.mat
-  artifactKey: Guid(8ef75a8af33544442af3e036558676f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/Materials/Material.001.mat using Guid(8ef75a8af33544442af3e036558676f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7af849d34516298e6d83de61deccc22d') in 0.015565 seconds
-  Import took 0.019567 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.006486 seconds.
-  path: Assets/Prefabs/obstacles/Materials/Material.001.mat
-  artifactKey: Guid(8ef75a8af33544442af3e036558676f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/Materials/Material.001.mat using Guid(8ef75a8af33544442af3e036558676f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7af849d34516298e6d83de61deccc22d') in 0.010891 seconds
-  Import took 0.013903 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.886400 seconds.
-  path: Assets/Prefabs/obstacles/new_jeep_dl.blend
-  artifactKey: Guid(315ba1085abba3a479ef2c28e35f5288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/new_jeep_dl.blend using Guid(315ba1085abba3a479ef2c28e35f5288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cd194b8dcf0402040699210e2555edb') in 0.068820 seconds
-  Import took 0.073804 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 249.113429 seconds.
-  path: Assets/Prefabs/obstacles/new_jeep_exact.jpg
-  artifactKey: Guid(e2fe886e948778548b4b8cf0ff33c359) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/new_jeep_exact.jpg using Guid(e2fe886e948778548b4b8cf0ff33c359) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebdfdc0a1d18c2c4ba335f2f4802152d') in 0.088818 seconds
-  Import took 0.093280 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 21.048751 seconds.
-  path: Assets/Prefabs/obstacles/New Material.mat
-  artifactKey: Guid(d519a260e790ff24b94048128fec9c4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/New Material.mat using Guid(d519a260e790ff24b94048128fec9c4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4946a8ffae082d165a2fb2186d4fa2c2') in 0.012565 seconds
-  Import took 0.017887 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 36.826770 seconds.
-  path: Assets/Prefabs/obstacles/jeep.mat
-  artifactKey: Guid(d519a260e790ff24b94048128fec9c4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/jeep.mat using Guid(d519a260e790ff24b94048128fec9c4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65b3d2a8baf11a5aedaedc839552e768') in 0.040031 seconds
-  Import took 0.045718 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 14.818182 seconds.
-  path: Assets/Prefabs/obstacles/new_jeep_dl.blend
-  artifactKey: Guid(315ba1085abba3a479ef2c28e35f5288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/new_jeep_dl.blend using Guid(315ba1085abba3a479ef2c28e35f5288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd40ad16f91626cb40da2a0524e5a75a8') in 0.050835 seconds
-  Import took 0.055827 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 14.638190 seconds.
-  path: Assets/textures & materials/obstacles/broken car/Materials
-  artifactKey: Guid(c162a0d617f8185419378680ba6839c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken car/Materials using Guid(c162a0d617f8185419378680ba6839c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c18cd8346ed14710a13a1c0f0b81a51') in 0.003757 seconds
-  Import took 0.007912 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.774399 seconds.
-  path: Assets/textures & materials/obstacles/broken cars
-  artifactKey: Guid(a5a0ade0414989941a4273fbd902007f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken cars using Guid(a5a0ade0414989941a4273fbd902007f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '280d83e64745fa534de5ad40497b4116') in 0.005059 seconds
-  Import took 0.009866 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.853892 seconds.
-  path: Assets/textures & materials/obstacles/broken cars/1
-  artifactKey: Guid(e16883696d713f44eae2002595840106) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken cars/1 using Guid(e16883696d713f44eae2002595840106) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a9e8a4991d04dcae3ab15a04dce3694') in 0.004524 seconds
-  Import took 0.008074 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 12.386850 seconds.
-  path: Assets/textures & materials/obstacles/broken cars/jeep
-  artifactKey: Guid(dbd90f4e39d33a24ca8c232102cdd500) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/textures & materials/obstacles/broken cars/jeep using Guid(dbd90f4e39d33a24ca8c232102cdd500) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca635d2729d92d0eeb1b9d62faaece2a') in 0.004329 seconds
-  Import took 0.007724 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 39.823444 seconds.
-  path: Assets/Prefabs/obstacles/Materials
-  artifactKey: Guid(c0c249ae07e141c45890f1fccb1e74ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/Materials using Guid(c0c249ae07e141c45890f1fccb1e74ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b55018025e778d556f3463cd33e67b21') in 0.004064 seconds
-  Import took 0.006951 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 308.776132 seconds.
-  path: Assets/Prefabs/obstacles/jeep.prefab
-  artifactKey: Guid(c2fadad0ca993c54faf7302eda9e8ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/jeep.prefab using Guid(c2fadad0ca993c54faf7302eda9e8ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b00d5f4fc5eae1dcd49173d5c9551d6d') in 0.034233 seconds
-  Import took 0.038835 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.093915 seconds.
-  path: Assets/Prefabs/obstacles/jeep.prefab
-  artifactKey: Guid(c2fadad0ca993c54faf7302eda9e8ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/jeep.prefab using Guid(c2fadad0ca993c54faf7302eda9e8ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94e94c7140e915ee9efb9b7fa1045d10') in 0.045850 seconds
-  Import took 0.050399 seconds .
+  Time since last request: 0.004747 seconds.
+  path: Assets/Prefabs/obstacles/broken car1.prefab
+  artifactKey: Guid(f128d725d4426cb44af5960b84793e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/obstacles/broken car1.prefab using Guid(f128d725d4426cb44af5960b84793e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c6436215750adbb696387355f2501d9') in 0.055006 seconds
+  Import took 0.058540 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.000899 seconds.
+Registered in 0.000793 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.48 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.47 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.529 seconds
+- Completed reload, in  1.438 seconds
 Platform modules already initialized, skipping
 Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.48 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1325 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 94.0 MB.
-System memory in use after: 93.9 MB.
+Unloading 1326 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 93.4 MB.
+System memory in use after: 93.3 MB.
 
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1934.
-Total: 2.461089 ms (FindLiveObjects: 0.177608 ms CreateObjectMapping: 0.070619 ms MarkObjects: 1.955453 ms  DeleteObjects: 0.255642 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1896.
+Total: 2.535972 ms (FindLiveObjects: 0.176197 ms CreateObjectMapping: 0.070267 ms MarkObjects: 2.029272 ms  DeleteObjects: 0.258823 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
 ========================================================================
 Received Import Request.
-  Time since last request: 83.667084 seconds.
+  Time since last request: 55.522894 seconds.
   path: Assets/Prefabs/obstacles/jeep.prefab
   artifactKey: Guid(c2fadad0ca993c54faf7302eda9e8ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/jeep.prefab using Guid(c2fadad0ca993c54faf7302eda9e8ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9a91e7b3b57f0a13ac6675483f99eed') in 0.138324 seconds
-  Import took 0.143245 seconds .
+Start importing Assets/Prefabs/obstacles/jeep.prefab using Guid(c2fadad0ca993c54faf7302eda9e8ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50d10e0677c8834572b5dce4ae9e9a9b') in 0.100900 seconds
+  Import took 0.105701 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.574683 seconds.
-  path: Assets/Prefabs/obstacles/jeep.prefab
-  artifactKey: Guid(c2fadad0ca993c54faf7302eda9e8ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/jeep.prefab using Guid(c2fadad0ca993c54faf7302eda9e8ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72eeafd5596ab4612b9e0187dc8be4d8') in 0.073834 seconds
-  Import took 0.079917 seconds .
+  Time since last request: 133.239806 seconds.
+  path: Assets/Prefabs/obstacles/broken_truck.prefab
+  artifactKey: Guid(6a561a122137c2b498dfa998e918904b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/obstacles/broken_truck.prefab using Guid(6a561a122137c2b498dfa998e918904b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd947e1e68dbf7a68a470f18d8cf6e293') in 0.020499 seconds
+  Import took 0.024880 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.054535 seconds.
-  path: Assets/Prefabs/obstacles/jeep.prefab
-  artifactKey: Guid(c2fadad0ca993c54faf7302eda9e8ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/jeep.prefab using Guid(c2fadad0ca993c54faf7302eda9e8ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84a56638ddee7e7e7439a4e18f66366c') in 0.053470 seconds
-  Import took 0.057013 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 23.939576 seconds.
-  path: Assets/Prefabs/obstacles/jeep 1.prefab
-  artifactKey: Guid(32bad4542521bc943a5f48e6e2bcf2d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/jeep 1.prefab using Guid(32bad4542521bc943a5f48e6e2bcf2d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebe2535a51d83eb91bb19a4f79a0226e') in 0.038586 seconds
-  Import took 0.042774 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.004887 seconds.
-  path: Assets/Prefabs/obstacles/jeep 1.prefab
-  artifactKey: Guid(32bad4542521bc943a5f48e6e2bcf2d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/jeep 1.prefab using Guid(32bad4542521bc943a5f48e6e2bcf2d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebe2535a51d83eb91bb19a4f79a0226e') in 0.032105 seconds
-  Import took 0.035053 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.495037 seconds.
-  path: Assets/Prefabs/obstacles/jeep 1.prefab
-  artifactKey: Guid(32bad4542521bc943a5f48e6e2bcf2d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/jeep 1.prefab using Guid(32bad4542521bc943a5f48e6e2bcf2d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e7b26e03bacf08b8cf45d14ef2a38ac') in 0.005768 seconds
-  Import took 0.009072 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 47.372977 seconds.
-  path: Assets/Prefabs/obstacles/jeep 1.prefab
-  artifactKey: Guid(32bad4542521bc943a5f48e6e2bcf2d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/jeep 1.prefab using Guid(32bad4542521bc943a5f48e6e2bcf2d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9cd5816e042650de15168bee84f6811') in 0.038436 seconds
-  Import took 0.042884 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000320 seconds.
-  path: Assets/Prefabs/obstacles/jeep.prefab
-  artifactKey: Guid(c2fadad0ca993c54faf7302eda9e8ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/jeep.prefab using Guid(c2fadad0ca993c54faf7302eda9e8ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a5cf87eed1af1aa22b77c59029b071d') in 0.061114 seconds
-  Import took 0.064262 seconds .
+  Time since last request: 43.007054 seconds.
+  path: Assets/Prefabs/obstacles/broken car1.prefab
+  artifactKey: Guid(f128d725d4426cb44af5960b84793e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/obstacles/broken car1.prefab using Guid(f128d725d4426cb44af5960b84793e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86304795c91d3e5b70562f24b20c0fb6') in 0.068685 seconds
+  Import took 0.073648 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.000814 seconds.
+Registered in 0.001257 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.50 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.482 seconds
+- Completed reload, in  1.494 seconds
 Platform modules already initialized, skipping
 Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.47 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1326 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 93.4 MB.
+System memory in use after: 93.3 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1900.
+Total: 2.721703 ms (FindLiveObjects: 0.197030 ms CreateObjectMapping: 0.072033 ms MarkObjects: 2.135909 ms  DeleteObjects: 0.313907 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000788 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.450 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1326 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 93.5 MB.
+System memory in use after: 93.3 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1903.
+Total: 2.623541 ms (FindLiveObjects: 0.193146 ms CreateObjectMapping: 0.073092 ms MarkObjects: 2.086121 ms  DeleteObjects: 0.269416 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000809 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.481 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1326 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 93.5 MB.
+System memory in use after: 93.3 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1906.
+Total: 2.603414 ms (FindLiveObjects: 0.173726 ms CreateObjectMapping: 0.069914 ms MarkObjects: 2.097067 ms  DeleteObjects: 0.260589 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000917 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.565 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1326 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 93.5 MB.
+System memory in use after: 93.4 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1909.
+Total: 2.463940 ms (FindLiveObjects: 0.175491 ms CreateObjectMapping: 0.070267 ms MarkObjects: 1.958652 ms  DeleteObjects: 0.258117 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001306 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.510 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1326 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 93.5 MB.
+System memory in use after: 93.4 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1912.
+Total: 2.686040 ms (FindLiveObjects: 0.201974 ms CreateObjectMapping: 0.078742 ms MarkObjects: 2.113310 ms  DeleteObjects: 0.289896 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000831 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.547 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1326 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 93.5 MB.
+System memory in use after: 93.4 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1915.
+Total: 2.674388 ms (FindLiveObjects: 0.189262 ms CreateObjectMapping: 0.071326 ms MarkObjects: 2.085768 ms  DeleteObjects: 0.325559 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 1924.068346 seconds.
+  path: Assets/Prefabs/obstacles/Road-Blocker.prefab
+  artifactKey: Guid(bf5bc7161ae2d344fa5e94c04fb23a75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/obstacles/Road-Blocker.prefab using Guid(bf5bc7161ae2d344fa5e94c04fb23a75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e7b2c1213256a85e466e964c69f98d6') in 0.152141 seconds
+  Import took 0.155688 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000688 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.490 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.66 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1322 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 94.8 MB.
+System memory in use after: 94.6 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1919.
+Total: 3.306439 ms (FindLiveObjects: 0.191028 ms CreateObjectMapping: 0.071326 ms MarkObjects: 2.273265 ms  DeleteObjects: 0.767995 ms)
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 1.30 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 68.7 MB.
+System memory in use after: 68.6 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1919.
+Total: 2.718879 ms (FindLiveObjects: 0.196677 ms CreateObjectMapping: 0.069914 ms MarkObjects: 2.075175 ms  DeleteObjects: 0.375346 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000766 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.501 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1322 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 94.7 MB.
+System memory in use after: 94.5 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1922.
+Total: 2.747833 ms (FindLiveObjects: 0.206211 ms CreateObjectMapping: 0.070267 ms MarkObjects: 2.039159 ms  DeleteObjects: 0.430077 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 292.469343 seconds.
+  path: Assets/_Scenes/gameplay/ReflectionProbe-0.exr
+  artifactKey: Guid(f236d2c523558a14ebdd2898ccf4dd68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Scenes/gameplay/ReflectionProbe-0.exr using Guid(f236d2c523558a14ebdd2898ccf4dd68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16cfcaefd2e13822e1ba5552b6336ef0') in 0.126575 seconds
+  Import took 0.132629 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000718 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 0.49 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1325 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 94.0 MB.
-System memory in use after: 93.9 MB.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.469 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.47 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1322 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 94.9 MB.
+System memory in use after: 94.8 MB.
 
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1938.
-Total: 2.496752 ms (FindLiveObjects: 0.192085 ms CreateObjectMapping: 0.072032 ms MarkObjects: 1.966046 ms  DeleteObjects: 0.264117 ms)
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1951.
+Total: 2.829399 ms (FindLiveObjects: 0.196324 ms CreateObjectMapping: 0.074151 ms MarkObjects: 2.133790 ms  DeleteObjects: 0.423721 ms)
 
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 22.418136 seconds.
+  path: Assets/_Scenes/gameplay/LightingData.asset
+  artifactKey: Guid(e3d08220e6d04ca4798d5890946f50a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Scenes/gameplay/LightingData.asset using Guid(e3d08220e6d04ca4798d5890946f50a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f94cef386f1783712ddf12f8e183ff2') in 0.024506 seconds
+  Import took 0.029356 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000442 seconds.
+  path: Assets/_Scenes/gameplay/ReflectionProbe-0.exr
+  artifactKey: Guid(f236d2c523558a14ebdd2898ccf4dd68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Scenes/gameplay/ReflectionProbe-0.exr using Guid(f236d2c523558a14ebdd2898ccf4dd68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2de911ab66f677f97107d3ca662d2ceb') in 0.080997 seconds
+  Import took 0.084851 seconds .
+
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.000891 seconds.
+Registered in 0.000793 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.54 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.527 seconds
+- Completed reload, in  1.538 seconds
 Platform modules already initialized, skipping
-Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.77 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1322 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 94.9 MB.
+System memory in use after: 94.8 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1955.
+Total: 2.743949 ms (FindLiveObjects: 0.196677 ms CreateObjectMapping: 0.071326 ms MarkObjects: 2.065995 ms  DeleteObjects: 0.408538 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000808 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.397 seconds
+Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1325 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 94.0 MB.
-System memory in use after: 93.9 MB.
+Unloading 1322 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 95.0 MB.
+System memory in use after: 94.8 MB.
 
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1941.
-Total: 2.773580 ms (FindLiveObjects: 0.192085 ms CreateObjectMapping: 0.078388 ms MarkObjects: 2.196972 ms  DeleteObjects: 0.304370 ms)
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1958.
+Total: 3.245352 ms (FindLiveObjects: 0.361929 ms CreateObjectMapping: 0.167370 ms MarkObjects: 2.305044 ms  DeleteObjects: 0.407479 ms)
 
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.000830 seconds.
+Registered in 0.000936 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.593 seconds
+- Completed reload, in  1.454 seconds
 Platform modules already initialized, skipping
-Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.49 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1325 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 94.0 MB.
-System memory in use after: 93.9 MB.
+Unloading 1322 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 95.0 MB.
+System memory in use after: 94.8 MB.
 
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1944.
-Total: 2.546891 ms (FindLiveObjects: 0.194204 ms CreateObjectMapping: 0.070973 ms MarkObjects: 2.010890 ms  DeleteObjects: 0.268707 ms)
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1961.
+Total: 2.714994 ms (FindLiveObjects: 0.205152 ms CreateObjectMapping: 0.071680 ms MarkObjects: 1.991843 ms  DeleteObjects: 0.444201 ms)
 
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000882 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.48 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.581 seconds
-Platform modules already initialized, skipping
-Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.50 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1325 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 94.0 MB.
-System memory in use after: 93.9 MB.
-
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1947.
-Total: 3.124912 ms (FindLiveObjects: 0.333677 ms CreateObjectMapping: 0.164896 ms MarkObjects: 2.350216 ms  DeleteObjects: 0.273297 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Import Request.
-  Time since last request: 739.453318 seconds.
-  path: Assets/Prefabs/obstacles/broken_truck.blend
-  artifactKey: Guid(a898d52feecc30f44981870a5affb739) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/broken_truck.blend using Guid(a898d52feecc30f44981870a5affb739) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3583df19c0364602a111d605d9575057') in 0.386695 seconds
-  Import took 0.392000 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 217.920523 seconds.
-  path: Assets/Prefabs/obstacles/broken_truck.prefab
-  artifactKey: Guid(6a561a122137c2b498dfa998e918904b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/broken_truck.prefab using Guid(6a561a122137c2b498dfa998e918904b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2be56d2a35eb57deb52b290b5ec7bd08') in 0.022765 seconds
-  Import took 0.027080 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.038283 seconds.
-  path: Assets/Prefabs/obstacles/broken_truck.prefab
-  artifactKey: Guid(6a561a122137c2b498dfa998e918904b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/broken_truck.prefab using Guid(6a561a122137c2b498dfa998e918904b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2be56d2a35eb57deb52b290b5ec7bd08') in 0.018237 seconds
-  Import took 0.021646 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 16.836286 seconds.
-  path: Assets/Prefabs/obstacles/broken_truck.prefab
-  artifactKey: Guid(6a561a122137c2b498dfa998e918904b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/broken_truck.prefab using Guid(6a561a122137c2b498dfa998e918904b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff57e06e3401f2b7cdb7f64d5c1bb9c6') in 0.020782 seconds
-  Import took 0.024624 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.773002 seconds.
-  path: Assets/Prefabs/obstacles/broken_truck.prefab
-  artifactKey: Guid(6a561a122137c2b498dfa998e918904b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/broken_truck.prefab using Guid(6a561a122137c2b498dfa998e918904b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0873ae239746431c63f80c85d16b756') in 0.019886 seconds
-  Import took 0.023774 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.835030 seconds.
-  path: Assets/Prefabs/obstacles/broken_truck.prefab
-  artifactKey: Guid(6a561a122137c2b498dfa998e918904b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/broken_truck.prefab using Guid(6a561a122137c2b498dfa998e918904b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08040c5e6522edb63c26f05ef243f297') in 0.024991 seconds
-  Import took 0.031425 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.755877 seconds.
-  path: Assets/Prefabs/obstacles/broken_truck.prefab
-  artifactKey: Guid(6a561a122137c2b498dfa998e918904b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/obstacles/broken_truck.prefab using Guid(6a561a122137c2b498dfa998e918904b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f271d9d4efef9ca2fc1c4fb19c0a236e') in 0.029427 seconds
-  Import took 0.035651 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000927 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.50 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.651 seconds
-Platform modules already initialized, skipping
-Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.83 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1325 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 94.1 MB.
-System memory in use after: 93.9 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1951.
-Total: 4.958546 ms (FindLiveObjects: 0.353097 ms CreateObjectMapping: 0.165956 ms MarkObjects: 3.967755 ms  DeleteObjects: 0.467501 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000

@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelManager: MonoBehaviour {
+
+    private void Start()
+    {
+        UnPause();
+    }
+
     public static void Pause()
     {
         Time.timeScale = 0;

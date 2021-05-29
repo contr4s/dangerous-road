@@ -972,6 +972,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _swipeSO: {fileID: 11400000, guid: 65e40c922576e8f4ab740906009dffe2, type: 2}
+  _possibleRotations:
+  - {x: 0, y: -90, z: 0}
+  - {x: 90, y: 90, z: 0}
+  - {x: 90, y: -90, z: 0}
+  - {x: 0, y: 90, z: 0}
   _fallTime: 10
 --- !u!1 &3135429484406588438
 GameObject:

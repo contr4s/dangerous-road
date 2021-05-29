@@ -1,6 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+public enum eObstacleType
+{
+    light,
+    medium,
+    heavy
+}
+
+[Serializable]
+public struct ObstacleVariant
+{
+    public eObstacleType type;
+    public float spawnChance;
+    public ObstaclePool[] pools;
+}
 
 public class ObstacleSpawner: Spawner<Obstacle>
 {
@@ -11,33 +27,52 @@ public class ObstacleSpawner: Spawner<Obstacle>
 
     private int _hundredMetersCounter = 1;
     private int _kilometerCounter = 1;
+    [SerializeField] private float _step;
 
     [SerializeField] private ObstaclePool[] _obstaclePools;
+    [SerializeField] private ObstacleVariant[] _variants;
 
     private void OnEnable()
     {
-        Car.passedHundredMeters += () =>
-        {
-            _timeBetweenSpawning *= 1 - complexityPercentage1 / 100 / _hundredMetersCounter;
-            _hundredMetersCounter++;
-        };
-
-        Car.passedOneKilometer += () =>
-        {
-            _timeBetweenSpawning *= 1 - complexityPercentage2 / 100 / _kilometerCounter;
-            _kilometerCounter++;
-        };
+        _step = _startStep;
+        Car.passedHundredMeters += Spawn;
+        Car.passedHundredMeters += () => ChangeComplexity(complexityPercentage1, ref _hundredMetersCounter);
+        Car.passedOneKilometer += () => ChangeComplexity(complexityPercentage2, ref _kilometerCounter);
     }
 
-    protected override void Start()
+    private void ChangeComplexity(float percentage, ref int counter)
     {
-        base.Start();
+        _step *= 1 - percentage / 100 / counter;
+        counter++;
+    }
 
-        StartCoroutine(SpawnObjects());
+    private void OnDisable()
+    {
+        Car.passedHundredMeters -= Spawn;
     }
 
     protected override ObjectPool<Obstacle> GetObjectPool()
     {
-        return _obstaclePools[Random.Range(0, _obstaclePools.Length)];
+        float sumChance = 0;
+        for (int i = 0; i < _variants.Length; i++)
+        {
+            sumChance += _variants[i].spawnChance;
+        }
+        float randNum = UnityEngine.Random.Range(0, sumChance);
+        for (int i = 0; i < _variants.Length; i++)
+        {
+            if (randNum < _variants[i].spawnChance)
+                return _variants[i].pools[UnityEngine.Random.Range(0, _variants[i].pools.Length)];
+            else
+                randNum -= _variants[i].spawnChance;
+        }
+        int j = _variants.Length - 1;
+        return _variants[j].pools[UnityEngine.Random.Range(0, _variants[j].pools.Length)];
+    }
+
+    private void Spawn()
+    {
+        _lastSpawnedPos -= _lastSpawnedPos % 100; //to control grow of last spawned pos
+        SpawnObjects(_lastSpawnedPos, _lastSpawnedPos + Car.hundredMeters, _step);
     }
 }

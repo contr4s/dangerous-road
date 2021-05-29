@@ -6,8 +6,6 @@ public class RoadSpawner: Spawner<MeshRenderer>
 {
     [SerializeField] private RoadPool _roadPool;
 
-    [SerializeField] private float _distToCover;
-
     private void OnEnable()
     {
         Car.passedHundredMeters += Spawn;
