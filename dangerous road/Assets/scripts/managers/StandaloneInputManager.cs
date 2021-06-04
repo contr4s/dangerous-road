@@ -5,12 +5,26 @@ using UnityEngine;
 public class StandaloneInputManager: MonoBehaviour
 {
     [SerializeField] private SwipeSO _swipeSO;
+    [SerializeField] private Car _car;
 
     private Camera _mainCam;
 
     private void Awake()
     {
         _mainCam = Camera.main;
+    }
+
+    private void Start()
+    {
+        if (_car.parametrs.TryFindParam(eCarParameter.swipeForce, out var param))
+            _swipeSO.swipeForceScale = param.curVal;
+        else
+            Debug.LogWarning("there is no max swipeForce in car params");
+
+        if (_car.parametrs.TryFindParam(eCarParameter.maxSwipeDist, out param))
+            _swipeSO.maxDistToSwipe = param.curVal;
+        else
+            Debug.LogWarning("there is no maxSwipeDist in car params");
     }
 
     void Update()
@@ -34,7 +48,7 @@ public class StandaloneInputManager: MonoBehaviour
         yield return new WaitForSeconds(swipeTime);
         Vector3 newPosition = CalulateMousePosition();
         Vector3 direction = (newPosition - _cashedPosition).normalized;
-        obstacle.AddForce(direction, distToCam);
+        obstacle.AddForce(_swipeSO.swipeForceScale, direction, distToCam);
         StartCoroutine(obstacle.DestroyAfterSwipe());
     }
 

@@ -5,6 +5,8 @@ using UnityEngine;
 public class MobileInputManager : MonoBehaviour
 {
     [SerializeField] private SwipeSO _swipeSO;
+    [SerializeField] private Car _car;
+
     private Obstacle _targetObstacle;
     private Vector2 _prevTouchPos;
 
@@ -13,6 +15,19 @@ public class MobileInputManager : MonoBehaviour
     private void Awake()
     {
         _mainCam = Camera.main;
+    }
+
+    private void Start()
+    {
+        if (_car.parametrs.TryFindParam(eCarParameter.swipeForce, out var param))
+            _swipeSO.swipeForceScale = param.curVal;
+        else
+            Debug.LogWarning("there is no max swipeForce in car params");
+
+        if (_car.parametrs.TryFindParam(eCarParameter.maxSwipeDist, out param))
+            _swipeSO.maxDistToSwipe = param.curVal;
+        else
+            Debug.LogWarning("there is no maxSwipeDist in car params");
     }
 
     void Update()
@@ -45,7 +60,7 @@ public class MobileInputManager : MonoBehaviour
                 direction.x = touch.position.x - _prevTouchPos.x;
                 direction.y = touch.position.y - _prevTouchPos.y;
                 direction.z = 0;
-                _targetObstacle.AddForce(direction, _targetObstacle.transform.position.z - _mainCam.transform.position.z);
+                _targetObstacle.AddForce(_swipeSO.swipeForceScale, direction, _targetObstacle.transform.position.z - _mainCam.transform.position.z);
                 StartCoroutine(_targetObstacle.DestroyAfterSwipe());
                 _targetObstacle = null;
             }

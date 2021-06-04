@@ -4,8 +4,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Obstacle: MonoBehaviour, IDestroyable
 {
-    [SerializeField] private SwipeSO _swipeSO;
-
     [SerializeField] private Vector3[] _possibleRotations;
     [SerializeField] private float _fallTime = 10f;
 
@@ -25,10 +23,10 @@ public class Obstacle: MonoBehaviour, IDestroyable
             transform.rotation = Quaternion.identity;
     }
 
-    public void AddForce(Vector3 direction, float distToCam)
+    public void AddForce(float force, Vector3 direction, float distToCam)
     {
         direction.Normalize();
-        _rigidbody.AddForce(direction * _swipeSO.swipeForceScale / distToCam, ForceMode.Impulse);
+        _rigidbody.AddForce(direction * force / distToCam, ForceMode.Impulse);
     }
 
     public void DestroyMe()

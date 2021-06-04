@@ -3069,6 +3069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _swipeSO: {fileID: 11400000, guid: 65e40c922576e8f4ab740906009dffe2, type: 2}
+  _car: {fileID: 1984312614}
 --- !u!1 &1457937016
 GameObject:
   m_ObjectHideFlags: 0
@@ -4035,9 +4036,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 852293558}
     - target: {fileID: 1706507520081601989, guid: 1464c9ceab331f6449b8a83f821d960e, type: 3}
+      propertyPath: _params
+      value: 
+      objectReference: {fileID: 11400000, guid: 269be17686fce8747b56ca0ab9820e8e, type: 2}
+    - target: {fileID: 1706507520081601989, guid: 1464c9ceab331f6449b8a83f821d960e, type: 3}
       propertyPath: _maxSpeed
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 1706507520081601989, guid: 1464c9ceab331f6449b8a83f821d960e, type: 3}
+      propertyPath: parametrs
+      value: 
+      objectReference: {fileID: 11400000, guid: 269be17686fce8747b56ca0ab9820e8e, type: 2}
     - target: {fileID: 1706507520081601989, guid: 1464c9ceab331f6449b8a83f821d960e, type: 3}
       propertyPath: _turnSpeed
       value: 5
@@ -4046,6 +4055,18 @@ PrefabInstance:
       propertyPath: _uIManager
       value: 
       objectReference: {fileID: 980914216}
+    - target: {fileID: 1706507520081601989, guid: 1464c9ceab331f6449b8a83f821d960e, type: 3}
+      propertyPath: _acceleration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706507520081601990, guid: 1464c9ceab331f6449b8a83f821d960e, type: 3}
+      propertyPath: m_Size.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706507520081601990, guid: 1464c9ceab331f6449b8a83f821d960e, type: 3}
+      propertyPath: m_Center.z
+      value: 0.14
+      objectReference: {fileID: 0}
     - target: {fileID: 1706507520081601991, guid: 1464c9ceab331f6449b8a83f821d960e, type: 3}
       propertyPath: m_UseGravity
       value: 1
@@ -4105,6 +4126,10 @@ PrefabInstance:
     - target: {fileID: 1710915590597980857, guid: 1464c9ceab331f6449b8a83f821d960e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711256647870496163, guid: 1464c9ceab331f6449b8a83f821d960e, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1728152478110834315, guid: 1464c9ceab331f6449b8a83f821d960e, type: 3}
       propertyPath: m_Enabled

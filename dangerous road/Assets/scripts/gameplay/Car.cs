@@ -17,10 +17,12 @@ public class Car: MonoBehaviour
     public static Action passedOneKilometer;
     private float _passedDist;
 
-    [SerializeField] private float _acceleration;
-    [SerializeField] private float _maxSpeed;
+    public CarParamsSO parametrs;
 
-    [SerializeField] private float _turnSpeed;
+    [SerializeField] private float _acceleration;
+    private float _maxSpeed;
+
+    private float _turnSpeed;
     [SerializeField] private float _turnDist = 3.5f;
     private int _curLane = 0;
     [SerializeField] private int _maxLane = 1;
@@ -36,6 +38,19 @@ public class Car: MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+    }
+
+    private void Start()
+    {
+        if (parametrs.TryFindParam(eCarParameter.maxSpeed, out var param))
+            _maxSpeed = param.curVal;
+        else
+            Debug.LogWarning("there is no max speed in params");
+
+        if (parametrs.TryFindParam(eCarParameter.turnSpeed, out param))
+            _turnSpeed = param.curVal;
+        else
+            Debug.LogWarning("there is no turn speed in params");
     }
 
     private void Update()
