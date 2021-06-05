@@ -225,6 +225,8 @@ MonoBehaviour:
   _type: 0
   _slider: {fileID: 7621113167323638624}
   _valText: {fileID: 1216616315646422702}
+  _upgradeButton: {fileID: 7621113168082260469}
+  _upgradeButtonText: {fileID: 7621113167668287355}
 --- !u!1 &7621113167323638626
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,7 +646,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7621113168082260468}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: OpenOverlay
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: StatUpgradeWindow, Assembly-CSharp
+        m_MethodName: Setup
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 36939927}
+          m_ObjectArgumentAssemblyTypeName: CarStatUI, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7621113168643436813
 GameObject:
   m_ObjectHideFlags: 0

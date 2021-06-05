@@ -17,12 +17,12 @@ public class StandaloneInputManager: MonoBehaviour
     private void Start()
     {
         if (_car.parametrs.TryFindParam(eCarParameter.swipeForce, out var param))
-            _swipeSO.swipeForceScale = param.curVal;
+            _swipeSO.swipeForceScale = param.CurVal;
         else
             Debug.LogWarning("there is no max swipeForce in car params");
 
         if (_car.parametrs.TryFindParam(eCarParameter.maxSwipeDist, out param))
-            _swipeSO.maxDistToSwipe = param.curVal;
+            _swipeSO.maxDistToSwipe = param.CurVal;
         else
             Debug.LogWarning("there is no maxSwipeDist in car params");
     }

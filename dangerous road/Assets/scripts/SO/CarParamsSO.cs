@@ -12,32 +12,72 @@ public enum eCarParameter
 }
 
 [Serializable]
-public struct CarParametr
+public class CarParameter
 {
     public eCarParameter paramType;
-    public float startVal;
-    public float curVal;
+
+    public float startVal;   
     public byte curLvl;
     public byte maxLvl;
     public float lvlUpPercentage;
 
-    public float CalculteMaxVal()
+    public int upgradePrice;
+
+
+    [SerializeField] private float _curVal;
+
+    public float CurVal
+    {
+        get {
+            _curVal = CalculateVal(curLvl);
+            return _curVal; 
+        }
+        set => _curVal = value;
+    }
+
+    public float NextVal { get => CalculateVal((byte)(curLvl + 1)); }
+
+    public float CalculateVal(byte lvl)
     {
         float result = startVal;
-        for(int i = 1; i < maxLvl; i++)
+        for (int i = 1; i < lvl; i++)
         {
             result *= 1 + lvlUpPercentage / 100;
         }
         return result;
     }
+
+    public float CalculteMaxVal()
+    {
+        return CalculateVal(maxLvl);
+    }
+
+    public void LvlUp()
+    {
+        if (curLvl >= maxLvl)
+            return;
+
+        curLvl++;
+        CurVal = CalculateVal(curLvl);
+    }
 }
 
 [CreateAssetMenu(menuName = "Assets/CarParams")]
-public class CarParamsSO : ScriptableObject
+public class CarParamsSO: ScriptableObject
 {
-    public CarParametr[] parametrs;
+    public CarParameter[] parametrs;
 
-    public bool TryFindParam(eCarParameter type, out CarParametr parametr)
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        foreach(var param in parametrs)
+        {
+            param.CurVal = param.CalculateVal(param.curLvl);
+        }
+    }
+#endif
+
+    public bool TryFindParam(eCarParameter type, out CarParameter parametr)
     {
         foreach (var param in parametrs)
         {
@@ -45,9 +85,9 @@ public class CarParamsSO : ScriptableObject
             {
                 parametr = param;
                 return true;
-            }           
+            }
         }
-        parametr = new CarParametr();
+        parametr = new CarParameter();
         return false;
     }
 }

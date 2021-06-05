@@ -43,12 +43,12 @@ public class Car: MonoBehaviour
     private void Start()
     {
         if (parametrs.TryFindParam(eCarParameter.maxSpeed, out var param))
-            _maxSpeed = param.curVal;
+            _maxSpeed = param.CurVal;
         else
             Debug.LogWarning("there is no max speed in params");
 
         if (parametrs.TryFindParam(eCarParameter.turnSpeed, out param))
-            _turnSpeed = param.curVal;
+            _turnSpeed = param.CurVal;
         else
             Debug.LogWarning("there is no turn speed in params");
     }
@@ -107,7 +107,7 @@ public class Car: MonoBehaviour
             else
             {
                 _uIManager.BlockButtons();
-                GameManager.S.Money += _uIManager.Money;
+                GameManager.S.moneyManager.Money += _uIManager.Money;
                 SaveGameManager.Save();
             }
 

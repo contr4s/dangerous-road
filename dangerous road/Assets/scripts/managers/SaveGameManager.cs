@@ -29,7 +29,7 @@ public static class SaveGameManager {
         if (LOCK)
             return;
 
-        _saveFile.money = GameManager.S.Money;
+        _saveFile.money = GameManager.S.moneyManager.Money;
 
         string jsonSaveFile = JsonUtility.ToJson(_saveFile, true);
 
@@ -80,6 +80,6 @@ public static class SaveGameManager {
     }
 
     private static void Initialize(SaveFile saveFile) {
-        GameManager.S.Money = saveFile.money;
+        GameManager.S.moneyManager.Money = saveFile.money;
     }
 }
