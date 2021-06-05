@@ -42,12 +42,12 @@ public class Car: MonoBehaviour
 
     private void Start()
     {
-        if (parametrs.TryFindParam(eCarParameter.maxSpeed, out var param))
+        if (parametrs.TryFindParam(eCarParameterType.maxSpeed, out var param))
             _maxSpeed = param.CurVal;
         else
             Debug.LogWarning("there is no max speed in params");
 
-        if (parametrs.TryFindParam(eCarParameter.turnSpeed, out param))
+        if (parametrs.TryFindParam(eCarParameterType.turnSpeed, out param))
             _turnSpeed = param.CurVal;
         else
             Debug.LogWarning("there is no turn speed in params");

@@ -13,31 +13,35 @@ MonoBehaviour:
   m_Name: car 1
   m_EditorClassIdentifier: 
   parametrs:
-  - paramType: 0
+  - type: 0
     startVal: 30
-    curLvl: 2
+    curLvl: 4
     maxLvl: 10
-    lvlUpPercentage: 10
-    upgradePrice: 100
-    _curVal: 33
-  - paramType: 1
+    lvlUpValuePercentage: 10
+    startUpgradePrice: 100
+    lvlUpPricePercentage: 20
+    _curVal: 39.93
+  - type: 1
     startVal: 5
-    curLvl: 5
-    maxLvl: 10
-    lvlUpPercentage: 10
-    upgradePrice: 100
-    _curVal: 7.3205004
-  - paramType: 2
-    startVal: 2000
-    curLvl: 7
-    maxLvl: 10
-    lvlUpPercentage: 10
-    upgradePrice: 100
-    _curVal: 3543.122
-  - paramType: 3
-    startVal: 100
     curLvl: 6
     maxLvl: 10
-    lvlUpPercentage: 10
-    upgradePrice: 100
-    _curVal: 161.05101
+    lvlUpValuePercentage: 10
+    startUpgradePrice: 100
+    lvlUpPricePercentage: 20
+    _curVal: 8.05255
+  - type: 2
+    startVal: 2000
+    curLvl: 9
+    maxLvl: 10
+    lvlUpValuePercentage: 10
+    startUpgradePrice: 100
+    lvlUpPricePercentage: 20
+    _curVal: 4287.1777
+  - type: 3
+    startVal: 100
+    curLvl: 1
+    maxLvl: 10
+    lvlUpValuePercentage: 10
+    startUpgradePrice: 100
+    lvlUpPricePercentage: 20
+    _curVal: 100

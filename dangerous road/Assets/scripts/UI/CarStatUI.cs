@@ -9,14 +9,14 @@ public class CarStatUI: MonoBehaviour
     private const string _maxLvl = "max level";
 
     [SerializeField] private CarParamsSO _carParams;
-    [SerializeField] private eCarParameter _type;
+    [SerializeField] private eCarParameterType _type;
 
     [SerializeField] private Slider _slider;
     [SerializeField] private TextMeshProUGUI _valText;
     [SerializeField] private Button _upgradeButton;
     [SerializeField] private TextMeshProUGUI _upgradeButtonText;
 
-    private CarParameter _parameter;
+    [SerializeField]private CarParameter _parameter;
     public CarParameter Parameter { get => _parameter; private set => _parameter = value; }
 
     private void Start()

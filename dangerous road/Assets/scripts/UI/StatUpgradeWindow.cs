@@ -23,11 +23,11 @@ public class StatUpgradeWindow : MonoBehaviour
         _curStat = carStat;
         var parameter = carStat.Parameter;
 
-        _title.text = parameter.paramType.ToString();
+        _title.text = parameter.type.ToString();
         _value.text = string.Format("{0}: {1} -> {2}", value, parameter.CurVal.ToString("F0"), parameter.NextVal.ToString("F0"));
         _lvl.text = string.Format("{0}: {1} -> {2}", lvl, parameter.curLvl, parameter.curLvl + 1);
-        _price.text = string.Format("{0}: {1}$", price, parameter.upgradePrice);
-        if (parameter.upgradePrice > GameManager.S.moneyManager.Money)
+        _price.text = string.Format("{0}: {1}$", price, parameter.CurPrice);
+        if (parameter.CurPrice > GameManager.S.moneyManager.Money)
             _upgradeButton.interactable = false;
     }
 
@@ -36,7 +36,7 @@ public class StatUpgradeWindow : MonoBehaviour
         if (_curStat is null)
             return;
 
-        GameManager.S.moneyManager.Money -= _curStat.Parameter.upgradePrice;
+        GameManager.S.moneyManager.Money -= _curStat.Parameter.CurPrice;
         _curStat.LvlUp();
     }
 }

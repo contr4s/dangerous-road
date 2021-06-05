@@ -19,12 +19,12 @@ public class MobileInputManager : MonoBehaviour
 
     private void Start()
     {
-        if (_car.parametrs.TryFindParam(eCarParameter.swipeForce, out var param))
+        if (_car.parametrs.TryFindParam(eCarParameterType.swipeForce, out var param))
             _swipeSO.swipeForceScale = param.CurVal;
         else
             Debug.LogWarning("there is no max swipeForce in car params");
 
-        if (_car.parametrs.TryFindParam(eCarParameter.maxSwipeDist, out param))
+        if (_car.parametrs.TryFindParam(eCarParameterType.maxSwipeDist, out param))
             _swipeSO.maxDistToSwipe = param.CurVal;
         else
             Debug.LogWarning("there is no maxSwipeDist in car params");
