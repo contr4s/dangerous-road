@@ -6,19 +6,11 @@ public abstract class Spawner<T> : MonoBehaviour where T : Component
 {   
     [SerializeField] protected float[] _xAxisSpawnPositions;
     [SerializeField] protected float _distanceToCam;
-    [SerializeField] protected float _timeBetweenSpawning;
 
     [SerializeField] protected Vector3 _startPosition;
     [SerializeField] protected float _startStep;
 
     protected float _lastSpawnedPos;
-
-    private Camera _mainCam;
-
-    private void Awake()
-    {
-        _mainCam = Camera.main;
-    }
 
     protected virtual void Start()
     {
@@ -36,15 +28,6 @@ public abstract class Spawner<T> : MonoBehaviour where T : Component
     }
 
     protected abstract ObjectPool<T> GetObjectPool();   
-
-    protected virtual IEnumerator SpawnObjects()
-    {
-        while (true)
-        {
-            SpawnObject(_mainCam.transform.position.z + _distanceToCam);
-            yield return new WaitForSeconds(_timeBetweenSpawning);
-        }
-    }
 
     private void SpawnObject(float zPos)
     {

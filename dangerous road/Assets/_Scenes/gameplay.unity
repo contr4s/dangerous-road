@@ -1328,7 +1328,7 @@ MonoBehaviour:
   _distanceToCam: 500
   _timeBetweenSpawning: 1.9
   _startPosition: {x: 0, y: 1, z: 50}
-  _startStep: 49
+  _startStep: 70
   _coinPools:
   - {fileID: 460697835}
   - {fileID: 460697835}
@@ -1347,6 +1347,9 @@ MonoBehaviour:
   - {fileID: 1457937018}
   - {fileID: 1481386889}
   - {fileID: 1481386889}
+  _step: 0
+  complexityPercentage100m: 2
+  complexityPercentage1km: 4
 --- !u!1 &336316332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1613,8 +1616,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38ed1f9cab412747baf47d121795b75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moneyDisplay: {fileID: 0}
-  _money: 0
+  moneyManager:
+    _moneyDisplay: {fileID: 0}
+    _money: 0
 --- !u!1 &432442721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,6 +1663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _swipeSO: {fileID: 11400000, guid: 65e40c922576e8f4ab740906009dffe2, type: 2}
+  _car: {fileID: 0}
 --- !u!1 &448186026
 GameObject:
   m_ObjectHideFlags: 0
@@ -2155,8 +2160,8 @@ MonoBehaviour:
   _timeBetweenSpawning: 1
   _startPosition: {x: 0, y: 1, z: 50}
   _startStep: 50
-  complexityPercentage1: 10
-  complexityPercentage2: 10
+  complexityPercentage100m: 10
+  complexityPercentage1km: 20
   _step: 0
   _obstaclePools:
   - {fileID: 2048983371}

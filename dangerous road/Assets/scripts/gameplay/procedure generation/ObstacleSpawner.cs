@@ -21,9 +21,9 @@ public struct ObstacleVariant
 public class ObstacleSpawner: Spawner<Obstacle>
 {
     [Range(0, 100)]
-    public float complexityPercentage1 = 5;
+    public float complexityPercentage100m = 5;
     [Range(0, 100)]
-    public float complexityPercentage2 = 10;
+    public float complexityPercentage1km = 10;
 
     private int _hundredMetersCounter = 1;
     private int _kilometerCounter = 1;
@@ -36,14 +36,8 @@ public class ObstacleSpawner: Spawner<Obstacle>
     {
         _step = _startStep;
         Car.passedHundredMeters += Spawn;
-        Car.passedHundredMeters += () => ChangeComplexity(complexityPercentage1, ref _hundredMetersCounter);
-        Car.passedOneKilometer += () => ChangeComplexity(complexityPercentage2, ref _kilometerCounter);
-    }
-
-    private void ChangeComplexity(float percentage, ref int counter)
-    {
-        _step *= 1 - percentage / 100 / counter;
-        counter++;
+        Car.passedHundredMeters += () => ChangeComplexity(complexityPercentage100m, ref _hundredMetersCounter);
+        Car.passedOneKilometer += () => ChangeComplexity(complexityPercentage1km, ref _kilometerCounter);
     }
 
     private void OnDisable()
@@ -68,6 +62,12 @@ public class ObstacleSpawner: Spawner<Obstacle>
         }
         int j = _variants.Length - 1;
         return _variants[j].pools[UnityEngine.Random.Range(0, _variants[j].pools.Length)];
+    }
+
+    private void ChangeComplexity(float percentage, ref int counter)
+    {
+        _step *= 1 - percentage / 100 / counter;
+        counter++;
     }
 
     private void Spawn()

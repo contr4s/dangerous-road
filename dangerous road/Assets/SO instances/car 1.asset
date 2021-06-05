@@ -15,29 +15,29 @@ MonoBehaviour:
   parametrs:
   - paramType: 0
     startVal: 30
-    curLvl: 1
+    curLvl: 2
     maxLvl: 10
     lvlUpPercentage: 10
     upgradePrice: 100
-    _curVal: 30
+    _curVal: 33
   - paramType: 1
     startVal: 5
-    curLvl: 1
+    curLvl: 5
     maxLvl: 10
     lvlUpPercentage: 10
     upgradePrice: 100
-    _curVal: 5
+    _curVal: 7.3205004
   - paramType: 2
     startVal: 2000
-    curLvl: 1
+    curLvl: 7
     maxLvl: 10
     lvlUpPercentage: 10
     upgradePrice: 100
-    _curVal: 2000
+    _curVal: 3543.122
   - paramType: 3
     startVal: 100
-    curLvl: 1
+    curLvl: 6
     maxLvl: 10
     lvlUpPercentage: 10
     upgradePrice: 100
-    _curVal: 100
+    _curVal: 161.05101
