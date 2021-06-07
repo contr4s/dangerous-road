@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a9a64e3b825c0f4bbcc654384507dcd, type: 3}
+  m_Name: car 2
+  m_EditorClassIdentifier: 
+  parametrs:
+  - type: 0
+    startVal: 30
+    curLvl: 4
+    maxLvl: 10
+    lvlUpValuePercentage: 10
+    startUpgradePrice: 100
+    lvlUpPricePercentage: 20
+    _curVal: 39.93
+  - type: 1
+    startVal: 5
+    curLvl: 6
+    maxLvl: 10
+    lvlUpValuePercentage: 10
+    startUpgradePrice: 100
+    lvlUpPricePercentage: 20
+    _curVal: 8.05255
+  - type: 2
+    startVal: 2000
+    curLvl: 9
+    maxLvl: 10
+    lvlUpValuePercentage: 10
+    startUpgradePrice: 100
+    lvlUpPricePercentage: 20
+    _curVal: 4287.1777
+  - type: 3
+    startVal: 100
+    curLvl: 1
+    maxLvl: 10
+    lvlUpValuePercentage: 10
+    startUpgradePrice: 100
+    lvlUpPricePercentage: 20
+    _curVal: 100

@@ -5,7 +5,6 @@ using UnityEngine;
 public class MobileInputManager : MonoBehaviour
 {
     [SerializeField] private SwipeSO _swipeSO;
-    [SerializeField] private Car _car;
 
     private Obstacle _targetObstacle;
     private Vector2 _prevTouchPos;
@@ -17,17 +16,14 @@ public class MobileInputManager : MonoBehaviour
         _mainCam = Camera.main;
     }
 
-    private void Start()
+    private void OnEnable()
     {
-        if (_car.parametrs.TryFindParam(eCarParameterType.swipeForce, out var param))
-            _swipeSO.swipeForceScale = param.CurVal;
-        else
-            Debug.LogWarning("there is no max swipeForce in car params");
+        CarManager.carSpawned += Init;
+    }
 
-        if (_car.parametrs.TryFindParam(eCarParameterType.maxSwipeDist, out param))
-            _swipeSO.maxDistToSwipe = param.CurVal;
-        else
-            Debug.LogWarning("there is no maxSwipeDist in car params");
+    private void OnDisable()
+    {
+        CarManager.carSpawned -= Init;
     }
 
     void Update()
@@ -65,5 +61,18 @@ public class MobileInputManager : MonoBehaviour
                 _targetObstacle = null;
             }
         }
+    }
+
+    private void Init(Car car)
+    {
+        if (car.parametrs.TryFindParam(eCarParameterType.swipeForce, out var param))
+            _swipeSO.swipeForceScale = param.CurVal;
+        else
+            Debug.LogWarning("there is no max swipeForce in car params");
+
+        if (car.parametrs.TryFindParam(eCarParameterType.maxSwipeDist, out param))
+            _swipeSO.maxDistToSwipe = param.CurVal;
+        else
+            Debug.LogWarning("there is no maxSwipeDist in car params");
     }
 }

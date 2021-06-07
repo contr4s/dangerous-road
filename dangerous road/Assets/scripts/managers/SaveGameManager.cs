@@ -4,11 +4,12 @@ using UnityEngine;
 [System.Serializable]
 public class SaveFile {
     public int money;
+    public Car curSelectedCar;
 }
 
 public static class SaveGameManager {
     private static SaveFile _saveFile;
-    private static string _filePath;
+    private static readonly string _filePath;
 
     // LOCK, if true, prevents the game from saving. This avoids issues that can happen while loading files.
     public static bool LOCK {
@@ -30,6 +31,7 @@ public static class SaveGameManager {
             return;
 
         _saveFile.money = GameManager.S.moneyManager.Money;
+        _saveFile.curSelectedCar = CarSelectManager.CurrentCar;
 
         string jsonSaveFile = JsonUtility.ToJson(_saveFile, true);
 
@@ -81,5 +83,6 @@ public static class SaveGameManager {
 
     private static void Initialize(SaveFile saveFile) {
         GameManager.S.moneyManager.Money = saveFile.money;
+        CarSelectManager.CurrentCar = saveFile.curSelectedCar;
     }
 }

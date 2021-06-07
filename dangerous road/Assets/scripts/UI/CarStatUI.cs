@@ -16,7 +16,7 @@ public class CarStatUI: MonoBehaviour
     [SerializeField] private Button _upgradeButton;
     [SerializeField] private TextMeshProUGUI _upgradeButtonText;
 
-    [SerializeField]private CarParameter _parameter;
+    private CarParameter _parameter;
     public CarParameter Parameter { get => _parameter; private set => _parameter = value; }
 
     private void Start()

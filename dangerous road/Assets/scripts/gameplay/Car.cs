@@ -19,6 +19,10 @@ public class Car: MonoBehaviour
 
     public CarParamsSO parametrs;
 
+    public Vector3 startPos;
+
+    public UIManager uIManager;
+
     [SerializeField] private float _acceleration;
     private float _maxSpeed;
 
@@ -29,7 +33,7 @@ public class Car: MonoBehaviour
     private Queue<IEnumerator> _turnQueue = new Queue<IEnumerator>();
     private Coroutine _turnCoroutine;
 
-    [SerializeField] private UIManager _uIManager;
+   
     [SerializeField] private SandStorm _storm;
 
     private int _multiplier = 1;
@@ -62,7 +66,7 @@ public class Car: MonoBehaviour
             passedHundredMeters?.Invoke();
             if (_multiplier % 10 == 0)
                 passedOneKilometer?.Invoke();
-            _uIManager.Dist += 0.1f;
+            uIManager.Dist += 0.1f;
             _multiplier++;
         }
     }
@@ -102,12 +106,12 @@ public class Car: MonoBehaviour
             gameOver?.Invoke();
             _storm.StartStorm();
 
-            if (!_uIManager)
+            if (!uIManager)
                 Debug.LogError("you must assign UIManager on the inspector");
             else
             {
-                _uIManager.BlockButtons();
-                GameManager.S.moneyManager.Money += _uIManager.Money;
+                uIManager.BlockButtons();
+                GameManager.S.moneyManager.Money += uIManager.Money;
                 SaveGameManager.Save();
             }
 
@@ -118,7 +122,7 @@ public class Car: MonoBehaviour
     {
         if (other.TryGetComponent(out Coin coin))
         {
-            _uIManager.Money += coin.Value;
+            uIManager.Money += coin.Value;
             coin.DestroyMe();
         }
     }
