@@ -2,29 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MobileInputManager : MonoBehaviour
+public class MobileInputManager : InputManager
 {
-    [SerializeField] private SwipeSO _swipeSO;
-
     private Obstacle _targetObstacle;
     private Vector2 _prevTouchPos;
-
-    private Camera _mainCam;
-
-    private void Awake()
-    {
-        _mainCam = Camera.main;
-    }
-
-    private void OnEnable()
-    {
-        CarManager.carSpawned += Init;
-    }
-
-    private void OnDisable()
-    {
-        CarManager.carSpawned -= Init;
-    }
 
     void Update()
     {
@@ -33,19 +14,12 @@ public class MobileInputManager : MonoBehaviour
             var touch = Input.GetTouch(i);
             if (touch.phase == TouchPhase.Began)
             {
-                Ray ray = _mainCam.ScreenPointToRay(touch.position);
-
-                if (Physics.Raycast(ray, out RaycastHit hit, _swipeSO.maxDistToSwipe))
+                if (CheckIfCanSwipeObstacle(Input.mousePosition, out var obstacle, out float dist))
                 {
-                    if (hit.distance < _swipeSO.minDistToSwipe)
-                        return;
-
-                    if (hit.collider.TryGetComponent(out Obstacle obstacle))
-                    {
-                        _targetObstacle = obstacle;
-                        _prevTouchPos = touch.position;
-                    }
+                    _targetObstacle = obstacle;
+                    _prevTouchPos = touch.position;
                 }
+
             }
             else if (touch.phase == TouchPhase.Ended)
             {
@@ -61,18 +35,5 @@ public class MobileInputManager : MonoBehaviour
                 _targetObstacle = null;
             }
         }
-    }
-
-    private void Init(Car car)
-    {
-        if (car.parametrs.TryFindParam(eCarParameterType.swipeForce, out var param))
-            _swipeSO.swipeForceScale = param.CurVal;
-        else
-            Debug.LogWarning("there is no max swipeForce in car params");
-
-        if (car.parametrs.TryFindParam(eCarParameterType.maxSwipeDist, out param))
-            _swipeSO.maxDistToSwipe = param.CurVal;
-        else
-            Debug.LogWarning("there is no maxSwipeDist in car params");
     }
 }

@@ -21,6 +21,7 @@ public class Obstacle: MonoBehaviour, IDestroyable
             transform.rotation = Quaternion.Euler(_possibleRotations[Random.Range(0, _possibleRotations.Length)]);
         else
             transform.rotation = Quaternion.identity;
+        StopAllCoroutines();
     }
 
     public void AddForce(float force, Vector3 direction, float distToCam)

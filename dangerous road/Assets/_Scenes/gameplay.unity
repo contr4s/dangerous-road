@@ -1662,7 +1662,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _swipeSO: {fileID: 11400000, guid: 65e40c922576e8f4ab740906009dffe2, type: 2}
-  _car: {fileID: 0}
 --- !u!1 &448186026
 GameObject:
   m_ObjectHideFlags: 0
@@ -4002,9 +4001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd34be48d5f54cb40b95364451f3bca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cars:
-  - {fileID: 1706507520081601989, guid: 1464c9ceab331f6449b8a83f821d960e, type: 3}
-  - {fileID: 1706507520081601989, guid: 771a5bdc6da024441adb54052a46ea37, type: 3}
+  _defaultCar: {fileID: 1706507520081601989, guid: 1464c9ceab331f6449b8a83f821d960e, type: 3}
   _uIManager: {fileID: 980914216}
 --- !u!1 &2098011779
 GameObject:
