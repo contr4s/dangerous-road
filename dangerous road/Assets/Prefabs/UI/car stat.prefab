@@ -221,11 +221,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd395573477e4d449b68bcd9543bc5e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _carParams: {fileID: 11400000, guid: 269be17686fce8747b56ca0ab9820e8e, type: 2}
+  upgradeButton: {fileID: 7621113168082260469}
   _type: 0
   _slider: {fileID: 7621113167323638624}
   _valText: {fileID: 1216616315646422702}
-  _upgradeButton: {fileID: 7621113168082260469}
   _upgradeButtonText: {fileID: 7621113167668287355}
 --- !u!1 &7621113167323638626
 GameObject:

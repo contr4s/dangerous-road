@@ -12,36 +12,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9a64e3b825c0f4bbcc654384507dcd, type: 3}
   m_Name: car 2
   m_EditorClassIdentifier: 
+  name: wagon
   parametrs:
   - type: 0
-    startVal: 30
-    curLvl: 4
-    maxLvl: 10
-    lvlUpValuePercentage: 10
-    startUpgradePrice: 100
-    lvlUpPricePercentage: 20
-    _curVal: 39.93
-  - type: 1
-    startVal: 5
-    curLvl: 6
-    maxLvl: 10
-    lvlUpValuePercentage: 10
-    startUpgradePrice: 100
-    lvlUpPricePercentage: 20
-    _curVal: 8.05255
-  - type: 2
-    startVal: 2000
-    curLvl: 9
-    maxLvl: 10
-    lvlUpValuePercentage: 10
-    startUpgradePrice: 100
-    lvlUpPricePercentage: 20
-    _curVal: 4287.1777
-  - type: 3
-    startVal: 100
+    startVal: 40
     curLvl: 1
     maxLvl: 10
     lvlUpValuePercentage: 10
     startUpgradePrice: 100
     lvlUpPricePercentage: 20
-    _curVal: 100
+    _curVal: 40
+  - type: 1
+    startVal: 8
+    curLvl: 1
+    maxLvl: 10
+    lvlUpValuePercentage: 10
+    startUpgradePrice: 100
+    lvlUpPricePercentage: 20
+    _curVal: 8
+  - type: 2
+    startVal: 3000
+    curLvl: 1
+    maxLvl: 10
+    lvlUpValuePercentage: 10
+    startUpgradePrice: 100
+    lvlUpPricePercentage: 20
+    _curVal: 3000
+  - type: 3
+    startVal: 120
+    curLvl: 1
+    maxLvl: 10
+    lvlUpValuePercentage: 10
+    startUpgradePrice: 100
+    lvlUpPricePercentage: 20
+    _curVal: 120
+  purchasePrice: 500
+  isPurchased: 0

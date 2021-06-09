@@ -8,26 +8,36 @@ public class CarStatUI: MonoBehaviour
 {
     private const string _maxLvl = "max level";
 
-    [SerializeField] private CarParamsSO _carParams;
+    public Button upgradeButton;
+
     [SerializeField] private eCarParameterType _type;
 
     [SerializeField] private Slider _slider;
-    [SerializeField] private TextMeshProUGUI _valText;
-    [SerializeField] private Button _upgradeButton;
+    [SerializeField] private TextMeshProUGUI _valText;  
     [SerializeField] private TextMeshProUGUI _upgradeButtonText;
 
     private CarParameter _parameter;
     public CarParameter Parameter { get => _parameter; private set => _parameter = value; }
 
-    private void Start()
+    private CarParamsSO _carParams;
+    public CarParamsSO CarParams
     {
-        if (_carParams.TryFindParam(_type, out CarParameter parametr))
+        get => _carParams;
+        set { 
+            _carParams = value;
+            SetupParameter();
+        }
+    }
+
+    private void SetupParameter()
+    {
+        if (CarParams.TryFindParam(_type, out CarParameter parametr))
         {
             Parameter = parametr;
             UpdateUI(parametr);
         }
         else
-            Debug.LogWarningFormat("parameter {0} not found on {1}", _type, _carParams);
+            Debug.LogWarningFormat("parameter {0} not found on {1}", _type, CarParams);
     }
 
     public void LvlUp()
@@ -43,8 +53,13 @@ public class CarStatUI: MonoBehaviour
         _valText.text = string.Format("{0}/{1}", parametr.CurVal.ToString("F0"), parametr.CalculteMaxVal().ToString("F0"));
         if (parametr.curLvl >= parametr.maxLvl)
         {
-            _upgradeButton.interactable = false;
-            _upgradeButtonText.text = _maxLvl; 
+            upgradeButton.interactable = false;
+            _upgradeButtonText.text = _maxLvl;
+        }
+        else
+        {
+            upgradeButton.interactable = true;
+            _upgradeButtonText.text = "upgrade";
         }
     }
 }

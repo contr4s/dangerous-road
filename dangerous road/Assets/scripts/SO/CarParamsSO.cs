@@ -5,7 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Assets/CarParams")]
 public class CarParamsSO: ScriptableObject
 {
+    public string name;
     public CarParameter[] parametrs;
+
+    public int purchasePrice;
+    public bool isPurchased;
 
 #if UNITY_EDITOR
     private void OnValidate()
