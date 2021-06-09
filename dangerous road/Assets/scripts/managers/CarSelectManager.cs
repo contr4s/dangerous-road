@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 [Serializable]
 public struct SelectableCar
@@ -24,8 +26,12 @@ public class CarSelectManager: MonoBehaviour
     }
 
     [SerializeField] private SelectableCar[] _cars;
+    [SerializeField] private Button _rightButton;
+    [SerializeField] private Button _leftButton;
+    [SerializeField] private Button _selectButton;
+    [SerializeField] private TextMeshProUGUI _selectButtonText;
 
-    private int _curCarIndex;
+    private int _curShowingCarIndex;
 
     private void Start()
     {
@@ -34,26 +40,32 @@ public class CarSelectManager: MonoBehaviour
             CurrentCar = _cars[0].prefab;
         }
         else
-            SelectCar(CurrentCar);
+            ShowCar(CurrentCar);
     }
 
-    public void SelectNextCar()
+    public void ShowNextCar()
     {
-        if (_curCarIndex >= _cars.Length - 1)
+        if (_curShowingCarIndex >= _cars.Length - 1)
             return;
 
-        SelectCar(_curCarIndex + 1);
+        ShowCar(_curShowingCarIndex + 1);
     }
 
-    public void SelectPrevCar()
+    public void ShowPrevCar()
     {
-        if (_curCarIndex <= 0)
+        if (_curShowingCarIndex <= 0)
             return;
 
-        SelectCar(_curCarIndex - 1);
+        ShowCar(_curShowingCarIndex - 1);
     }
 
-    private void SelectCar(int index)
+    public void SelectCurShowingCar()
+    {
+        CurrentCar = _cars[_curShowingCarIndex].prefab;
+        UpdateSelectButton();
+    }
+
+    private void ShowCar(int index)
     {
         if (index < 0 || index >= _cars.Length)
         {
@@ -66,19 +78,36 @@ public class CarSelectManager: MonoBehaviour
             _cars[i].view.gameObject.SetActive(i == index);
             if (i == index)
             {
-                CurrentCar = _cars[i].prefab;
-                _curCarIndex = i;
+                _curShowingCarIndex = i;
             }
+        }
+
+        _rightButton.interactable = (_curShowingCarIndex != _cars.Length - 1);
+        _leftButton.interactable = (_curShowingCarIndex != 0);
+        UpdateSelectButton();
+    }
+
+    private void UpdateSelectButton()
+    {
+        if (CurrentCar == _cars[_curShowingCarIndex].prefab)
+        {
+            _selectButton.interactable = false;
+            _selectButtonText.text = "Selected";
+        }
+        else
+        {
+            _selectButton.interactable = true;
+            _selectButtonText.text = "Select";
         }
     }
 
-    private void SelectCar(Car car)
+    private void ShowCar(Car car)
     {
         for (int i = 0; i < _cars.Length; i++)
         {
             if (_cars[i].prefab == car)
             {
-                SelectCar(i);
+                ShowCar(i);
                 return;
             }
         }
