@@ -5,7 +5,6 @@ using UnityEngine;
 public class Obstacle: MonoBehaviour, IDestroyable
 {
     [SerializeField] private Vector3[] _possibleRotations;
-    [SerializeField] private float _fallTime = 10f;
 
     private Rigidbody _rigidbody;
 
@@ -35,9 +34,9 @@ public class Obstacle: MonoBehaviour, IDestroyable
         gameObject.SetActive(false);
     }
 
-    public IEnumerator DestroyAfterSwipe()
+    public IEnumerator DestroyAfterSwipe(float activeTimeAfterSwipe)
     {
-        yield return new WaitForSeconds(_fallTime);
+        yield return new WaitForSeconds(activeTimeAfterSwipe);
         DestroyMe();
     }
 }

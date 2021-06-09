@@ -5,6 +5,8 @@ using UnityEngine;
 public abstract class InputManager : MonoBehaviour
 {
     [SerializeField] protected SwipeSO _swipeSO;
+    [SerializeField] protected float swipeForceScale = 20;
+    [SerializeField] protected float maxDistToSwipe = 150;
 
     protected Camera _mainCam;
 
@@ -28,7 +30,7 @@ public abstract class InputManager : MonoBehaviour
         obstacle = null;
         distToObstacle = 0;
         Ray ray = _mainCam.ScreenPointToRay(mousePos);
-        if (Physics.Raycast(ray, out RaycastHit hit, _swipeSO.maxDistToSwipe))
+        if (Physics.Raycast(ray, out RaycastHit hit, maxDistToSwipe))
         {
             if (hit.distance < _swipeSO.minDistToSwipe)
                 return false;
@@ -46,12 +48,12 @@ public abstract class InputManager : MonoBehaviour
     private void Init(Car car)
     {
         if (car.parametrs.TryFindParam(eCarParameterType.swipeForce, out var param))
-            _swipeSO.swipeForceScale = param.CurVal;
+            swipeForceScale = param.CurVal;
         else
             Debug.LogWarning("there is no max swipeForce in car params");
 
         if (car.parametrs.TryFindParam(eCarParameterType.maxSwipeDist, out param))
-            _swipeSO.maxDistToSwipe = param.CurVal;
+            maxDistToSwipe = param.CurVal;
         else
             Debug.LogWarning("there is no maxSwipeDist in car params");
     }

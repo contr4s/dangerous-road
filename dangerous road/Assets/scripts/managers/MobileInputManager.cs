@@ -30,8 +30,8 @@ public class MobileInputManager : InputManager
                 direction.x = touch.position.x - _prevTouchPos.x;
                 direction.y = touch.position.y - _prevTouchPos.y;
                 direction.z = 0;
-                _targetObstacle.AddForce(_swipeSO.swipeForceScale, direction, _targetObstacle.transform.position.z - _mainCam.transform.position.z);
-                StartCoroutine(_targetObstacle.DestroyAfterSwipe());
+                _targetObstacle.AddForce(swipeForceScale, direction, _targetObstacle.transform.position.z - _mainCam.transform.position.z);
+                StartCoroutine(_targetObstacle.DestroyAfterSwipe(_swipeSO.activeTimeAfterSwipe));
                 _targetObstacle = null;
             }
         }

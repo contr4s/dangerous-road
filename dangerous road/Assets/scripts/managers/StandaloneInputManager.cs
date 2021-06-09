@@ -22,7 +22,7 @@ public class StandaloneInputManager: InputManager
         var direction = (Input.mousePosition - _prevTouchPos);
         direction.z = 0;
         direction.Normalize();
-        obstacle.AddForce(_swipeSO.swipeForceScale, direction, distToCam);
-        StartCoroutine(obstacle.DestroyAfterSwipe());
+        obstacle.AddForce(swipeForceScale, direction, distToCam);
+        StartCoroutine(obstacle.DestroyAfterSwipe(_swipeSO.activeTimeAfterSwipe));
     }
 }
