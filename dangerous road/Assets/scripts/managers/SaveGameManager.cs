@@ -29,9 +29,19 @@ public static class SaveGameManager
         LOCK = false;
         _filePath = Application.persistentDataPath + "/PA.save";
 
-        _saveFile = new SaveFile();
+        InitSaveFile();
     }
 
+    private static void InitSaveFile()
+    {
+        _saveFile = new SaveFile();
+        _saveFile.curSelectedCar = GameManager.DefaultCar;
+        var parameters = GameManager.DefaultCar.parametrs;
+        parameters.ResetParams();
+        parameters.isPurchased = true;
+        _saveFile.carData.Add(parameters);
+        Debug.Log(_saveFile.carData.Count);
+    }
 
     public static void Save()
     {
@@ -64,21 +74,13 @@ public static class SaveGameManager
                 return;
             }
 
-            LOCK = true;
-
             Initialize(_saveFile);
-
-            LOCK = false;
         }
         else
         {
             Debug.LogWarning("Unable to find save file. This is fine if you've never call save method ");
 
-            LOCK = true;
-
             Initialize(_saveFile);
-
-            LOCK = false;
         }
     }
 
@@ -88,20 +90,21 @@ public static class SaveGameManager
         if (File.Exists(_filePath))
         {
             File.Delete(_filePath);
-            _saveFile = new SaveFile();
+            InitSaveFile();
         }
         else
         {
             Debug.LogWarning("Unable to find and delete save file. This is fine if you've never call save method ");
         }
-
         Initialize(_saveFile);
     }
 
     private static void Initialize(SaveFile saveFile)
     {
+        LOCK = true;
         GameManager.S.moneyManager.Money = saveFile.money;
         CarSelectManager.CurrentCar = saveFile.curSelectedCar;
         CarSelectManager.CarData = saveFile.carData;
+        LOCK = false;
     }
 }

@@ -32,12 +32,12 @@ MonoBehaviour:
     _curVal: 10
   - type: 2
     startVal: 4000
-    curLvl: 1
+    curLvl: 2
     maxLvl: 10
     lvlUpValuePercentage: 10
     startUpgradePrice: 120
     lvlUpPricePercentage: 20
-    _curVal: 4000
+    _curVal: 4400
   - type: 3
     startVal: 150
     curLvl: 1

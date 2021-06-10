@@ -40,11 +40,11 @@ MonoBehaviour:
     _curVal: 10000
   - type: 3
     startVal: 200
-    curLvl: 1
+    curLvl: 2
     maxLvl: 10
     lvlUpValuePercentage: 10
     startUpgradePrice: 150
     lvlUpPricePercentage: 20
-    _curVal: 200
+    _curVal: 220
   purchasePrice: 20000
   isPurchased: 1

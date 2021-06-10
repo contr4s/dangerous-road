@@ -13,7 +13,7 @@ public struct SelectableCar
 }
 
 public class CarSelectManager: MonoBehaviour
-{
+{   
     private static Car _currentCar;
     public static Car CurrentCar
     {
@@ -25,12 +25,13 @@ public class CarSelectManager: MonoBehaviour
         }
     }
 
-    private static List<CarParamsSO> _carData;
+    private static List<CarParamsSO> _carData = new List<CarParamsSO>();
     public static List<CarParamsSO> CarData
     {
         get => _carData;
         set => _carData = value;
     }
+    
 
     public static void ChangeData(CarParamsSO carParams)
     {
