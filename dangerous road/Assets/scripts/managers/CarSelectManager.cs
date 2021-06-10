@@ -25,6 +25,27 @@ public class CarSelectManager: MonoBehaviour
         }
     }
 
+    private static List<CarParamsSO> _carData;
+    public static List<CarParamsSO> CarData
+    {
+        get => _carData;
+        set => _carData = value;
+    }
+
+    public static void ChangeData(CarParamsSO carParams)
+    {
+        for (int i = 0; i < CarData.Count; i++)
+        {
+            if (carParams.name == _carData[i].name)
+            {
+                _carData[i] = carParams;
+                SaveGameManager.Save();
+                return;
+            }
+        }
+        Debug.LogWarningFormat("there is no {0} in car data", carParams);
+    }
+
     [SerializeField] private SelectableCar[] _cars;
 
     [SerializeField] private CarStatUI[] _stats;
@@ -46,6 +67,13 @@ public class CarSelectManager: MonoBehaviour
         }
         else
             ShowCar(CurrentCar);
+
+
+        foreach (var car in _cars)
+        {
+            if (!CarData.Contains(car.prefab.parametrs))
+                CarData.Add(car.prefab.parametrs);
+        }
     }
 
     private void OnEnable()
@@ -123,7 +151,7 @@ public class CarSelectManager: MonoBehaviour
     {
         bool isPurchased = _cars[_curShowingCarIndex].prefab.parametrs.isPurchased;
         _unlockButton.gameObject.SetActive(!isPurchased);
-        _selectButton.gameObject.SetActive(isPurchased);               
+        _selectButton.gameObject.SetActive(isPurchased);
         foreach (var stat in _stats)
         {
             stat.upgradeButton.gameObject.SetActive(isPurchased);
@@ -155,6 +183,7 @@ public class CarSelectManager: MonoBehaviour
     private void UnlockCurCar()
     {
         _cars[_curShowingCarIndex].prefab.parametrs.isPurchased = true;
+        ChangeData(_cars[_curShowingCarIndex].prefab.parametrs);
         UpdateButtonsWhichDependOnPurchaseStatus();
     }
 }

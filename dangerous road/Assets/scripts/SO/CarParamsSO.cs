@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Assets/CarParams")]
 public class CarParamsSO: ScriptableObject
 {
-    public string name;
+    public new string name;
     public CarParameter[] parametrs;
 
     public int purchasePrice;
