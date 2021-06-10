@@ -29,7 +29,6 @@ public class ObstacleSpawner: Spawner<Obstacle>
     private int _kilometerCounter = 1;
     [SerializeField] private float _step;
 
-    [SerializeField] private ObstaclePool[] _obstaclePools;
     [SerializeField] private ObstacleVariant[] _variants;
 
     private void OnEnable()
