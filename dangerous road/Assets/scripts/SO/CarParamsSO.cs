@@ -34,4 +34,13 @@ public class CarParamsSO: ScriptableObject
         parametr = new CarParameter();
         return false;
     }
+
+    public void ResetParams()
+    {
+        isPurchased = false;
+        foreach(var param in parametrs)
+        {
+            param.curLvl = 1;
+        }
+    }
 }

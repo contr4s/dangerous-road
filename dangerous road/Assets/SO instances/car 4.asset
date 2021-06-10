@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a9a64e3b825c0f4bbcc654384507dcd, type: 3}
+  m_Name: car 4
+  m_EditorClassIdentifier: 
+  name: suv
+  parametrs:
+  - type: 0
+    startVal: 50
+    curLvl: 1
+    maxLvl: 10
+    lvlUpValuePercentage: 10
+    startUpgradePrice: 120
+    lvlUpPricePercentage: 20
+    _curVal: 50
+  - type: 1
+    startVal: 10
+    curLvl: 1
+    maxLvl: 10
+    lvlUpValuePercentage: 10
+    startUpgradePrice: 120
+    lvlUpPricePercentage: 20
+    _curVal: 10
+  - type: 2
+    startVal: 4000
+    curLvl: 1
+    maxLvl: 10
+    lvlUpValuePercentage: 10
+    startUpgradePrice: 120
+    lvlUpPricePercentage: 20
+    _curVal: 4000
+  - type: 3
+    startVal: 150
+    curLvl: 1
+    maxLvl: 10
+    lvlUpValuePercentage: 10
+    startUpgradePrice: 120
+    lvlUpPricePercentage: 20
+    _curVal: 150
+  purchasePrice: 5000
+  isPurchased: 1

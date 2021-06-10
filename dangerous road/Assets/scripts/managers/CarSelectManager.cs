@@ -71,8 +71,13 @@ public class CarSelectManager: MonoBehaviour
 
         foreach (var car in _cars)
         {
-            if (!CarData.Contains(car.prefab.parametrs))
-                CarData.Add(car.prefab.parametrs);
+            var parameters = car.prefab.parametrs;
+            if (!CarData.Contains(parameters))
+            {
+                parameters.ResetParams();
+                CarData.Add(parameters);
+            }
+                
         }
     }
 
