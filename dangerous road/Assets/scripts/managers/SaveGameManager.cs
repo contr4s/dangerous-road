@@ -40,7 +40,6 @@ public static class SaveGameManager
         parameters.ResetParams();
         parameters.isPurchased = true;
         _saveFile.carData.Add(parameters);
-        Debug.Log(_saveFile.carData.Count);
     }
 
     public static void Save()
@@ -79,7 +78,7 @@ public static class SaveGameManager
         else
         {
             Debug.LogWarning("Unable to find save file. This is fine if you've never call save method ");
-
+            InitSaveFile();
             Initialize(_saveFile);
         }
     }
