@@ -810,11 +810,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLosed: 0
   parametrs: {fileID: 11400000, guid: e106b4bea57e63646a7f4f381303a1cd, type: 2}
+  road: {fileID: 11400000, guid: 8202e88350b09db4e9b01e3811c0ed82, type: 2}
   startPos: {x: 0, y: 1.15, z: 0}
   uIManager: {fileID: 0}
   _acceleration: 0.5
-  _turnDist: 3.5
-  _maxLane: 1
   _storm: {fileID: 1706507518931756885}
 --- !u!1001 &5170246580514389410
 PrefabInstance:

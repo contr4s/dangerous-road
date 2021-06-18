@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoadSpawner: Spawner<MeshRenderer>
+public class RoadSpawner: Spawner<Transform>
 {
     [SerializeField] private RoadPool _roadPool;
 
@@ -16,7 +16,7 @@ public class RoadSpawner: Spawner<MeshRenderer>
         Car.passedHundredMeters -= Spawn;
     }
 
-    protected override ObjectPool<MeshRenderer> GetObjectPool()
+    protected override ObjectPool<Transform> GetObjectPool()
     {
         return _roadPool;
     }

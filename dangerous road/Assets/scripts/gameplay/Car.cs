@@ -18,6 +18,7 @@ public class Car: MonoBehaviour
     private float _passedDist;
 
     public CarParamsSO parametrs;
+    public RoadSO road;
 
     public Vector3 startPos;
 
@@ -27,9 +28,7 @@ public class Car: MonoBehaviour
     private float _maxSpeed;
 
     private float _turnSpeed;
-    [SerializeField] private float _turnDist = 3.5f;
     private int _curLane = 0;
-    [SerializeField] private int _maxLane = 1;
     private Queue<IEnumerator> _turnQueue = new Queue<IEnumerator>();
     private Coroutine _turnCoroutine;
 
@@ -137,10 +136,10 @@ public class Car: MonoBehaviour
 
     private void Turn(int coef)
     {
-        if (Math.Abs(_curLane + coef) > _maxLane)
+        if (Math.Abs(_curLane + coef) > road.maxLane)
             return;
 
-        _turnQueue.Enqueue(Turn((_curLane + coef) * _turnDist));
+        _turnQueue.Enqueue(Turn((_curLane + coef) * road.laneWidth));
         if (_turnCoroutine is null)
         {
             _turnCoroutine = StartCoroutine(_turnQueue.Dequeue());
@@ -152,7 +151,7 @@ public class Car: MonoBehaviour
     private IEnumerator Turn(float targetX)
     {
         float i = 0;
-        while (i < _turnDist)
+        while (i < road.laneWidth)
         {
             var x = Mathf.MoveTowards(transform.position.x, targetX, _turnSpeed * Time.deltaTime);
             transform.position = new Vector3(x, transform.position.y, transform.position.z);

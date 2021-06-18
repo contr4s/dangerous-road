@@ -384,11 +384,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLosed: 0
   parametrs: {fileID: 11400000, guid: 598a775c634cc9d4e8cff68a183e65df, type: 2}
+  road: {fileID: 11400000, guid: 8202e88350b09db4e9b01e3811c0ed82, type: 2}
   startPos: {x: 0, y: 1, z: 0}
   uIManager: {fileID: 0}
   _acceleration: 0.5
-  _turnDist: 3.5
-  _maxLane: 1
   _storm: {fileID: 4975278880859387095}
 --- !u!1 &5955172972512511158
 GameObject:

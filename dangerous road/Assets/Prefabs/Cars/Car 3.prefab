@@ -153,11 +153,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLosed: 0
   parametrs: {fileID: 11400000, guid: 8f42ea87b2bc87241b57839663d78688, type: 2}
+  road: {fileID: 11400000, guid: 8202e88350b09db4e9b01e3811c0ed82, type: 2}
   startPos: {x: 0, y: 0.2, z: 0}
   uIManager: {fileID: 0}
   _acceleration: 0.5
-  _turnDist: 3.5
-  _maxLane: 1
   _storm: {fileID: 2026245613140281767}
 --- !u!146 &5441169102711709440
 WheelCollider:
