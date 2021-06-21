@@ -9,8 +9,14 @@ public class DeathZone : MonoBehaviour
         if (other.TryGetComponent(out IDestroyable destroyable))
             destroyable.DestroyMe();
         if (other.CompareTag("road"))
-            other.gameObject.SetActive(false);
+            StartCoroutine(ReturnToPool(other.gameObject));
         if (other.CompareTag("environment"))
-            other.gameObject.SetActive(false);
+            StartCoroutine(ReturnToPool(other.gameObject));
+    }
+
+    private IEnumerator ReturnToPool(GameObject go)
+    {
+        yield return new WaitForEndOfFrame();
+        go.SetActive(false);
     }
 }

@@ -89,7 +89,6 @@ public static class SaveGameManager
         if (File.Exists(_filePath))
         {
             File.Delete(_filePath);
-            InitSaveFile();
         }
         else
         {
