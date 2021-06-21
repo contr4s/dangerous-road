@@ -2395,9 +2395,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _xAxisSpawnPositions:
-  - -3.5
+  - -4
   - 0
-  - 3.5
+  - 4
   _distanceToCam: 500
   _startPosition: {x: 0, y: 1, z: 50}
   _startStep: 50
@@ -2422,9 +2422,7 @@ MonoBehaviour:
   - type: 2
     spawnChance: 1
     pools:
-    - {fileID: 1064444839}
     - {fileID: 1843689498}
-    - {fileID: 2128384056}
 --- !u!1 &894668682
 GameObject:
   m_ObjectHideFlags: 0
