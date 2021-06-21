@@ -12,7 +12,7 @@ public class MobileInputManager : InputManager
         for (int i = 0; i < Input.touchCount; ++i)
         {
             var touch = Input.GetTouch(i);
-            if (touch.phase == TouchPhase.Began)
+            if (_targetObstacle is null)
             {
                 if (CheckIfCanSwipeObstacle(Input.mousePosition, out var obstacle, out float dist))
                 {
@@ -21,11 +21,8 @@ public class MobileInputManager : InputManager
                 }
 
             }
-            else if (touch.phase == TouchPhase.Ended)
+            else 
             {
-                if (_targetObstacle is null)
-                    return;
-
                 Vector3 direction;
                 direction.x = touch.position.x - _prevTouchPos.x;
                 direction.y = touch.position.y - _prevTouchPos.y;
