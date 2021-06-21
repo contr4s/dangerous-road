@@ -21,7 +21,7 @@ public class MobileInputManager : InputManager
                 }
 
             }
-            else 
+            else if (touch.phase == TouchPhase.Ended)
             {
                 Vector3 direction;
                 direction.x = touch.position.x - _prevTouchPos.x;

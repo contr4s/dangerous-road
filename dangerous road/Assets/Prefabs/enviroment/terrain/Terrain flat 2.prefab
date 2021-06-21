@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7565038028665731307
+--- !u!1 &4931549639722126211
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7565038028665731310}
-  - component: {fileID: 7565038028665731305}
-  - component: {fileID: 7565038028665731304}
+  - component: {fileID: 4931549639722126222}
+  - component: {fileID: 4931549639722126209}
+  - component: {fileID: 4931549639722126208}
   m_Layer: 0
-  m_Name: Terrain with hills
+  m_Name: Terrain flat 2
   m_TagString: environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
---- !u!4 &7565038028665731310
+  m_IsActive: 1
+--- !u!4 &4931549639722126222
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7565038028665731307}
+  m_GameObject: {fileID: 4931549639722126211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: 0}
+  m_LocalPosition: {x: -206, y: 0, z: 8.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!218 &7565038028665731305
+--- !u!218 &4931549639722126209
 Terrain:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7565038028665731307}
+  m_GameObject: {fileID: 4931549639722126211}
   m_Enabled: 1
   serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: 90c805c78ff80aa48b41a4c40408df44, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: 86ed34369a2fb79459e46c1752632f35, type: 2}
   m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
+  m_TreeBillboardDistance: 60
+  m_TreeCrossFadeLength: 30
   m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_DetailObjectDistance: 150
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 100
-  m_SplatMapDistance: 500
+  m_SplatMapDistance: 1000
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 0
   m_DrawHeightmap: 1
@@ -65,14 +65,14 @@ Terrain:
   m_GroupingID: 0
   m_RenderingLayerMask: 1
   m_AllowAutoConnect: 1
---- !u!154 &7565038028665731304
+--- !u!154 &4931549639722126208
 TerrainCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7565038028665731307}
+  m_GameObject: {fileID: 4931549639722126211}
   m_Material: {fileID: 0}
   m_Enabled: 1
-  m_TerrainData: {fileID: 15600000, guid: 90c805c78ff80aa48b41a4c40408df44, type: 2}
-  m_EnableTreeColliders: 0
+  m_TerrainData: {fileID: 15600000, guid: 86ed34369a2fb79459e46c1752632f35, type: 2}
+  m_EnableTreeColliders: 1

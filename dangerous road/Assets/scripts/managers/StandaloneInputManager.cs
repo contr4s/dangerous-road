@@ -13,7 +13,6 @@ public class StandaloneInputManager: InputManager
         {
             if (CheckIfCanSwipeObstacle(Input.mousePosition, out var obstacle, out float dist))
             {
-                //StartCoroutine(Swipe(obstacle, _swipeSO.swipeTime, dist));
                 _prevTouchPos = Input.mousePosition;
                 _targetObstacle = obstacle;
             }
@@ -30,15 +29,5 @@ public class StandaloneInputManager: InputManager
             StartCoroutine(_targetObstacle.DestroyAfterSwipe(_swipeSO.activeTimeAfterSwipe));
             _targetObstacle = null;
         }
-    }
-
-    public IEnumerator Swipe(Obstacle obstacle, float swipeTime, float distToCam)
-    {
-        yield return new WaitForSeconds(swipeTime);
-        var direction = (Input.mousePosition - _prevTouchPos);
-        direction.z = 0;
-        direction.Normalize();
-        obstacle.AddForce(swipeForceScale, direction, distToCam);
-        StartCoroutine(obstacle.DestroyAfterSwipe(_swipeSO.activeTimeAfterSwipe));
     }
 }
