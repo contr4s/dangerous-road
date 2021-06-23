@@ -11,9 +11,13 @@ public class GameManager: Singleton<GameManager>
     [SerializeField] private Car _defaultCar;
     public static Car DefaultCar { get => S._defaultCar; set => S._defaultCar = value; }
 
-    private void Start()
+    private void OnEnable()
     {
         SaveGameManager.Load();
+    }
+
+    private void Start()
+    {        
         moneyManager.Initialize();
     }
 

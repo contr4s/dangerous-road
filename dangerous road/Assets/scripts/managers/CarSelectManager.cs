@@ -31,7 +31,8 @@ public class CarSelectManager: MonoBehaviour
         get => _carData;
         set => _carData = value;
     }
-    
+
+    [SerializeField] List<CarParamsSO> carData;
 
     public static void ChangeData(CarParamsSO carParams)
     {
@@ -77,9 +78,10 @@ public class CarSelectManager: MonoBehaviour
             {
                 parameters.ResetParams();
                 CarData.Add(parameters);
-            }
-                
+            }               
         }
+        carData = CarData;
+        
     }
 
     private void OnEnable()
