@@ -803,7 +803,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 801898818}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &231302307
 MonoBehaviour:
@@ -1182,7 +1182,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 801898818}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &316423386
 MonoBehaviour:
@@ -1618,52 +1618,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationSpeed: 400
---- !u!1 &405497501
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 405497502}
-  - component: {fileID: 405497503}
-  m_Layer: 0
-  m_Name: cone pool (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &405497502
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 405497501}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 801898818}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &405497503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 405497501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a39906c69ed8e0340a7092b29e5619d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnObjectPrefab: {fileID: 2719116546703695541, guid: ca996cfa9ec49df40b839be202af3ad8, type: 3}
-  _poolDepth: 100
-  _canGrow: 1
 --- !u!1 &427364177
 GameObject:
   m_ObjectHideFlags: 0
@@ -2370,7 +2324,6 @@ Transform:
   m_Children:
   - {fileID: 2048983370}
   - {fileID: 1052085193}
-  - {fileID: 405497502}
   - {fileID: 1064444838}
   - {fileID: 1843689497}
   - {fileID: 2128384055}
@@ -2379,6 +2332,7 @@ Transform:
   - {fileID: 231302306}
   - {fileID: 316423385}
   - {fileID: 1890365453}
+  - {fileID: 1207503452}
   m_Father: {fileID: 1209023105}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2409,7 +2363,6 @@ MonoBehaviour:
     spawnChance: 1
     pools:
     - {fileID: 1052085194}
-    - {fileID: 405497503}
     - {fileID: 316423386}
     - {fileID: 1890365454}
   - type: 1
@@ -2419,6 +2372,7 @@ MonoBehaviour:
     - {fileID: 2041869839}
     - {fileID: 2117162415}
     - {fileID: 231302307}
+    - {fileID: 1207503453}
   - type: 2
     spawnChance: 1
     pools:
@@ -2941,7 +2895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a39906c69ed8e0340a7092b29e5619d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnObjectPrefab: {fileID: 2911000871115271295, guid: efaa767e14f230344ac6b636a16b869e, type: 3}
+  spawnObjectPrefab: {fileID: 300569989047662023, guid: fe750b4692936c14a94f4b98c709040e, type: 3}
   _poolDepth: 100
   _canGrow: 1
 --- !u!1 &1064444837
@@ -2973,7 +2927,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 801898818}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1064444839
 MonoBehaviour:
@@ -3067,6 +3021,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnObjectPrefab: {fileID: 829429249347772806, guid: de34d520ee381004aaaf660f2a06c6f3, type: 3}
   _poolDepth: 10
+  _canGrow: 1
+--- !u!1 &1207503451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1207503452}
+  - component: {fileID: 1207503453}
+  m_Layer: 0
+  m_Name: 'white barier pool '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1207503452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207503451}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 801898818}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1207503453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207503451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a39906c69ed8e0340a7092b29e5619d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnObjectPrefab: {fileID: 7401632941297741016, guid: 3e9feaf099fc6054cb759d0439492db7, type: 3}
+  _poolDepth: 100
   _canGrow: 1
 --- !u!1 &1209023104
 GameObject:
@@ -3683,7 +3683,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 801898818}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1843689498
 MonoBehaviour:
@@ -3729,7 +3729,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 801898818}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1890365454
 MonoBehaviour:
@@ -4039,7 +4039,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 801898818}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2041869839
 MonoBehaviour:
@@ -4053,7 +4053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a39906c69ed8e0340a7092b29e5619d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnObjectPrefab: {fileID: 3671157739508249232, guid: 65dd37b10009aa845ba33eb1f1d428c1, type: 3}
+  spawnObjectPrefab: {fileID: 4319801528141013741, guid: a58f8070949014541aaf4afd3aa08402, type: 3}
   _poolDepth: 100
   _canGrow: 1
 --- !u!1 &2048983369
@@ -4228,7 +4228,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 801898818}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2117162415
 MonoBehaviour:
@@ -4274,7 +4274,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 801898818}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2128384056
 MonoBehaviour:

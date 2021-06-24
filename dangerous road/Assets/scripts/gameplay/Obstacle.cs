@@ -5,6 +5,7 @@ using UnityEngine;
 public class Obstacle: MonoBehaviour, IDestroyable
 {
     [SerializeField] private Vector3[] _possibleRotations;
+    [SerializeField] private GameObject _outline;
 
     private Rigidbody _rigidbody;
 
@@ -21,6 +22,12 @@ public class Obstacle: MonoBehaviour, IDestroyable
         else
             transform.rotation = Quaternion.identity;
         StopAllCoroutines();
+    }
+
+    public void SetupOutline(bool active)
+    {
+        if (_outline)
+            _outline.SetActive(active);
     }
 
     public void AddForce(float force, Vector3 direction, float distToCam)

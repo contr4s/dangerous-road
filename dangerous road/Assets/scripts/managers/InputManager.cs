@@ -8,6 +8,7 @@ public abstract class InputManager : MonoBehaviour
     [SerializeField] protected float swipeForceScale = 20;
     [SerializeField] protected float maxDistToSwipe = 150;
 
+    protected Obstacle _targetObstacle;
     protected Camera _mainCam;
 
     private void Awake()
@@ -25,10 +26,9 @@ public abstract class InputManager : MonoBehaviour
         CarSpawnManager.carSpawned -= Init;
     }
 
-    protected bool CheckIfCanSwipeObstacle(Vector2 mousePos, out Obstacle obstacle, out float distToObstacle)
+    protected bool CheckIfCanSwipeObstacle(Vector2 mousePos, out Obstacle obstacle)
     {
         obstacle = null;
-        distToObstacle = 0;
         Ray ray = _mainCam.ScreenPointToRay(mousePos);
         if (Physics.Raycast(ray, out RaycastHit hit, maxDistToSwipe))
         {
@@ -37,12 +37,33 @@ public abstract class InputManager : MonoBehaviour
 
             if (hit.collider.TryGetComponent(out Obstacle _obstacle))
             {
-                distToObstacle = hit.distance;
-                obstacle = _obstacle;
+                obstacle = _obstacle;              
                 return true;
             }
         }
         return false;
+    }
+
+    protected void SetupTargetObstacle(Obstacle obstacle)
+    {
+        if (!(_targetObstacle is null))
+            SwipeOutObstacle();
+        _targetObstacle = obstacle;
+        _targetObstacle.SetupOutline(true);
+    }
+
+    protected abstract Vector3 CalculateSwipeDirection();
+
+    protected void SwipeOutObstacle()
+    {
+        if (_targetObstacle is null)
+            return;
+
+        var direction = CalculateSwipeDirection();
+        _targetObstacle.AddForce(swipeForceScale, direction, _targetObstacle.transform.position.z - _mainCam.transform.position.z);
+        StartCoroutine(_targetObstacle.DestroyAfterSwipe(_swipeSO.activeTimeAfterSwipe));
+        _targetObstacle.SetupOutline(false);
+        _targetObstacle = null;
     }
 
     private void Init(Car car)
