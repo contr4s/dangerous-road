@@ -32,7 +32,7 @@ public class Car: MonoBehaviour
     private Queue<IEnumerator> _turnQueue = new Queue<IEnumerator>();
     private Coroutine _turnCoroutine;
 
-    [SerializeField] private GameObject _view;
+    public GameObject view;
     [SerializeField] private SandStorm _storm;
 
     private int _multiplier = 1;
@@ -160,7 +160,7 @@ public class Car: MonoBehaviour
             i += _turnSpeed * Time.deltaTime;
             float x = Mathf.Lerp(-1, 1, Mathf.InverseLerp(0, road.laneWidth, i));
             float angle = coef * Mathf.Abs(Mathf.Rad2Deg * Mathf.Atan(1 / Mathf.Sqrt(1 - x * x)) - 90) * smoothCoef;
-            _view.transform.rotation = Quaternion.Euler(0, angle, 0);
+            view.transform.rotation = Quaternion.Euler(0, angle, 0);
             yield return null;
         }
         if (_turnQueue.Count > 0)

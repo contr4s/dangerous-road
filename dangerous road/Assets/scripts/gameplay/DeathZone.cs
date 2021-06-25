@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(FollowCar))]
 public class DeathZone : MonoBehaviour
 {
     private void OnTriggerExit(Collider other)

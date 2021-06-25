@@ -34,7 +34,6 @@ public class CarSpawnManager : MonoBehaviour
     {
         _spawnedCar = Instantiate(car, car.startPos, Quaternion.identity);
         _spawnedCar.uIManager = _uIManager;
-        Camera.main.transform.SetParent(_spawnedCar.transform);
         carSpawned?.Invoke(_spawnedCar);
     }
 }

@@ -2432,7 +2432,7 @@ MonoBehaviour:
   - 0
   - 3.5
   _distanceToCam: 500
-  _startPosition: {x: 0, y: 1, z: 50}
+  _startPosition: {x: 0, y: 2, z: 50}
   _startStep: 50
   complexityPercentage100m: 10
   complexityPercentage1km: 20
