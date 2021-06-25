@@ -32,7 +32,7 @@ public class Car: MonoBehaviour
     private Queue<IEnumerator> _turnQueue = new Queue<IEnumerator>();
     private Coroutine _turnCoroutine;
 
-   
+    [SerializeField] private GameObject _view;
     [SerializeField] private SandStorm _storm;
 
     private int _multiplier = 1;
@@ -139,7 +139,7 @@ public class Car: MonoBehaviour
         if (Math.Abs(_curLane + coef) > road.maxLane)
             return;
 
-        _turnQueue.Enqueue(Turn((_curLane + coef) * road.laneWidth));
+        _turnQueue.Enqueue(Turn((_curLane + coef) * road.laneWidth, coef));
         if (_turnCoroutine is null)
         {
             _turnCoroutine = StartCoroutine(_turnQueue.Dequeue());
@@ -148,14 +148,19 @@ public class Car: MonoBehaviour
         return;
     }
 
-    private IEnumerator Turn(float targetX)
+    private IEnumerator Turn(float targetX, int coef)
     {
         float i = 0;
         while (i < road.laneWidth)
         {
-            var x = Mathf.MoveTowards(transform.position.x, targetX, _turnSpeed * Time.deltaTime);
-            transform.position = new Vector3(x, transform.position.y, transform.position.z);
+            var xPos = Mathf.MoveTowards(transform.position.x, targetX, _turnSpeed * Time.deltaTime);
+            transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
+
+            float smoothCoef = _turnSpeed / _maxSpeed;
             i += _turnSpeed * Time.deltaTime;
+            float x = Mathf.Lerp(-1, 1, Mathf.InverseLerp(0, road.laneWidth, i));
+            float angle = coef * Mathf.Abs(Mathf.Rad2Deg * Mathf.Atan(1 / Mathf.Sqrt(1 - x * x)) - 90) * smoothCoef;
+            _view.transform.rotation = Quaternion.Euler(0, angle, 0);
             yield return null;
         }
         if (_turnQueue.Count > 0)
