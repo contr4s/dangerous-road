@@ -36,6 +36,7 @@ public class Car: MonoBehaviour
 
     public GameObject view;
     [SerializeField] private SandStorm _storm;
+    [SerializeField] private GameObject _sparksVFX;
 
     private int _multiplier = 1;
     private Rigidbody _rigidbody;
@@ -91,7 +92,10 @@ public class Car: MonoBehaviour
     private void Brake()
     {
         if (_rigidbody.velocity.z < _acceleration)
+        {
+            _sparksVFX.SetActive(false);
             return;
+        }          
 
         _rigidbody.AddForce(Vector3.back * _acceleration, ForceMode.VelocityChange);
     }
@@ -103,6 +107,7 @@ public class Car: MonoBehaviour
 
         if (collision.gameObject.CompareTag(obstacleTag))
         {
+            _sparksVFX.SetActive(true);
             isLosed = true;
             gameOver?.Invoke();
             _storm.StartStorm();
