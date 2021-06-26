@@ -47,7 +47,7 @@ public abstract class InputManager : MonoBehaviour
     protected void SetupTargetObstacle(Obstacle obstacle)
     {
         if (!(_targetObstacle is null))
-            SwipeOutObstacle();
+            return;
         _targetObstacle = obstacle;
         _targetObstacle.SetupOutline(true);
     }
