@@ -2,13 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
-public class CarSpawnManager : MonoBehaviour
+public class CarSpawnManager: MonoBehaviour
 {
     public static Action<Car> carSpawned;
 
     [SerializeField] private Car _defaultCar;
     [SerializeField] private UIManager _uIManager;
+
+    [SerializeField] PlayableDirector _playableDirector;
 
     private Car _spawnedCar;
 
@@ -22,7 +25,7 @@ public class CarSpawnManager : MonoBehaviour
         {
             SpawnCar(CarSelectManager.CurrentCar);
         }
-           
+        StartCoroutine(WaitUntillClipPlayed());   
     }
 
     public void TurnButton(bool turningRight)
@@ -35,5 +38,11 @@ public class CarSpawnManager : MonoBehaviour
         _spawnedCar = Instantiate(car, car.startPos, Quaternion.identity);
         _spawnedCar.uIManager = _uIManager;
         carSpawned?.Invoke(_spawnedCar);
+    }
+
+    private IEnumerator WaitUntillClipPlayed()
+    {
+        yield return new WaitForSeconds((float)_playableDirector.duration);
+        _spawnedCar.canAccelerate = true;
     }
 }

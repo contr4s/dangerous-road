@@ -22,7 +22,7 @@ public class FollowCar : MonoBehaviour
         CarSpawnManager.carSpawned -= Init;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         var xPos = _changeXPos ? _car.transform.position.x : _xPos;
         transform.position = new Vector3(xPos, _yPos, _car.transform.position.z - _distToCar);

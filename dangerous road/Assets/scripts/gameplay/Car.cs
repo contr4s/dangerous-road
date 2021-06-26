@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Car: MonoBehaviour
@@ -24,6 +25,7 @@ public class Car: MonoBehaviour
 
     public UIManager uIManager;
 
+    public bool canAccelerate = false;
     [SerializeField] private float _acceleration;
     private float _maxSpeed;
 
@@ -74,7 +76,7 @@ public class Car: MonoBehaviour
     {
         if (isLosed)
             Brake();
-        else
+        else if (canAccelerate)
             Accelerate();
     }
 
