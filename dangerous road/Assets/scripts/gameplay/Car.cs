@@ -124,6 +124,14 @@ public class Car: MonoBehaviour
         }
     }
 
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag(obstacleTag))
+        {
+            _sparksVFX.SetActive(false);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Coin coin))

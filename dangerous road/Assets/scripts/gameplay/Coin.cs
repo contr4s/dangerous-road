@@ -5,17 +5,21 @@ using UnityEngine;
 public class Coin : MonoBehaviour, IDestroyable
 {
     [SerializeField] private int _value;
-
     public int Value { get => _value; private set => _value = value; }
+    
+
+    [SerializeField] private GameObject _vfx;
+    public GameObject Vfx { get => _vfx; private set => _vfx = value; }
+
 
     public void OnEnable()
     {
-        CoinRotator.allCoins.Add(this);
+        CoinVfxManager.allCoins.Add(this);
     }
 
     public void OnDisable()
     {
-        CoinRotator.allCoins.Remove(this);
+        CoinVfxManager.allCoins.Remove(this);
     }
 
     public void DestroyMe()
