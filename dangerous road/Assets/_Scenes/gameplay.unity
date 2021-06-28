@@ -1862,6 +1862,7 @@ Transform:
   - {fileID: 705507995}
   - {fileID: 1440147007}
   - {fileID: 1145562519}
+  - {fileID: 2111123219}
   - {fileID: 1209023105}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -3571,7 +3572,7 @@ Transform:
   - {fileID: 2029190127}
   - {fileID: 327906408}
   m_Father: {fileID: 448186027}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1230243281
 GameObject:
@@ -4109,6 +4110,39 @@ Transform:
   m_Father: {fileID: 1209023105}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1712459073
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 448186027}
+    m_Modifications:
+    - target: {fileID: 146229103480568626, guid: fdbac3b049587e64c98994e1342f154f, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 146229103480568626, guid: fdbac3b049587e64c98994e1342f154f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 146229103480568626, guid: fdbac3b049587e64c98994e1342f154f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 146229103480568626, guid: fdbac3b049587e64c98994e1342f154f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 146229103480568626, guid: fdbac3b049587e64c98994e1342f154f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 146229103480568629, guid: fdbac3b049587e64c98994e1342f154f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fdbac3b049587e64c98994e1342f154f, type: 3}
 --- !u!850595691 &1776174758
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -4797,6 +4831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _defaultCar: {fileID: 1706507520081601989, guid: 1464c9ceab331f6449b8a83f821d960e, type: 3}
   _uIManager: {fileID: 980914216}
+  _wind: {fileID: 2111123222}
   _playableDirector: {fileID: 279118211}
 --- !u!1 &2098011779
 GameObject:
@@ -4850,6 +4885,16 @@ MonoBehaviour:
   - {fileID: 1907260889}
   - {fileID: 1277233503}
   _distToCover: 1000
+--- !u!4 &2111123219 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 146229103480568626, guid: fdbac3b049587e64c98994e1342f154f, type: 3}
+  m_PrefabInstance: {fileID: 1712459073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!2083052967 &2111123222 stripped
+VisualEffect:
+  m_CorrespondingSourceObject: {fileID: 146229103480568628, guid: fdbac3b049587e64c98994e1342f154f, type: 3}
+  m_PrefabInstance: {fileID: 1712459073}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2117162413
 GameObject:
   m_ObjectHideFlags: 0

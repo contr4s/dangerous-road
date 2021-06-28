@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.VFX;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Car: MonoBehaviour
@@ -10,6 +11,7 @@ public class Car: MonoBehaviour
     public const string obstacleTag = "obstacle";
     public const int hundredMeters = 100;
     public const int kilometer = 1000;
+    public const float windRateConst = 5;
 
     public static Action gameOver;
     public bool isLosed;
@@ -24,6 +26,7 @@ public class Car: MonoBehaviour
     public Vector3 startPos;
 
     public UIManager uIManager;
+    public VisualEffect wind;
 
     public bool canAccelerate = false;
     [SerializeField] private float _acceleration;
@@ -79,6 +82,9 @@ public class Car: MonoBehaviour
             Brake();
         else if (canAccelerate)
             Accelerate();
+   
+        wind.SetFloat("Speed", _rigidbody.velocity.z);
+        wind.SetFloat("Spawn rate", _rigidbody.velocity.z * windRateConst);
     }
 
     private void Accelerate()

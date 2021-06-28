@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.VFX;
 
 public class CarSpawnManager: MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class CarSpawnManager: MonoBehaviour
 
     [SerializeField] private Car _defaultCar;
     [SerializeField] private UIManager _uIManager;
+    [SerializeField] private VisualEffect _wind;
 
     [SerializeField] PlayableDirector _playableDirector;
 
@@ -37,6 +39,7 @@ public class CarSpawnManager: MonoBehaviour
     {
         _spawnedCar = Instantiate(car, car.startPos, Quaternion.identity);
         _spawnedCar.uIManager = _uIManager;
+        _spawnedCar.wind = _wind;
         carSpawned?.Invoke(_spawnedCar);
     }
 
