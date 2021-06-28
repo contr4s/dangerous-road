@@ -28,7 +28,7 @@ public class FollowCar : MonoBehaviour
         transform.position = new Vector3(xPos, _yPos, _car.transform.position.z - _distToCar);
 
         if (_UseCarRotationYAxis)
-            transform.rotation = new Quaternion(transform.rotation.x, _car.view.transform.rotation.y, transform.rotation.z, transform.rotation.w);
+            transform.rotation = new Quaternion(transform.rotation.x, _car.transform.rotation.y, transform.rotation.z, transform.rotation.w);
     }
 
     private void Init(Car car)

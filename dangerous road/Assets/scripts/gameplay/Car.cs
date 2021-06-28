@@ -175,7 +175,7 @@ public class Car: MonoBehaviour
             i += _turnSpeed * Time.deltaTime;
             float x = Mathf.Lerp(-1, 1, Mathf.InverseLerp(0, road.laneWidth, i));
             float angle = coef * Mathf.Abs(Mathf.Rad2Deg * Mathf.Atan(1 / Mathf.Sqrt(1 - x * x)) - 90) * smoothCoef;
-            view.transform.rotation = Quaternion.Euler(0, angle, 0);
+            transform.rotation = Quaternion.Euler(0, angle, 0);
             yield return null;
         }
         if (_turnQueue.Count > 0)
