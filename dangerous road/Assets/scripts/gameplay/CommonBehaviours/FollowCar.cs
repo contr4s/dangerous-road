@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FollowCar : MonoBehaviour
 {
+    public bool follow = true;
+
     [SerializeField] private float _yPos;
     [SerializeField] private float _xPos;
     [SerializeField] private bool _changeXPos = false;
@@ -24,11 +26,19 @@ public class FollowCar : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (!follow)
+            return;
+
         var xPos = _changeXPos ? _car.transform.position.x : _xPos;
-        transform.position = new Vector3(xPos, _yPos, _car.transform.position.z - _distToCar);
+        transform.position = new Vector3(xPos, _yPos, CalculateZPos());
 
         if (_UseCarRotationYAxis)
             transform.rotation = new Quaternion(transform.rotation.x, _car.transform.rotation.y, transform.rotation.z, transform.rotation.w);
+    }
+
+    public float CalculateZPos()
+    {
+        return _car.transform.position.z - _distToCar;
     }
 
     private void Init(Car car)
