@@ -11,7 +11,9 @@ public class Car: MonoBehaviour
     public const string obstacleTag = "obstacle";
     public const int hundredMeters = 100;
     public const int kilometer = 1000;
-    public const float windRateConst = 5;
+    public const float windRate = 5;
+    public const int exhaustEmmisionStart = 40;
+    public const int exhaustEmmisionOverSpeedMultiplier = 10;
 
     public static Action gameOver;
     public bool isLosed;
@@ -40,6 +42,7 @@ public class Car: MonoBehaviour
     public GameObject view;
     [SerializeField] private SandStorm _storm;
     [SerializeField] private GameObject _sparksVFX;
+    [SerializeField] private ParticleSystem _exhaustVfx;
 
     private int _multiplier = 1;
     private Rigidbody _rigidbody;
@@ -84,7 +87,12 @@ public class Car: MonoBehaviour
             Accelerate();
    
         wind.SetFloat("Speed", _rigidbody.velocity.z);
-        wind.SetFloat("Spawn rate", _rigidbody.velocity.z * windRateConst);
+        wind.SetFloat("Spawn rate", _rigidbody.velocity.z * windRate);
+        var exhaustEmmision = _exhaustVfx.emission;
+        if (canAccelerate)
+            exhaustEmmision.rateOverTime = exhaustEmmisionStart * (exhaustEmmisionOverSpeedMultiplier / (exhaustEmmisionOverSpeedMultiplier + _rigidbody.velocity.z));
+        else
+            exhaustEmmision.rateOverTime = 0;
     }
 
     private void Accelerate()
