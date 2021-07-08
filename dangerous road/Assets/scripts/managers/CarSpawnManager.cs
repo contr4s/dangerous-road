@@ -8,6 +8,7 @@ using UnityEngine.VFX;
 public class CarSpawnManager: MonoBehaviour
 {
     public static Action<Car> carSpawned;
+    public static bool canTurn = false;
 
     [SerializeField] private Car _defaultCar;
     [SerializeField] private UIManager _uIManager;
@@ -15,8 +16,7 @@ public class CarSpawnManager: MonoBehaviour
 
     [SerializeField] PlayableDirector _playableDirector;
 
-    private static Car _spawnedCar;
-    private static bool _canTurn = false;
+    private static Car _spawnedCar;   
 
     private void Start()
     {
@@ -33,9 +33,9 @@ public class CarSpawnManager: MonoBehaviour
 
     public static bool TryTurn(bool turningRight)
     {
-        if (_canTurn)
+        if (canTurn)
             _spawnedCar.TurnButton(turningRight);
-        return _canTurn;
+        return canTurn;
     }
 
     private void SpawnCar(Car car)
@@ -50,6 +50,6 @@ public class CarSpawnManager: MonoBehaviour
     {
         yield return new WaitForSeconds((float)_playableDirector.duration);
         _spawnedCar.canAccelerate = true;
-        _canTurn = true;
+        canTurn = true;
     }
 }

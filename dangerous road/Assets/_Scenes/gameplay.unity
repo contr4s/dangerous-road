@@ -1699,6 +1699,7 @@ MonoBehaviour:
   swipeForceScale: 20
   maxDistToSwipe: 150
   carInputBound: 0.3
+  _turnInputType: 1
 --- !u!1 &448186026
 GameObject:
   m_ObjectHideFlags: 0
@@ -3282,6 +3283,7 @@ MonoBehaviour:
   swipeForceScale: 20
   maxDistToSwipe: 150
   carInputBound: 0.3
+  _turnInputType: 0
 --- !u!1001 &1440147006
 PrefabInstance:
   m_ObjectHideFlags: 0

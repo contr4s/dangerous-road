@@ -10,9 +10,10 @@ public class StandaloneInputManager: InputManager
     {
         if (Input.GetMouseButtonDown(0))
         {
-            TryTurnCar(Input.mousePosition);
+            if (CanTurnCar(Input.mousePosition))
+                _prevTouchPos = Input.mousePosition;           
         }
-        if (Input.GetMouseButton(0))
+        else if (Input.GetMouseButton(0))
         {
             if (_targetObstacle is null)
             {
@@ -26,6 +27,7 @@ public class StandaloneInputManager: InputManager
         else if (Input.GetMouseButtonUp(0))
         {
             SwipeOutObstacle();
+            TryTurnCar(Input.mousePosition);
         }
     }
 

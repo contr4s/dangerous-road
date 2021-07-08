@@ -2,13 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class InputManager : MonoBehaviour
+public enum eTurnInputType
+{
+    touch,
+    swipe
+}
+
+public abstract class InputManager: MonoBehaviour
 {
     [SerializeField] protected SwipeSO _swipeSO;
     [SerializeField] protected float swipeForceScale = 20;
     [SerializeField] protected float maxDistToSwipe = 150;
     [Range(0, 1)]
     [SerializeField] protected float carInputBound = .3f;
+    [SerializeField] private eTurnInputType _turnInputType = eTurnInputType.touch;
 
     protected Obstacle _targetObstacle;
     protected Camera _mainCam;
@@ -39,7 +46,7 @@ public abstract class InputManager : MonoBehaviour
 
             if (hit.collider.TryGetComponent(out Obstacle _obstacle))
             {
-                obstacle = _obstacle;              
+                obstacle = _obstacle;
                 return true;
             }
         }
@@ -68,11 +75,22 @@ public abstract class InputManager : MonoBehaviour
         _targetObstacle = null;
     }
 
+    protected bool CanTurnCar(Vector2 mousePos)
+    {
+        return (mousePos.y / Screen.height < carInputBound) && CarSpawnManager.canTurn;
+    }
+
     protected bool TryTurnCar(Vector2 mousePos)
     {
-        if (mousePos.y / Screen.height > carInputBound)
+        if (!CanTurnCar(mousePos))
             return false;
-        return CarSpawnManager.TryTurn(mousePos.x > Screen.width / 2);       
+        if (_turnInputType == eTurnInputType.touch)
+            return CarSpawnManager.TryTurn(mousePos.x > Screen.width / 2);
+        else
+        {
+            return CarSpawnManager.TryTurn(CalculateSwipeDirection().x > 0);
+        }
+
     }
 
     private void Init(Car car)
