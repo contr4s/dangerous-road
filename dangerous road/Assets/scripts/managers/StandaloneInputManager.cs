@@ -8,13 +8,20 @@ public class StandaloneInputManager: InputManager
 
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            TryTurnCar(Input.mousePosition);
+        }
         if (Input.GetMouseButton(0))
         {
-            if (CheckIfCanSwipeObstacle(Input.mousePosition, out var obstacle))
+            if (_targetObstacle is null)
             {
-                _prevTouchPos = Input.mousePosition;
-                SetupTargetObstacle(obstacle);
-            }
+                if (CheckIfCanSwipeObstacle(Input.mousePosition, out var obstacle))
+                {
+                    _prevTouchPos = Input.mousePosition;
+                    SetupTargetObstacle(obstacle);
+                }
+            }          
         }
         else if (Input.GetMouseButtonUp(0))
         {

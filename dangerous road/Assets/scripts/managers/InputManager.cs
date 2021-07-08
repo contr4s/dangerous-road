@@ -7,6 +7,8 @@ public abstract class InputManager : MonoBehaviour
     [SerializeField] protected SwipeSO _swipeSO;
     [SerializeField] protected float swipeForceScale = 20;
     [SerializeField] protected float maxDistToSwipe = 150;
+    [Range(0, 1)]
+    [SerializeField] protected float carInputBound = .3f;
 
     protected Obstacle _targetObstacle;
     protected Camera _mainCam;
@@ -64,6 +66,13 @@ public abstract class InputManager : MonoBehaviour
         StartCoroutine(_targetObstacle.DestroyAfterSwipe(_swipeSO.activeTimeAfterSwipe));
         _targetObstacle.SetupOutline(false);
         _targetObstacle = null;
+    }
+
+    protected bool TryTurnCar(Vector2 mousePos)
+    {
+        if (mousePos.y / Screen.height > carInputBound)
+            return false;
+        return CarSpawnManager.TryTurn(mousePos.x > Screen.width / 2);       
     }
 
     private void Init(Car car)

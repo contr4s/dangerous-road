@@ -15,7 +15,8 @@ public class CarSpawnManager: MonoBehaviour
 
     [SerializeField] PlayableDirector _playableDirector;
 
-    private Car _spawnedCar;
+    private static Car _spawnedCar;
+    private static bool _canTurn = false;
 
     private void Start()
     {
@@ -27,12 +28,14 @@ public class CarSpawnManager: MonoBehaviour
         {
             SpawnCar(CarSelectManager.CurrentCar);
         }
-        StartCoroutine(WaitUntillClipPlayed());   
+        StartCoroutine(WaitUntillClipPlayed());
     }
 
-    public void TurnButton(bool turningRight)
+    public static bool TryTurn(bool turningRight)
     {
-        _spawnedCar.TurnButton(turningRight);
+        if (_canTurn)
+            _spawnedCar.TurnButton(turningRight);
+        return _canTurn;
     }
 
     private void SpawnCar(Car car)
@@ -47,5 +50,6 @@ public class CarSpawnManager: MonoBehaviour
     {
         yield return new WaitForSeconds((float)_playableDirector.duration);
         _spawnedCar.canAccelerate = true;
+        _canTurn = true;
     }
 }
