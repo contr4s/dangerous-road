@@ -35,6 +35,14 @@ public abstract class InputManager: MonoBehaviour
         CarSpawnManager.carSpawned -= Init;
     }
 
+    public void ChangeTurnInputType()
+    {
+        if (_turnInputType == eTurnInputType.swipe)
+            _turnInputType = eTurnInputType.touch;
+        else
+            _turnInputType = eTurnInputType.swipe;
+    }
+
     protected bool CheckIfCanSwipeObstacle(Vector2 mousePos, out Obstacle obstacle)
     {
         obstacle = null;
