@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowCar : MonoBehaviour
+public class FollowCar: MonoBehaviour
 {
     public bool follow = true;
 
@@ -36,9 +36,13 @@ public class FollowCar : MonoBehaviour
             transform.rotation = new Quaternion(transform.rotation.x, _car.transform.rotation.y, transform.rotation.z, transform.rotation.w);
     }
 
+    public float CalculateZPos(float distToCar)
+    {
+        return _car.transform.position.z - distToCar;
+    }
     public float CalculateZPos()
     {
-        return _car.transform.position.z - _distToCar;
+        return CalculateZPos(_distToCar);
     }
 
     private void Init(Car car)

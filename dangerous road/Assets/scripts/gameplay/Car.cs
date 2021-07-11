@@ -15,7 +15,7 @@ public class Car: MonoBehaviour
     public const int exhaustEmmisionStart = 40;
     public const int exhaustEmmisionOverSpeedMultiplier = 10;
 
-    public static Action gameOver;
+    public static Action clashWithObstacle;
     public bool isLosed;
 
     public static Action passedHundredMeters;
@@ -123,8 +123,8 @@ public class Car: MonoBehaviour
         {
             _sparksVFX.SetActive(true);
             isLosed = true;
-            gameOver?.Invoke();
-            _storm.StartStorm();
+            clashWithObstacle?.Invoke();
+            //_storm.StartStorm();
 
             if (!uIManager)
                 Debug.LogError("you must assign UIManager on the inspector");

@@ -18,12 +18,12 @@ public class CameraShaking : MonoBehaviour
 
     void OnEnable()
     {
-        Car.gameOver += ShakeCamera;
+        Car.clashWithObstacle += ShakeCamera;
     }
 
     void OnDisable()
     {
-        Car.gameOver -= ShakeCamera;
+        Car.clashWithObstacle -= ShakeCamera;
     }
 
     public void ShakeCamera()

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Globalization;
 using TMPro;
 using UnityEngine;
@@ -8,9 +9,12 @@ public class UIManager: MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _distDisplay;
     [SerializeField] private TextMeshProUGUI _moneyDisplay;
-    [SerializeField] private GameObject _loseDisplay;
-    [SerializeField] private GameObject _pauseOverlay;
+    [SerializeField] private RectTransform _gameOverOverlay;
+    [SerializeField] private RectTransform _secondChanceOverlay;
+    [SerializeField] private float _delayBeforeSecondChanseOverlay = 2;
+    [SerializeField] private float _delayAfterSecondChanseOverlay = 2;
     [SerializeField] private Button[] _gameplayButtons;
+    [SerializeField] private SandStorm _storm;
 
     readonly NumberFormatInfo _nfi = new CultureInfo("en-US", false).NumberFormat;
 
@@ -43,18 +47,33 @@ public class UIManager: MonoBehaviour
 
     private void OnEnable()
     {
-        SandStorm.stormReachedDestination += SetupLoseDisplay;
+        Car.clashWithObstacle += SetupSecondChanceOverlay;
     }
 
     private void OnDisable()
     {
-        SandStorm.stormReachedDestination -= SetupLoseDisplay;
+        Car.clashWithObstacle -= SetupSecondChanceOverlay;
     }
 
-    public void SetupLoseDisplay()
+    public void RunAwayAfterClash()
     {
-        _loseDisplay.SetActive(true);
-        _pauseOverlay.SetActive(true);        
+        LevelManager.UnPause();
+        _secondChanceOverlay.gameObject.SetActive(false);
+        _storm.StartStorm();
+        StartCoroutine(SetupOverlayAfterDelay(_gameOverOverlay, _delayAfterSecondChanseOverlay));
+    }
+
+    private void SetupSecondChanceOverlay()
+    {
+        StartCoroutine(SetupOverlayAfterDelay(_secondChanceOverlay, _delayBeforeSecondChanseOverlay));
+    }
+
+    private IEnumerator SetupOverlayAfterDelay(RectTransform overlay, float time, bool pauseGame = true)
+    {
+        yield return new WaitForSeconds(time);
+        overlay.gameObject.SetActive(true);
+        if (pauseGame)
+            LevelManager.Pause();
     }
 
     public void BlockButtons()
