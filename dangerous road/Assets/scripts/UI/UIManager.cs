@@ -9,8 +9,8 @@ public class UIManager: MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _distDisplay;
     [SerializeField] private TextMeshProUGUI _moneyDisplay;
-    [SerializeField] private RectTransform _gameOverOverlay;
-    [SerializeField] private RectTransform _secondChanceOverlay;
+    [SerializeField] private LoseOverlay _loseOverlay;
+    [SerializeField] private SecondChanseOverlay _secondChanceOverlay;
     [SerializeField] private float _delayBeforeSecondChanseOverlay = 2;
     [SerializeField] private float _delayAfterSecondChanseOverlay = 2;
     [SerializeField] private Button[] _gameplayButtons;
@@ -60,15 +60,17 @@ public class UIManager: MonoBehaviour
         LevelManager.UnPause();
         _secondChanceOverlay.gameObject.SetActive(false);
         _storm.StartStorm();
-        StartCoroutine(SetupOverlayAfterDelay(_gameOverOverlay, _delayAfterSecondChanseOverlay));
+        _loseOverlay.Setup(Dist, Money);
+        StartCoroutine(SetupOverlayAfterDelay(_loseOverlay.gameObject, _delayAfterSecondChanseOverlay));
     }
 
     private void SetupSecondChanceOverlay()
     {
-        StartCoroutine(SetupOverlayAfterDelay(_secondChanceOverlay, _delayBeforeSecondChanseOverlay));
+        StartCoroutine(SetupOverlayAfterDelay(_secondChanceOverlay.gameObject, _delayBeforeSecondChanseOverlay));
+        _secondChanceOverlay.timeout += RunAwayAfterClash;
     }
 
-    private IEnumerator SetupOverlayAfterDelay(RectTransform overlay, float time, bool pauseGame = true)
+    private IEnumerator SetupOverlayAfterDelay(GameObject overlay, float time, bool pauseGame = true)
     {
         yield return new WaitForSeconds(time);
         overlay.gameObject.SetActive(true);
