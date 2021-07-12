@@ -47,6 +47,9 @@ public class Car: MonoBehaviour
     private int _multiplier = 1;
     private Rigidbody _rigidbody;
 
+    private float _xPos;
+    [SerializeField]private float _curSpeed;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -62,13 +65,14 @@ public class Car: MonoBehaviour
         if (parametrs.TryFindParam(eCarParameterType.turnSpeed, out param))
             _turnSpeed = param.CurVal;
         else
-            Debug.LogWarning("there is no turn speed in params");
+            Debug.LogWarning("there is no turn speed in params");        
     }
 
     private void Update()
     {
-        _passedDist = transform.position.z;
+        transform.position = new Vector3(_xPos, startPos.y, CalculateZPos());
 
+        _passedDist = transform.position.z;
         if (_passedDist > hundredMeters * _multiplier)
         {
             passedHundredMeters?.Invoke();
@@ -79,20 +83,44 @@ public class Car: MonoBehaviour
         }
     }
 
+    private float CalculateZPos()
+    {
+        return transform.position.z + _curSpeed * Time.deltaTime;
+    }
+
+    public IEnumerator Acelerate()
+    {
+        while (_curSpeed < _maxSpeed)
+        {
+            _curSpeed += _acceleration * Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    public IEnumerator Brake()
+    {
+        while (_curSpeed > 0)
+        {
+            _curSpeed -= _acceleration * Time.deltaTime;
+            yield return null;
+        }
+        _curSpeed = 0;
+    }
+
     private void FixedUpdate()
     {
-        if (isLosed)
-            Brake();
-        else if (canAccelerate)
-            Accelerate();
+        //if (isLosed)
+        //    Brake();
+        //else if (canAccelerate)
+        //    Accelerate();
    
-        wind.SetFloat("Speed", _rigidbody.velocity.z);
-        wind.SetFloat("Spawn rate", _rigidbody.velocity.z * windRate);
-        var exhaustEmmision = _exhaustVfx.emission;
-        if (canAccelerate)
-            exhaustEmmision.rateOverTime = exhaustEmmisionStart * (exhaustEmmisionOverSpeedMultiplier / (exhaustEmmisionOverSpeedMultiplier + _rigidbody.velocity.z));
-        else
-            exhaustEmmision.rateOverTime = 0;
+        //wind.SetFloat("Speed", _rigidbody.velocity.z);
+        //wind.SetFloat("Spawn rate", _rigidbody.velocity.z * windRate);
+        //var exhaustEmmision = _exhaustVfx.emission;
+        //if (canAccelerate)
+        //    exhaustEmmision.rateOverTime = exhaustEmmisionStart * (exhaustEmmisionOverSpeedMultiplier / (exhaustEmmisionOverSpeedMultiplier + _rigidbody.velocity.z));
+        //else
+        //    exhaustEmmision.rateOverTime = 0;
     }
 
     private void Accelerate()
@@ -103,16 +131,16 @@ public class Car: MonoBehaviour
         _rigidbody.AddForce(Vector3.forward * _acceleration, ForceMode.VelocityChange);
     }
 
-    private void Brake()
-    {
-        if (_rigidbody.velocity.z < _acceleration)
-        {
-            _sparksVFX.SetActive(false);
-            return;
-        }          
+    //private void Brake()
+    //{
+    //    if (_rigidbody.velocity.z < _acceleration)
+    //    {
+    //        _sparksVFX.SetActive(false);
+    //        return;
+    //    }          
 
-        _rigidbody.AddForce(Vector3.back * _acceleration, ForceMode.VelocityChange);
-    }
+    //    _rigidbody.AddForce(Vector3.back * _acceleration, ForceMode.VelocityChange);
+    //}
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -123,6 +151,7 @@ public class Car: MonoBehaviour
         {
             _sparksVFX.SetActive(true);
             isLosed = true;
+            StartCoroutine(Brake());
             clashWithObstacle?.Invoke();
             //_storm.StartStorm();
 
@@ -183,7 +212,8 @@ public class Car: MonoBehaviour
         while (i < road.laneWidth)
         {
             var xPos = Mathf.MoveTowards(transform.position.x, targetX, _turnSpeed * Time.deltaTime);
-            transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
+            //transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
+            _xPos = xPos;
 
             float smoothCoef = _turnSpeed / _maxSpeed;
             i += _turnSpeed * Time.deltaTime;
