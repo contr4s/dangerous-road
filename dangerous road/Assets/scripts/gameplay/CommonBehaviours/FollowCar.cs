@@ -11,6 +11,7 @@ public class FollowCar: MonoBehaviour
     [SerializeField] private bool _changeXPos = false;
     [SerializeField] private float _distToCar;
     [SerializeField] private bool _UseCarRotationYAxis = false;
+    [SerializeField] private float _chaseSpeed = 0;
 
     private Car _car;
 
@@ -45,8 +46,18 @@ public class FollowCar: MonoBehaviour
         return CalculateZPos(_distToCar);
     }
 
+    public IEnumerator Chase()
+    {
+        while (_distToCar > 0)
+        {
+            _distToCar -= _chaseSpeed * Time.deltaTime;
+            yield return null;
+        }
+        _distToCar = 0;
+    }
+
     private void Init(Car car)
     {
         _car = car;
-    }
+    }  
 }

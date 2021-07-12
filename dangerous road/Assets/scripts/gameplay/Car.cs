@@ -31,7 +31,8 @@ public class Car: MonoBehaviour
     public VisualEffect wind;
 
     public bool canAccelerate = false;
-    [SerializeField] private float _acceleration;
+    [SerializeField] private float _accelerationSpeed = 5;
+    [SerializeField] private float _brakeSpeed = 10;
     private float _maxSpeed;
 
     private float _turnSpeed;
@@ -40,14 +41,13 @@ public class Car: MonoBehaviour
     private Coroutine _turnCoroutine;
 
     public GameObject view;
-    [SerializeField] private SandStorm _storm;
     [SerializeField] private GameObject _sparksVFX;
     [SerializeField] private ParticleSystem _exhaustVfx;
 
     private int _multiplier = 1;
     private Rigidbody _rigidbody;
 
-    [SerializeField] private float _xPos;
+    private float _xPos;
     [SerializeField] private float _curSpeed;
 
     private void Awake()
@@ -90,16 +90,16 @@ public class Car: MonoBehaviour
     {
         while (_curSpeed < _maxSpeed)
         {
-            _curSpeed += _acceleration * Time.deltaTime;
+            _curSpeed += _accelerationSpeed * Time.deltaTime;
             yield return null;
         }
     }
 
-    public IEnumerator Brake()
+    private IEnumerator Brake()
     {
         while (_curSpeed > 0)
         {
-            _curSpeed -= _acceleration * Time.deltaTime;
+            _curSpeed -= _brakeSpeed * Time.deltaTime;
             yield return null;
         }
         _curSpeed = 0;

@@ -4710,7 +4710,7 @@ GameObject:
   - component: {fileID: 5800633047143694337}
   - component: {fileID: 5957229103920214907}
   - component: {fileID: 5956879277791077355}
-  - component: {fileID: 5795812020465507063}
+  - component: {fileID: 27993796}
   m_Layer: 1
   m_Name: TornadoMover
   m_TagString: Untagged
@@ -9607,7 +9607,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &5795812020465507063
+--- !u!114 &27993796
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9616,9 +9616,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5795006405615131849}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbda77e102b1b724da1e638e90d4e7ed, type: 3}
+  m_Script: {fileID: 11500000, guid: b6ed48fe1b6fe004a962e269e09cf2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _storm: {fileID: 5957229103920214907}
-  _stormSpeed: 20
-  _targetZPos: 0
+  follow: 1
+  _yPos: 0
+  _xPos: 0
+  _changeXPos: 1
+  _distToCar: 50
+  _UseCarRotationYAxis: 0
+  _chaseSpeed: 100

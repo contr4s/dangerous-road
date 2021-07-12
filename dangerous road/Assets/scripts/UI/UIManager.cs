@@ -14,7 +14,7 @@ public class UIManager: MonoBehaviour
     [SerializeField] private float _delayBeforeSecondChanseOverlay = 2;
     [SerializeField] private float _delayAfterSecondChanseOverlay = 2;
     [SerializeField] private Button[] _gameplayButtons;
-    [SerializeField] private SandStorm _storm;
+    [SerializeField] private FollowCar _storm;
 
     readonly NumberFormatInfo _nfi = new CultureInfo("en-US", false).NumberFormat;
 
@@ -59,7 +59,8 @@ public class UIManager: MonoBehaviour
     {
         LevelManager.UnPause();
         _secondChanceOverlay.gameObject.SetActive(false);
-        _storm.StartStorm();
+        //_storm.StartStorm();
+        StartCoroutine(_storm.Chase());
         _loseOverlay.Setup(Dist, Money);
         StartCoroutine(SetupOverlayAfterDelay(_loseOverlay.gameObject, _delayAfterSecondChanseOverlay));
     }
