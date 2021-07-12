@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4319801528141013742}
   - component: {fileID: 4319801528141013741}
   - component: {fileID: 2343340532500670653}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: concrete barrier new
   m_TagString: obstacle
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 351479147794112232}
   - component: {fileID: 8330884953910559569}
   - component: {fileID: 522087870740743415}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: highliter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,6 +224,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 65faa96893e15434980e6a86726c1def, type: 3}
       propertyPath: m_Name
       value: Concrete barrier (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 65faa96893e15434980e6a86726c1def, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3451118302482216456, guid: 65faa96893e15434980e6a86726c1def, type: 3}

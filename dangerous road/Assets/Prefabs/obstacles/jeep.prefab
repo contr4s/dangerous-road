@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8508269432813140807}
   - component: {fileID: 1813214181589754908}
   - component: {fileID: 1633283011583244719}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: highliter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 1935866094307164973}
   - component: {fileID: 1047607092484075658}
   - component: {fileID: 6126326213940038429}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 6675201614442818101}
   - component: {fileID: 8081372374235634648}
   - component: {fileID: 4304112705166059827}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: jeep
   m_TagString: obstacle
   m_Icon: {fileID: 0}

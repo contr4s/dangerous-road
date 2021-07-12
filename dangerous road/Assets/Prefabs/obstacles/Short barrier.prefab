@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 243196620}
   - component: {fileID: 243196622}
   - component: {fileID: 243196621}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: highliter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4724158998304010321}
   - component: {fileID: 4724158998304010320}
   - component: {fileID: 4724158998304010323}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Short barrier
   m_TagString: obstacle
   m_Icon: {fileID: 0}

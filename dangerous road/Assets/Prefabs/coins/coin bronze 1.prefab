@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 942904805350788264}
   - component: {fileID: 5368737484636195823}
   - component: {fileID: 8333696068240824347}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: coin bronze 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 3252783003982865563}
   - component: {fileID: 5341848138833032557}
   - component: {fileID: 4812454276147172467}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BezierCurve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 3553325022111564485}
   - component: {fileID: 3553325022111564483}
   - component: {fileID: 3553325022111564482}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: vfx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 7702676675183017394}
   - component: {fileID: 4105136144719972657}
   - component: {fileID: 9202741912817947708}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

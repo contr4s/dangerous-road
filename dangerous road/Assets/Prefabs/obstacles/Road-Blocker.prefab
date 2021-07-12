@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6773957490563016830}
   - component: {fileID: 8563244148155011380}
   - component: {fileID: 5184622903896569248}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 5907424451291168449}
   - component: {fileID: 5907424451291168450}
   - component: {fileID: 5907424451291168448}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road-Blocker
   m_TagString: obstacle
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 2926677511685452025}
   - component: {fileID: 783579558854871144}
   - component: {fileID: 5744583921825749202}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: highliter
   m_TagString: Untagged
   m_Icon: {fileID: 0}

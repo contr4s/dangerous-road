@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 183499178218045345}
   - component: {fileID: 7401632941297741016}
   - component: {fileID: 6953421974118276754}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: white barrier
   m_TagString: obstacle
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 3373081625693582449}
   - component: {fileID: 3373081625693582451}
   - component: {fileID: 3373081625693582448}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: highliter
   m_TagString: Untagged
   m_Icon: {fileID: 0}

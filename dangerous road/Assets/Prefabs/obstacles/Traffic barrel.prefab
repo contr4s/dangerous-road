@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6352311033379194754}
   - component: {fileID: 4008634690970420774}
   - component: {fileID: 2472477906186793681}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Traffic barrel
   m_TagString: obstacle
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 7073440436621435798}
   - component: {fileID: 4020363201018987494}
   - component: {fileID: 9046135465080860850}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: highliter
   m_TagString: Untagged
   m_Icon: {fileID: 0}

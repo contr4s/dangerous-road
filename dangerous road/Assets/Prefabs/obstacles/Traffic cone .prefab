@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 300569990394631229}
   - component: {fileID: 300569990394631226}
   - component: {fileID: 300569990394631227}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: highliter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 300569989047662073}
   - component: {fileID: 300569989047662022}
   - component: {fileID: 300569989047662023}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 'Traffic cone '
   m_TagString: obstacle
   m_Icon: {fileID: 0}

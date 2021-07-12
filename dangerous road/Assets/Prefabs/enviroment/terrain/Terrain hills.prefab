@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7565038028665731310}
   - component: {fileID: 7565038028665731305}
   - component: {fileID: 7565038028665731304}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Terrain hills
   m_TagString: environment
   m_Icon: {fileID: 0}

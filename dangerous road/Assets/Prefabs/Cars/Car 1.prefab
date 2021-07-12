@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1702422954960034315}
   - component: {fileID: 1718491329425130953}
   - component: {fileID: 1728762367814006627}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WC2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 1711246881674241683}
   - component: {fileID: 1719096712007269921}
   - component: {fileID: 1727792189413357155}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WC2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1702432700951543627}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WDR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1711142294018574893}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WDF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 1706507520081601991}
   - component: {fileID: 1706507520081601990}
   - component: {fileID: 1706507520081601989}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Car 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 1711332967353755661}
   - component: {fileID: 1717602673097708991}
   - component: {fileID: 1728177460675895317}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WC2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -404,7 +404,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1711082054079344567}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WDR (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 1702883651455852931}
   - component: {fileID: 1717693996804151927}
   - component: {fileID: 1728152478110834315}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Car2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +520,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1711156045688669955}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WDF (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 1702705043365133847}
   - component: {fileID: 1719195080601422583}
   - component: {fileID: 1728448497633284947}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WC2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -630,9 +630,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1710915590597980857}
     m_Modifications:
+    - target: {fileID: 5794750064672430185, guid: 0433e520d6a65a24eb438fabb92a50b6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5795006405615131849, guid: 0433e520d6a65a24eb438fabb92a50b6, type: 3}
       propertyPath: m_Name
       value: TornadoMover
+      objectReference: {fileID: 0}
+    - target: {fileID: 5795006405615131849, guid: 0433e520d6a65a24eb438fabb92a50b6, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5795006405615131849, guid: 0433e520d6a65a24eb438fabb92a50b6, type: 3}
       propertyPath: m_IsActive
@@ -755,6 +763,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: exhaust vfx
       objectReference: {fileID: 0}
+    - target: {fileID: 6202995625441432936, guid: 7a961187e4f408e46bea9985cfb8c86b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a961187e4f408e46bea9985cfb8c86b, type: 3}
 --- !u!4 &1927198610 stripped
@@ -829,6 +841,10 @@ PrefabInstance:
     - target: {fileID: 2266770947848312633, guid: bb43aa3c489a4c3469bf7f1bf926cc6e, type: 3}
       propertyPath: m_Name
       value: collision sparks
+      objectReference: {fileID: 0}
+    - target: {fileID: 2266770947848312633, guid: bb43aa3c489a4c3469bf7f1bf926cc6e, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2266770947848312633, guid: bb43aa3c489a4c3469bf7f1bf926cc6e, type: 3}
       propertyPath: m_IsActive

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 254034376}
   - component: {fileID: 254034378}
   - component: {fileID: 254034377}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: highliter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3189811161146821144}
   - component: {fileID: 5222053715411278177}
   - component: {fileID: 5670053576862313259}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Red barrier
   m_TagString: obstacle
   m_Icon: {fileID: 0}

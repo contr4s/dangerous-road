@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 829429249347772807}
   - component: {fileID: 829429249347772806}
   - component: {fileID: 829429249347772805}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Terrain flat
   m_TagString: environment
   m_Icon: {fileID: 0}
