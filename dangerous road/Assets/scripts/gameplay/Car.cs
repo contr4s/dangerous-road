@@ -47,6 +47,9 @@ public class Car: MonoBehaviour
     private int _multiplier = 1;
     private Rigidbody _rigidbody;
 
+    [SerializeField] private float _xPos;
+    [SerializeField] private float _curSpeed;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -68,7 +71,6 @@ public class Car: MonoBehaviour
     private void Update()
     {
         _passedDist = transform.position.z;
-
         if (_passedDist > hundredMeters * _multiplier)
         {
             passedHundredMeters?.Invoke();
@@ -79,39 +81,45 @@ public class Car: MonoBehaviour
         }
     }
 
+    private float CalculateZPos()
+    {
+        return transform.position.z + _curSpeed * Time.deltaTime;
+    }
+
+    public IEnumerator Acelerate()
+    {
+        while (_curSpeed < _maxSpeed)
+        {
+            _curSpeed += _acceleration * Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    public IEnumerator Brake()
+    {
+        while (_curSpeed > 0)
+        {
+            _curSpeed -= _acceleration * Time.deltaTime;
+            yield return null;
+        }
+        _curSpeed = 0;
+    }
+
     private void FixedUpdate()
     {
-        if (isLosed)
-            Brake();
-        else if (canAccelerate)
-            Accelerate();
-   
-        wind.SetFloat("Speed", _rigidbody.velocity.z);
-        wind.SetFloat("Spawn rate", _rigidbody.velocity.z * windRate);
-        var exhaustEmmision = _exhaustVfx.emission;
-        if (canAccelerate)
-            exhaustEmmision.rateOverTime = exhaustEmmisionStart * (exhaustEmmisionOverSpeedMultiplier / (exhaustEmmisionOverSpeedMultiplier + _rigidbody.velocity.z));
-        else
-            exhaustEmmision.rateOverTime = 0;
-    }
+        _rigidbody.MovePosition(new Vector3(_xPos, startPos.y, CalculateZPos()));
+        //if (isLosed)
+        //    Brake();
+        //else if (canAccelerate)
+        //    Accelerate();
 
-    private void Accelerate()
-    {
-        if (_rigidbody.velocity.z > _maxSpeed)
-            return;
-
-        _rigidbody.AddForce(Vector3.forward * _acceleration, ForceMode.VelocityChange);
-    }
-
-    private void Brake()
-    {
-        if (_rigidbody.velocity.z < _acceleration)
-        {
-            _sparksVFX.SetActive(false);
-            return;
-        }          
-
-        _rigidbody.AddForce(Vector3.back * _acceleration, ForceMode.VelocityChange);
+        //wind.SetFloat("Speed", _rigidbody.velocity.z);
+        //wind.SetFloat("Spawn rate", _rigidbody.velocity.z * windRate);
+        //var exhaustEmmision = _exhaustVfx.emission;
+        //if (canAccelerate)
+        //    exhaustEmmision.rateOverTime = exhaustEmmisionStart * (exhaustEmmisionOverSpeedMultiplier / (exhaustEmmisionOverSpeedMultiplier + _rigidbody.velocity.z));
+        //else
+        //    exhaustEmmision.rateOverTime = 0;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -123,6 +131,7 @@ public class Car: MonoBehaviour
         {
             _sparksVFX.SetActive(true);
             isLosed = true;
+            StartCoroutine(Brake());
             clashWithObstacle?.Invoke();
             //_storm.StartStorm();
 
@@ -182,16 +191,17 @@ public class Car: MonoBehaviour
         float i = 0;
         while (i < road.laneWidth)
         {
-            var xPos = Mathf.MoveTowards(transform.position.x, targetX, _turnSpeed * Time.deltaTime);
-            transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
+            var distDelta = _turnSpeed * Time.deltaTime;
+            i += distDelta;
+            _xPos += distDelta * coef;
 
             float smoothCoef = _turnSpeed / _maxSpeed;
-            i += _turnSpeed * Time.deltaTime;
             float x = Mathf.Lerp(-1, 1, Mathf.InverseLerp(0, road.laneWidth, i));
             float angle = coef * Mathf.Abs(Mathf.Rad2Deg * Mathf.Atan(1 / Mathf.Sqrt(1 - x * x)) - 90) * smoothCoef;
             transform.rotation = Quaternion.Euler(0, angle, 0);
             yield return null;
         }
+        _xPos = targetX;
         if (_turnQueue.Count > 0)
             _turnCoroutine = StartCoroutine(_turnQueue.Dequeue());
         else
