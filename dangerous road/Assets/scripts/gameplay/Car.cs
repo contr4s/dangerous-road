@@ -47,8 +47,8 @@ public class Car: MonoBehaviour
     private int _multiplier = 1;
     private Rigidbody _rigidbody;
 
-    private float _xPos;
-    [SerializeField]private float _curSpeed;
+    [SerializeField] private float _xPos;
+    [SerializeField] private float _curSpeed;
 
     private void Awake()
     {
@@ -65,13 +65,11 @@ public class Car: MonoBehaviour
         if (parametrs.TryFindParam(eCarParameterType.turnSpeed, out param))
             _turnSpeed = param.CurVal;
         else
-            Debug.LogWarning("there is no turn speed in params");        
+            Debug.LogWarning("there is no turn speed in params");
     }
 
     private void Update()
     {
-        transform.position = new Vector3(_xPos, startPos.y, CalculateZPos());
-
         _passedDist = transform.position.z;
         if (_passedDist > hundredMeters * _multiplier)
         {
@@ -109,11 +107,12 @@ public class Car: MonoBehaviour
 
     private void FixedUpdate()
     {
+        _rigidbody.MovePosition(new Vector3(_xPos, startPos.y, CalculateZPos()));
         //if (isLosed)
         //    Brake();
         //else if (canAccelerate)
         //    Accelerate();
-   
+
         //wind.SetFloat("Speed", _rigidbody.velocity.z);
         //wind.SetFloat("Spawn rate", _rigidbody.velocity.z * windRate);
         //var exhaustEmmision = _exhaustVfx.emission;
@@ -122,25 +121,6 @@ public class Car: MonoBehaviour
         //else
         //    exhaustEmmision.rateOverTime = 0;
     }
-
-    private void Accelerate()
-    {
-        if (_rigidbody.velocity.z > _maxSpeed)
-            return;
-
-        _rigidbody.AddForce(Vector3.forward * _acceleration, ForceMode.VelocityChange);
-    }
-
-    //private void Brake()
-    //{
-    //    if (_rigidbody.velocity.z < _acceleration)
-    //    {
-    //        _sparksVFX.SetActive(false);
-    //        return;
-    //    }          
-
-    //    _rigidbody.AddForce(Vector3.back * _acceleration, ForceMode.VelocityChange);
-    //}
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -211,17 +191,17 @@ public class Car: MonoBehaviour
         float i = 0;
         while (i < road.laneWidth)
         {
-            var xPos = Mathf.MoveTowards(transform.position.x, targetX, _turnSpeed * Time.deltaTime);
-            //transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
-            _xPos = xPos;
+            var distDelta = _turnSpeed * Time.deltaTime;
+            i += distDelta;
+            _xPos += distDelta * coef;
 
             float smoothCoef = _turnSpeed / _maxSpeed;
-            i += _turnSpeed * Time.deltaTime;
             float x = Mathf.Lerp(-1, 1, Mathf.InverseLerp(0, road.laneWidth, i));
             float angle = coef * Mathf.Abs(Mathf.Rad2Deg * Mathf.Atan(1 / Mathf.Sqrt(1 - x * x)) - 90) * smoothCoef;
             transform.rotation = Quaternion.Euler(0, angle, 0);
             yield return null;
         }
+        _xPos = targetX;
         if (_turnQueue.Count > 0)
             _turnCoroutine = StartCoroutine(_turnQueue.Dequeue());
         else
