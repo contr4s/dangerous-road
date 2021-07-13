@@ -308,12 +308,11 @@ MonoBehaviour:
   uIManager: {fileID: 0}
   wind: {fileID: 0}
   canAccelerate: 0
-  _acceleration: 5
+  _accelerationSpeed: 5
+  _brakeSpeed: 10
   view: {fileID: 1705537889611996871}
-  _storm: {fileID: 0}
   _sparksVFX: {fileID: 7602832362360003469}
   _exhaustVfx: {fileID: 1945573142}
-  _xPos: 0
   _curSpeed: 0
 --- !u!1 &1705243495443112619
 GameObject:
@@ -682,6 +681,10 @@ PrefabInstance:
     - target: {fileID: 6202995625441432936, guid: 7a961187e4f408e46bea9985cfb8c86b, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202995625441432936, guid: 7a961187e4f408e46bea9985cfb8c86b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a961187e4f408e46bea9985cfb8c86b, type: 3}

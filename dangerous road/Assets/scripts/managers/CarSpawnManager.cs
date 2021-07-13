@@ -49,7 +49,6 @@ public class CarSpawnManager: MonoBehaviour
     private IEnumerator WaitUntillClipPlayed()
     {
         yield return new WaitForSeconds((float)_playableDirector.duration);
-        _spawnedCar.canAccelerate = true;
         StartCoroutine(_spawnedCar.Acelerate());
         canTurn = true;
     }
