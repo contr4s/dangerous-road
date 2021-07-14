@@ -15,11 +15,13 @@ public class LevelManager: MonoBehaviour {
     public static void Pause()
     {
         Time.timeScale = 0;
+        GameplaySoundManager.ReactToChangingTimescale();
     }
 
     public static void UnPause()
     {
         Time.timeScale = 1;
+        GameplaySoundManager.ReactToChangingTimescale();
     }
 
     public static void LoadScene(string sceneName) {

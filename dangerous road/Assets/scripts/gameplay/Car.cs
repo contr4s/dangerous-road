@@ -121,6 +121,8 @@ public class Car: MonoBehaviour
             _sparksVFX.SetActive(true);
             _sparksVFX.transform.localPosition = collision.contacts[0].point - transform.position;
             isLosed = true;
+            soundManager.PlaySound(eSoundType.collision);
+            soundManager.PlaySound(eSoundType.sparks);
             StartCoroutine(Brake());
             clashWithObstacle?.Invoke();
 
@@ -141,6 +143,7 @@ public class Car: MonoBehaviour
         if (collision.gameObject.CompareTag(obstacleTag))
         {
             _sparksVFX.SetActive(false);
+            soundManager.StopSound(eSoundType.sparks);
         }
     }
 

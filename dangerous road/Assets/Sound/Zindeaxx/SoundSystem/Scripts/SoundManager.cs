@@ -21,7 +21,7 @@ namespace Zindea.Sounds
         /// <summary>
         /// Current instances of sounds
         /// </summary>
-        private List<AudioSource> m_Audio;
+        private List<AudioSource> m_Audio = new List<AudioSource>();
 
         /// <summary>
         /// This enables sounds to keep playing even if the object is already deleted 
@@ -208,6 +208,24 @@ namespace Zindea.Sounds
                     }
                 }
             }                         
+        }
+
+        public void SetPitch(SoundSet soundSet)
+        {
+            foreach (AudioClip c in soundSet.Clips)
+            {
+                
+                foreach (AudioSource s in m_Audio)
+                {
+                    if (s != null)
+                    {
+                        if (s.clip == c)
+                        {
+                            s.pitch = Time.timeScale;
+                        }
+                    }
+                }
+            }
         }
 
         /// <summary>

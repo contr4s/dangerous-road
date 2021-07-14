@@ -7,7 +7,9 @@ using Zindea.Sounds;
 public enum eSoundType {
     startEngine,
     engine,
-    drive
+    drive,
+    collision,
+    sparks
 }
 
 [RequireComponent(typeof(SoundManager))]
@@ -15,11 +17,13 @@ public class GameplaySoundManager : MonoBehaviour
 {
     [SerializeField] private SerializableDictionary<eSoundType, SoundSet> _sounds;
 
-    private SoundManager _soundManager;
+    private static SoundManager _soundManager;
+    private static SerializableDictionary<eSoundType, SoundSet> _soundsStaticCopy;
 
     private void Awake()
     {
         _soundManager = GetComponent<SoundManager>();
+        _soundsStaticCopy = _sounds;
     }
 
     public void PlaySound(eSoundType type)
@@ -41,5 +45,13 @@ public class GameplaySoundManager : MonoBehaviour
     public void StopSound(eSoundType type)
     {
         _soundManager.StopSound(_sounds[type]);
+    }
+
+    public static void ReactToChangingTimescale()
+    {
+        foreach(var sound in _soundsStaticCopy)
+        {
+            _soundManager.SetPitch(sound.Value);
+        }
     }
 }

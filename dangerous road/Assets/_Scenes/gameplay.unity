@@ -6205,6 +6205,10 @@ MonoBehaviour:
       Value: {fileID: 11400000, guid: 0c8e12f451d541a4085e0fea60465c75, type: 2}
     - Key: 2
       Value: {fileID: 11400000, guid: 99ded72ee54a01741b96b8312bf8a969, type: 2}
+    - Key: 3
+      Value: {fileID: 11400000, guid: 244575a2add1f284ab1a3bee6961e8ae, type: 2}
+    - Key: 4
+      Value: {fileID: 11400000, guid: abb47ff76d11f2641ab4b04fbbefa2f0, type: 2}
 --- !u!114 &1330108849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8756,6 +8760,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1330108848}
+        m_TargetAssemblyTypeName: GameplaySoundManager, Assembly-CSharp
+        m_MethodName: SetPauseToAllSounds
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1885680595
 MonoBehaviour:
