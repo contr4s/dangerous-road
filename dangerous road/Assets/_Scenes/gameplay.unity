@@ -6209,6 +6209,11 @@ MonoBehaviour:
       Value: {fileID: 11400000, guid: 244575a2add1f284ab1a3bee6961e8ae, type: 2}
     - Key: 4
       Value: {fileID: 11400000, guid: abb47ff76d11f2641ab4b04fbbefa2f0, type: 2}
+    - Key: 5
+      Value: {fileID: 11400000, guid: 27925b2b03bea6143ab021d5baf4c990, type: 2}
+    - Key: 6
+      Value: {fileID: 11400000, guid: 211e7895ef36d074a9fa46132df581c7, type: 2}
+  _tornadoStartVolume: 0.8
 --- !u!114 &1330108849
 MonoBehaviour:
   m_ObjectHideFlags: 0

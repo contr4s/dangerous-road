@@ -37,7 +37,10 @@ public class Car: MonoBehaviour
     [SerializeField] private float _minEngineVolume = 0f;
     [SerializeField] private float _maxEngineVolume = 1f;
     [SerializeField] private float _minDriveVolume = .3f;
-    [SerializeField] private float _maxDriveVolume = .5f;
+    [SerializeField] private float _maxDriveVolume = .5f;   
+    private float _tornadoMinVolume = .1f;
+    private float _tornadoMaxVolume = 1f;
+
 
     [Header("Vfx params")]
     [SerializeField] private GameObject _sparksVFX;
@@ -46,7 +49,7 @@ public class Car: MonoBehaviour
     [SerializeField] private ParticleSystem _exhaustVfx;
     [SerializeField] private int _exhaustEmmisionStart = 400;
     [SerializeField] private float _exhaustEmmisionCoef1 = .1f;
-    [SerializeField] private float _exhaustEmmisionCoef2 = 5;
+    [SerializeField] private float _exhaustEmmisionCoef2 = 5;   
 
     private float _turnSpeed;
     private int _curLane = 0;
@@ -152,6 +155,7 @@ public class Car: MonoBehaviour
         if (other.TryGetComponent(out Coin coin))
         {
             uIManager.Money += coin.Value;
+            soundManager.PlaySound(eSoundType.coins);
             coin.DestroyMe();
         }
     }
@@ -162,8 +166,9 @@ public class Car: MonoBehaviour
         while (CurSpeed < _maxSpeed)
         {
             CurSpeed += _accelerationSpeed * Time.deltaTime;
-            soundManager.ChangeSoundVolume(eSoundType.engine, CalculateEngineVolume(_maxEngineVolume, _minEngineVolume));
-            soundManager.ChangeSoundVolume(eSoundType.drive, CalculateEngineVolume(_minDriveVolume, _maxDriveVolume));
+            soundManager.ChangeSoundVolume(eSoundType.engine, CalculateVolumeByIncrasingSpeed(_maxEngineVolume, _minEngineVolume));
+            soundManager.ChangeSoundVolume(eSoundType.drive, CalculateVolumeByIncrasingSpeed(_minDriveVolume, _maxDriveVolume));
+            soundManager.ChangeSoundVolume(eSoundType.tornado, CalculateVolumeByIncrasingSpeed(soundManager.TornadoStartVolume, _tornadoMinVolume));
             yield return null;
         }
         soundManager.StopSound(eSoundType.engine);        
@@ -182,6 +187,7 @@ public class Car: MonoBehaviour
         while (CurSpeed > 0)
         {
             CurSpeed -= _brakeSpeed * Time.deltaTime;
+            soundManager.ChangeSoundVolume(eSoundType.tornado, CalculateVolumeByIncrasingSpeed(_tornadoMaxVolume, _tornadoMinVolume));
             yield return null;
         }
     }
@@ -191,7 +197,7 @@ public class Car: MonoBehaviour
         return transform.position.z + CurSpeed * Time.deltaTime;
     }
 
-    private float CalculateEngineVolume(float startValue, float endValue)
+    private float CalculateVolumeByIncrasingSpeed(float startValue, float endValue)
     {
         return Mathf.Lerp(startValue, endValue, Mathf.InverseLerp(0, _maxSpeed, CurSpeed));
     }

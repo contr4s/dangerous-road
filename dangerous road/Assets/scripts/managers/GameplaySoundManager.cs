@@ -9,21 +9,28 @@ public enum eSoundType {
     engine,
     drive,
     collision,
-    sparks
+    sparks,
+    coins,
+    tornado
 }
 
 [RequireComponent(typeof(SoundManager))]
 public class GameplaySoundManager : MonoBehaviour
 {
-    [SerializeField] private SerializableDictionary<eSoundType, SoundSet> _sounds;
-
     private static SoundManager _soundManager;
     private static SerializableDictionary<eSoundType, SoundSet> _soundsStaticCopy;
+
+    [SerializeField] private SerializableDictionary<eSoundType, SoundSet> _sounds;
+    [SerializeField] private float _tornadoStartVolume;
+
+    public float TornadoStartVolume { get => _tornadoStartVolume; }
 
     private void Awake()
     {
         _soundManager = GetComponent<SoundManager>();
         _soundsStaticCopy = _sounds;
+        ChangeSoundVolume(eSoundType.tornado, _tornadoStartVolume);
+        PlaySound(eSoundType.tornado);
     }
 
     public void PlaySound(eSoundType type)
