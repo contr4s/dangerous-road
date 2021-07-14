@@ -25,12 +25,17 @@ public class Car: MonoBehaviour
 
     [HideInInspector] public UIManager uIManager;
     [HideInInspector] public VisualEffect wind;
+    [HideInInspector] public GameplaySoundManager soundManager;
 
     [Header("Car params")]
     public Vector3 startPos;
     [SerializeField] private float _accelerationSpeed = 5;
     [SerializeField] private float _brakeSpeed = 10;
     private float _maxSpeed;
+
+    [Header("Audio params")]
+    private float _minEngineVolume = .3f;
+    private float _maxEngineVolume = 1f;
 
     [Header("Vfx params")]
     [SerializeField] private GameObject _sparksVFX;
@@ -96,45 +101,12 @@ public class Car: MonoBehaviour
         }
     }
 
-    private float CalculateZPos()
-    {
-        return transform.position.z + CurSpeed * Time.deltaTime;
-    }
-
-    public IEnumerator Acelerate()
-    {
-        _exhaustVfx.gameObject.SetActive(true);
-        while (CurSpeed < _maxSpeed)
-        {
-            CurSpeed += _accelerationSpeed * Time.deltaTime;
-            yield return null;
-        }
-    }
-
-    private IEnumerator Brake()
-    {
-        while (CurSpeed > 0)
-        {
-            CurSpeed -= _brakeSpeed * Time.deltaTime;
-            yield return null;
-        }
-    }
-
     private void FixedUpdate()
     {
         _rigidbody.MovePosition(new Vector3(_xPos, startPos.y, CalculateZPos()));
 
         //wind.SetFloat("Speed", _rigidbody.velocity.z);
         //wind.SetFloat("Spawn rate", _rigidbody.velocity.z * windRate);
-    }
-
-    private void SetExhaustEmmision(float speed, bool accelerate)
-    {
-        var exhaustEmmision = _exhaustVfx.emission;
-        if (accelerate)
-            exhaustEmmision.rateOverTime = _exhaustEmmisionStart * (_exhaustEmmisionCoef1 / (_exhaustEmmisionCoef1 + speed / _exhaustEmmisionCoef2));
-        else
-            exhaustEmmision.rateOverTime = _exhaustEmmisionCoef1 / (_maxSpeed - speed);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -145,7 +117,7 @@ public class Car: MonoBehaviour
         if (collision.gameObject.CompareTag(obstacleTag))
         {
             _sparksVFX.SetActive(true);
-            _sparksVFX.transform.localPosition = collision.contacts[0].point - transform.position;          
+            _sparksVFX.transform.localPosition = collision.contacts[0].point - transform.position;
             isLosed = true;
             StartCoroutine(Brake());
             clashWithObstacle?.Invoke();
@@ -179,6 +151,19 @@ public class Car: MonoBehaviour
         }
     }
 
+    
+
+    public IEnumerator Acelerate()
+    {
+        _exhaustVfx.gameObject.SetActive(true);
+        while (CurSpeed < _maxSpeed)
+        {
+            CurSpeed += _accelerationSpeed * Time.deltaTime;
+            soundManager.ChangeSoundVolume(eSoundType.engine, CalculateEngineSound());
+            yield return null;
+        }
+    }
+
     public void TurnButton(bool turningRight)
     {
         if (turningRight)
@@ -186,6 +171,34 @@ public class Car: MonoBehaviour
         else
             Turn(-1);
     }
+
+    private IEnumerator Brake()
+    {
+        while (CurSpeed > 0)
+        {
+            CurSpeed -= _brakeSpeed * Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    private float CalculateZPos()
+    {
+        return transform.position.z + CurSpeed * Time.deltaTime;
+    }
+
+    private float CalculateEngineSound()
+    {
+        return Mathf.Lerp(_maxEngineVolume, _minEngineVolume, Mathf.InverseLerp(0, _maxSpeed, CurSpeed));
+    }
+
+    private void SetExhaustEmmision(float speed, bool accelerate)
+    {
+        var exhaustEmmision = _exhaustVfx.emission;
+        if (accelerate)
+            exhaustEmmision.rateOverTime = _exhaustEmmisionStart * (_exhaustEmmisionCoef1 / (_exhaustEmmisionCoef1 + speed / _exhaustEmmisionCoef2));
+        else
+            exhaustEmmision.rateOverTime = _exhaustEmmisionCoef1 / (_maxSpeed - speed);
+    }   
 
     private void Turn(int coef)
     {

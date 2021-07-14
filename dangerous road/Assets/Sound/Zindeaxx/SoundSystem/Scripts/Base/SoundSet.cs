@@ -38,7 +38,7 @@ namespace Zindea.Sounds
 
         public AudioClip[] Clips => m_Clips;
 
-        public AudioClip curClip;
+        [HideInInspector]public AudioClip curClip;
         /// <summary>
         /// Returns a random sound from this set
         /// </summary>

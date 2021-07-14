@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90b87ecf561357478c03bf20f5aba2e, type: 3}
   m_Name: Start Engine
   m_EditorClassIdentifier: 
-  VolumeAmount: 1
+  VolumeAmount: 0.5
   VolumeID: Sound
   LoopedSounds: 0
   MinDistance: 0
@@ -22,3 +22,4 @@ MonoBehaviour:
   SpatialBlend: 0
   m_Clips:
   - {fileID: 8300000, guid: f90d2412cefca404cba80202baddb8d1, type: 3}
+  curClip: {fileID: 8300000, guid: f90d2412cefca404cba80202baddb8d1, type: 3}

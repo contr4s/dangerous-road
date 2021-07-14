@@ -127,29 +127,9 @@ namespace Zindea.Sounds
             SelectedChannel.spatialBlend = SpatialBlend;
             SelectedChannel.pitch = pitch;
 
-            //Since the volume could change during playing, we have to check constantly if the settings have been changed and change the volume accordingly
-            if (gameObject.activeSelf)
-                StartCoroutine(CheckVolumeChange(SelectedChannel, VolumeID, Secondaryvolume));
-
             //Play the sound :)
             SelectedChannel.Play();
             return audio;
-        }
-
-        /// <summary>
-        /// Constantly checks if the volume of the assigned audio has changed
-        /// </summary>
-        private IEnumerator CheckVolumeChange(AudioSource channel, string VolumeID, float Secondaryvolume)
-        {
-            while (channel != null)
-            {
-                float targetVolume = Secondaryvolume * GetVolume(VolumeID.ToLower());
-                if (channel.volume != targetVolume)
-                {
-                    channel.volume = targetVolume;
-                }
-                yield return null;
-            }
         }
 
         /// <summary>
@@ -211,6 +191,24 @@ namespace Zindea.Sounds
         public float GetSoundDuration(SoundSet soundSet)
         {
             return soundSet.curClip.length;
+        }
+
+        public void ChangeVolume(SoundSet soundSet, float amount)
+        {
+            foreach (AudioClip c in soundSet.Clips)
+            {
+                foreach (AudioSource s in m_Audio)
+                {
+                    if (s != null)
+                    {
+                        if (s.clip == c)
+                        {
+                            s.volume = amount;
+                            print(s.volume);
+                        }
+                    }
+                }
+            }                         
         }
 
         /// <summary>

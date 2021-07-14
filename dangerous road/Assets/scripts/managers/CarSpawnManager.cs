@@ -44,6 +44,7 @@ public class CarSpawnManager: MonoBehaviour
         _spawnedCar = Instantiate(car, car.startPos, Quaternion.identity);
         _spawnedCar.uIManager = _uIManager;
         _spawnedCar.wind = _wind;
+        _spawnedCar.soundManager = _soundManager;
         carSpawned?.Invoke(_spawnedCar);
     }
 
@@ -51,7 +52,8 @@ public class CarSpawnManager: MonoBehaviour
     {
         yield return new WaitForSeconds((float)_playableDirector.duration);
         yield return StartCoroutine(_soundManager.PlaySoundCoroutine(eSoundType.startEngine));
-        StartCoroutine(_spawnedCar.Acelerate());
         canTurn = true;
+        StartCoroutine(_spawnedCar.Acelerate());
+        _soundManager.PlaySound(eSoundType.engine);
     }
 }

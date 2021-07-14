@@ -6200,6 +6200,8 @@ MonoBehaviour:
     array:
     - Key: 0
       Value: {fileID: 11400000, guid: 6c0f1c4d32cdf6b43b53f4cb813358d5, type: 2}
+    - Key: 1
+      Value: {fileID: 11400000, guid: 0c8e12f451d541a4085e0fea60465c75, type: 2}
 --- !u!114 &1330108849
 MonoBehaviour:
   m_ObjectHideFlags: 0

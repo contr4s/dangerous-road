@@ -6,6 +6,7 @@ using Zindea.Sounds;
 
 public enum eSoundType {
     startEngine,
+    engine
 }
 
 [RequireComponent(typeof(SoundManager))]
@@ -29,5 +30,10 @@ public class GameplaySoundManager : MonoBehaviour
     {
         PlaySound(type);
         yield return new WaitForSeconds(_soundManager.GetSoundDuration(_sounds[type]));
+    }
+
+    public void ChangeSoundVolume(eSoundType type, float amount)
+    {
+        _soundManager.ChangeVolume(_sounds[type], amount);
     }
 }
