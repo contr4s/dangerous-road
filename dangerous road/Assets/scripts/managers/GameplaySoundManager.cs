@@ -6,7 +6,8 @@ using Zindea.Sounds;
 
 public enum eSoundType {
     startEngine,
-    engine
+    engine,
+    drive
 }
 
 [RequireComponent(typeof(SoundManager))]
@@ -35,5 +36,10 @@ public class GameplaySoundManager : MonoBehaviour
     public void ChangeSoundVolume(eSoundType type, float amount)
     {
         _soundManager.ChangeVolume(_sounds[type], amount);
+    }
+
+    public void StopSound(eSoundType type)
+    {
+        _soundManager.StopSound(_sounds[type]);
     }
 }

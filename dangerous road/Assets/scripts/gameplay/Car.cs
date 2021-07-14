@@ -34,8 +34,10 @@ public class Car: MonoBehaviour
     private float _maxSpeed;
 
     [Header("Audio params")]
-    private float _minEngineVolume = .3f;
-    private float _maxEngineVolume = 1f;
+    [SerializeField] private float _minEngineVolume = 0f;
+    [SerializeField] private float _maxEngineVolume = 1f;
+    [SerializeField] private float _minDriveVolume = .3f;
+    [SerializeField] private float _maxDriveVolume = .5f;
 
     [Header("Vfx params")]
     [SerializeField] private GameObject _sparksVFX;
@@ -151,17 +153,17 @@ public class Car: MonoBehaviour
         }
     }
 
-    
-
     public IEnumerator Acelerate()
     {
         _exhaustVfx.gameObject.SetActive(true);
         while (CurSpeed < _maxSpeed)
         {
             CurSpeed += _accelerationSpeed * Time.deltaTime;
-            soundManager.ChangeSoundVolume(eSoundType.engine, CalculateEngineSound());
+            soundManager.ChangeSoundVolume(eSoundType.engine, CalculateEngineVolume(_maxEngineVolume, _minEngineVolume));
+            soundManager.ChangeSoundVolume(eSoundType.drive, CalculateEngineVolume(_minDriveVolume, _maxDriveVolume));
             yield return null;
         }
+        soundManager.StopSound(eSoundType.engine);        
     }
 
     public void TurnButton(bool turningRight)
@@ -186,9 +188,9 @@ public class Car: MonoBehaviour
         return transform.position.z + CurSpeed * Time.deltaTime;
     }
 
-    private float CalculateEngineSound()
+    private float CalculateEngineVolume(float startValue, float endValue)
     {
-        return Mathf.Lerp(_maxEngineVolume, _minEngineVolume, Mathf.InverseLerp(0, _maxSpeed, CurSpeed));
+        return Mathf.Lerp(startValue, endValue, Mathf.InverseLerp(0, _maxSpeed, CurSpeed));
     }
 
     private void SetExhaustEmmision(float speed, bool accelerate)

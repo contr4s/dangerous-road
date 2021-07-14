@@ -55,5 +55,6 @@ public class CarSpawnManager: MonoBehaviour
         canTurn = true;
         StartCoroutine(_spawnedCar.Acelerate());
         _soundManager.PlaySound(eSoundType.engine);
+        _soundManager.PlaySound(eSoundType.drive);
     }
 }

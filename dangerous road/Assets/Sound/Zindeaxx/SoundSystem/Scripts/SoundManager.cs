@@ -182,7 +182,7 @@ namespace Zindea.Sounds
             {
                 foreach (AudioSource s in m_Audio)
                 {
-                    if (s.clip == sound)
+                    if (s != null && s.clip == sound)
                         s.Stop();
                 }
             }
@@ -204,7 +204,6 @@ namespace Zindea.Sounds
                         if (s.clip == c)
                         {
                             s.volume = amount;
-                            print(s.volume);
                         }
                     }
                 }
