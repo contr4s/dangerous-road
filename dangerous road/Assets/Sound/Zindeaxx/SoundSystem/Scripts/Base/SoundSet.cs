@@ -38,6 +38,7 @@ namespace Zindea.Sounds
 
         public AudioClip[] Clips => m_Clips;
 
+        public AudioClip curClip;
         /// <summary>
         /// Returns a random sound from this set
         /// </summary>
@@ -47,7 +48,8 @@ namespace Zindea.Sounds
             {
                 if (Clips.Length != 0)
                 {
-                    return Clips[ZindeaLibrary.RandomRange(0, Clips.Length)];
+                    curClip = Clips[ZindeaLibrary.RandomRange(0, Clips.Length)];
+                    return curClip;
                 }
                 return default(AudioClip);
             }

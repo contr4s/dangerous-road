@@ -208,6 +208,11 @@ namespace Zindea.Sounds
             }
         }
 
+        public float GetSoundDuration(SoundSet soundSet)
+        {
+            return soundSet.curClip.length;
+        }
+
         /// <summary>
         /// Plays sounds from this soundset
         /// </summary>

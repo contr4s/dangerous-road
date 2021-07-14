@@ -15,6 +15,7 @@ public class CarSpawnManager: MonoBehaviour
     [SerializeField] private VisualEffect _wind;
 
     [SerializeField] PlayableDirector _playableDirector;
+    [SerializeField] GameplaySoundManager _soundManager;
 
     private static Car _spawnedCar;   
 
@@ -49,6 +50,7 @@ public class CarSpawnManager: MonoBehaviour
     private IEnumerator WaitUntillClipPlayed()
     {
         yield return new WaitForSeconds((float)_playableDirector.duration);
+        yield return StartCoroutine(_soundManager.PlaySoundCoroutine(eSoundType.startEngine));
         StartCoroutine(_spawnedCar.Acelerate());
         canTurn = true;
     }
