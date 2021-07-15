@@ -210,7 +210,7 @@ namespace Zindea.Sounds
             }                         
         }
 
-        public void SetPitch(SoundSet soundSet)
+        public void SetPitch(SoundSet soundSet, float pitch)
         {
             foreach (AudioClip c in soundSet.Clips)
             {
@@ -221,7 +221,7 @@ namespace Zindea.Sounds
                     {
                         if (s.clip == c)
                         {
-                            s.pitch = Time.timeScale;
+                            s.pitch = pitch;
                         }
                     }
                 }

@@ -9,6 +9,7 @@ public class SaveFile
     public int money;
     public Car curSelectedCar;
     public List<CarParamsSO> carData = new List<CarParamsSO>();
+    public bool isSoundMuted;
 }
 
 public static class SaveGameManager
@@ -40,6 +41,7 @@ public static class SaveGameManager
         parameters.ResetParams();
         parameters.isPurchased = true;
         _saveFile.carData.Add(parameters);
+        _saveFile.isSoundMuted = false;
     }
 
     public static void Save()
@@ -50,6 +52,7 @@ public static class SaveGameManager
         _saveFile.money = GameManager.S.moneyManager.Money;
         _saveFile.curSelectedCar = CarSelectManager.CurrentCar;
         _saveFile.carData = CarSelectManager.CarData;
+        _saveFile.isSoundMuted = GameplaySoundManager.muted;
 
         string jsonSaveFile = JsonUtility.ToJson(_saveFile, true);
 
@@ -94,6 +97,7 @@ public static class SaveGameManager
         {
             Debug.LogWarning("Unable to find and delete save file. This is fine if you've never call save method ");
         }
+        InitSaveFile();
         Initialize(_saveFile);
     }
 
@@ -103,6 +107,7 @@ public static class SaveGameManager
         GameManager.S.moneyManager.Money = saveFile.money;
         CarSelectManager.CurrentCar = saveFile.curSelectedCar;
         CarSelectManager.CarData = saveFile.carData;
+        GameplaySoundManager.muted = saveFile.isSoundMuted;
         LOCK = false;
     }
 }

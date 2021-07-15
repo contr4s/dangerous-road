@@ -2604,6 +2604,17 @@ MonoBehaviour:
   spawnObjectPrefab: {fileID: 8333696068240824347, guid: cfacc3cbd550d6c4e8c28cf75d598985, type: 3}
   _poolDepth: 50
   _canGrow: 1
+--- !u!114 &481390912 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7754259555097382614, guid: ef6c0f3c22f2c4cc992d6c624fa72d03, type: 3}
+  m_PrefabInstance: {fileID: 1577334535}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &487229177
 GameObject:
   m_ObjectHideFlags: 0
@@ -3564,7 +3575,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 646501635}
-  m_LocalRotation: {x: 9.952038e-11, y: 0.9989289, z: -0.046271365, w: 0.0000000021484947}
+  m_LocalRotation: {x: -9.9520316e-11, y: 0.9989289, z: -0.046271365, w: -0.0000000021484934}
   m_LocalPosition: {x: 0, y: 4.15, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -6213,7 +6224,8 @@ MonoBehaviour:
       Value: {fileID: 11400000, guid: 27925b2b03bea6143ab021d5baf4c990, type: 2}
     - Key: 6
       Value: {fileID: 11400000, guid: 211e7895ef36d074a9fa46132df581c7, type: 2}
-  _tornadoStartVolume: 0.8
+  _tornadoStartVolume: 0.6
+  _soundToggle: {fileID: 481390912}
 --- !u!114 &1330108849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7416,6 +7428,42 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 7754259555097382614, guid: ef6c0f3c22f2c4cc992d6c624fa72d03, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7754259555097382614, guid: ef6c0f3c22f2c4cc992d6c624fa72d03, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7754259555097382614, guid: ef6c0f3c22f2c4cc992d6c624fa72d03, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1330108848}
+    - target: {fileID: 7754259555097382614, guid: ef6c0f3c22f2c4cc992d6c624fa72d03, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7754259555097382614, guid: ef6c0f3c22f2c4cc992d6c624fa72d03, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetMute
+      objectReference: {fileID: 0}
+    - target: {fileID: 7754259555097382614, guid: ef6c0f3c22f2c4cc992d6c624fa72d03, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: QuantumTek.QuantumUI.QUI_SwitchToggle, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7754259555097382614, guid: ef6c0f3c22f2c4cc992d6c624fa72d03, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameplaySoundManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7754259555097382614, guid: ef6c0f3c22f2c4cc992d6c624fa72d03, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7754259555097382614, guid: ef6c0f3c22f2c4cc992d6c624fa72d03, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef6c0f3c22f2c4cc992d6c624fa72d03, type: 3}
 --- !u!224 &1577334536 stripped
@@ -8037,7 +8085,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1691274240}
-  m_LocalRotation: {x: 9.952038e-11, y: 0.9989289, z: -0.046271365, w: 0.0000000021484947}
+  m_LocalRotation: {x: -9.9520316e-11, y: 0.9989289, z: -0.046271365, w: -0.0000000021484934}
   m_LocalPosition: {x: 0, y: 3.15, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
