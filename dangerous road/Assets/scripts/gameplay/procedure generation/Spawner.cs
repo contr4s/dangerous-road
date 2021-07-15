@@ -28,6 +28,7 @@ public abstract class Spawner<T> : MonoBehaviour where T : Component
     }
 
     protected abstract ObjectPool<T> GetObjectPool();   
+    protected virtual void InitObject(T gameObject) { }
 
     private void SpawnObject(float zPos)
     {
@@ -36,10 +37,11 @@ public abstract class Spawner<T> : MonoBehaviour where T : Component
 
     private void SpawnObject(Vector3 position)
     {
-        var obstacle = GetObjectPool().GetAvailableObject();
+        var spawnedObject = GetObjectPool().GetAvailableObject();
 
-        obstacle.transform.position = position;
-        obstacle.gameObject.SetActive(true);
+        InitObject(spawnedObject);
+        spawnedObject.transform.position = position;
+        spawnedObject.gameObject.SetActive(true);
     }
 
     private float GetRandomXPos()

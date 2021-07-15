@@ -222,6 +222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5387ea445ead7ce45a465b31a000b590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vfxManager: {fileID: 0}
+  _type: 2
   _value: 5
   _vfx: {fileID: 6212932852732881207}
 --- !u!1 &6212932852732881207

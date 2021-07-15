@@ -2,15 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour, IDestroyable
+public enum eCoinType
 {
+    bronze,
+    silver,
+    gold,
+}
+
+public class Coin: MonoBehaviour, IDestroyable
+{
+    [HideInInspector] public CoinVfxManager vfxManager;
+
+    [SerializeField] private eCoinType _type;
+    public eCoinType Type { get => _type; }
+
     [SerializeField] private int _value;
-    public int Value { get => _value; private set => _value = value; }
-    
+    public int Value { get => _value; }
 
     [SerializeField] private GameObject _vfx;
-    public GameObject Vfx { get => _vfx; private set => _vfx = value; }
-
+    public GameObject Vfx { get => _vfx; }
 
     public void OnEnable()
     {
@@ -25,5 +35,7 @@ public class Coin : MonoBehaviour, IDestroyable
     public void DestroyMe()
     {
         gameObject.SetActive(false);
+        if (vfxManager)
+            vfxManager.CreateExplosion(transform.position, _type);
     }
 }

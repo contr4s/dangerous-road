@@ -5,7 +5,8 @@ using UnityEngine;
 public class CoinSpawner: Spawner<Coin>
 {
     [SerializeField] private CoinPool[] _coinPools;
-    [SerializeField] private float _step;
+    [SerializeField] private float _step;  
+    [SerializeField] private CoinVfxManager _vfxManager;
 
     [Range(0, 100)]
     public float complexityPercentage100m = 5;
@@ -28,6 +29,11 @@ public class CoinSpawner: Spawner<Coin>
     protected override ObjectPool<Coin> GetObjectPool()
     {
         return _coinPools[Random.Range(0, _coinPools.Length)];
+    }
+
+    protected override void InitObject(Coin gameObject)
+    {
+        gameObject.vfxManager = _vfxManager;
     }
 
     private void ChangeComplexity(float percentage)
