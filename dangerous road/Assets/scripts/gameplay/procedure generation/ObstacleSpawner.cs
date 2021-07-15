@@ -30,6 +30,7 @@ public class ObstacleSpawner: Spawner<Obstacle>
     [SerializeField] private float _step;
 
     [SerializeField] private ObstacleVariant[] _variants;
+    [SerializeField] private UIManager _uIManager;
 
     private void OnEnable()
     {
@@ -61,6 +62,11 @@ public class ObstacleSpawner: Spawner<Obstacle>
         }
         int j = _variants.Length - 1;
         return _variants[j].pools[UnityEngine.Random.Range(0, _variants[j].pools.Length)];
+    }
+
+    protected override void InitObject(Obstacle gameObject)
+    {
+        gameObject.uIManager = _uIManager;
     }
 
     private void ChangeComplexity(float percentage, ref int counter)

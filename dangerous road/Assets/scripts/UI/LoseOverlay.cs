@@ -10,9 +10,10 @@ public class LoseOverlay : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _points;
 
 
-    public void Setup(float dist, int money)
+    public void Setup(float dist, int money, float points)
     {
         _dist.text = $"{dist:F0}m";
         _money.text = $"{money}$";
+        _points.text = $"{points:F0}";
     }
 }

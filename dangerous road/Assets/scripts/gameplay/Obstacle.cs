@@ -4,6 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Obstacle: MonoBehaviour, IDestroyable
 {
+    public UIManager uIManager;
+
     [SerializeField] private Vector3[] _possibleRotations;
     [SerializeField] private GameObject _outline;
 
@@ -33,7 +35,9 @@ public class Obstacle: MonoBehaviour, IDestroyable
     public void AddForce(float force, Vector3 direction, float distToCam)
     {
         direction.Normalize();
-        _rigidbody.AddForce(direction * force / distToCam, ForceMode.Impulse);
+        var scaledForce = force / distToCam;
+        _rigidbody.AddForce(direction * scaledForce, ForceMode.Impulse);
+        uIManager.Points += scaledForce / _rigidbody.mass;
     }
 
     public void DestroyMe()

@@ -7,19 +7,35 @@ using UnityEngine.UI;
 
 public class UIManager: MonoBehaviour
 {
+    [Header("Displays")]
+    [SerializeField] private TextMeshProUGUI _pointsDisplay;
     [SerializeField] private TextMeshProUGUI _distDisplay;
     [SerializeField] private TextMeshProUGUI _moneyDisplay;
+
+    [Header("Overlays")]
     [SerializeField] private LoseOverlay _loseOverlay;
     [SerializeField] private SecondChanseOverlay _secondChanceOverlay;
     [SerializeField] private float _delayBeforeSecondChanseOverlay = 2;
     [SerializeField] private float _delayAfterSecondChanseOverlay = 2;
+
+    [Header("Other")]
     [SerializeField] private RectTransform[] _hudElements;
     [SerializeField] private FollowCar _storm;
 
-    readonly NumberFormatInfo _nfi = new CultureInfo("en-US", false).NumberFormat;
+    private float _points = 0;
+    public float Points
+    {
+        get => _points;
+        set
+        {
+            if (value < 0)
+                Debug.LogError("points can't be less than 0");
+            _points = value;
+            _pointsDisplay.text = string.Format("POINTS {0}", _points.ToString("F0"));
+        }
+    }
 
     private float _dist = 0;
-
     public float Dist
     {
         get => _dist;
@@ -62,7 +78,7 @@ public class UIManager: MonoBehaviour
         _secondChanceOverlay.gameObject.SetActive(false);
         //_storm.StartStorm();
         StartCoroutine(_storm.Chase());
-        _loseOverlay.Setup(Dist, Money);
+        _loseOverlay.Setup(Dist, Money, Points);
         GameManager.S.moneyManager.Money += Money;
         SaveGameManager.Save();
         StartCoroutine(SetupOverlayAfterDelay(_loseOverlay.gameObject, _delayAfterSecondChanseOverlay));

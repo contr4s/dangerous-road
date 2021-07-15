@@ -56,13 +56,14 @@ public class Car: MonoBehaviour
     private Queue<IEnumerator> _turnQueue = new Queue<IEnumerator>();
     private Coroutine _turnCoroutine;
 
-    private int _multiplier = 1;
+    [SerializeField] private float _curSpeed;
+    private int _multiplier = 1;  
+    private float _xPos;
+    private float _prevDist = 0;
+
     private Rigidbody _rigidbody;
 
-    private float _xPos;
-    private float _passedDist;
-
-    [SerializeField] private float _curSpeed;
+    
     public float CurSpeed
     {
         get => _curSpeed;
@@ -95,15 +96,18 @@ public class Car: MonoBehaviour
 
     private void Update()
     {
-        _passedDist = transform.position.z;
-        if (_passedDist > hundredMeters * _multiplier)
+        var passedDist = transform.position.z;
+        var distDelta = passedDist - _prevDist;
+        _prevDist = passedDist;
+        if (passedDist > hundredMeters * _multiplier)
         {
             passedHundredMeters?.Invoke();
             if (_multiplier % 10 == 0)
                 passedOneKilometer?.Invoke();
             _multiplier++;
         }
-        uIManager.Dist = transform.position.z;
+        uIManager.Dist = passedDist;
+        uIManager.Points += distDelta;
     }
 
     private void FixedUpdate()
