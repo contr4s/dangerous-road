@@ -3575,7 +3575,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 646501635}
-  m_LocalRotation: {x: -9.9520316e-11, y: 0.9989289, z: -0.046271365, w: -0.0000000021484934}
+  m_LocalRotation: {x: 9.952038e-11, y: 0.9989289, z: -0.046271365, w: 0.0000000021484947}
   m_LocalPosition: {x: 0, y: 4.15, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -5234,6 +5234,7 @@ Transform:
   - {fileID: 350247103}
   - {fileID: 2093632396}
   - {fileID: 1330108847}
+  - {fileID: 1283943555}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5551,6 +5552,17 @@ MonoBehaviour:
   spawnObjectPrefab: {fileID: 3018006590031626645, guid: f128d725d4426cb44af5960b84793e76, type: 3}
   _poolDepth: 50
   _canGrow: 1
+--- !u!114 &1081025224 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7754259555097382614, guid: ef6c0f3c22f2c4cc992d6c624fa72d03, type: 3}
+  m_PrefabInstance: {fileID: 2040379538}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1118568389
 GameObject:
   m_ObjectHideFlags: 0
@@ -6030,6 +6042,64 @@ MonoBehaviour:
   spawnObjectPrefab: {fileID: 829429249347772806, guid: de34d520ee381004aaaf660f2a06c6f3, type: 3}
   _poolDepth: 10
   _canGrow: 1
+--- !u!1 &1283943554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1283943555}
+  - component: {fileID: 1283943557}
+  - component: {fileID: 1283943556}
+  m_Layer: 0
+  m_Name: Music Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1283943555
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283943554}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 985797967}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1283943556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283943554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45d17c9a251555a4eba48f5b6945b53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _music: {fileID: 11400000, guid: 01f28d9438802de4b865508791e953b6, type: 2}
+  _musicToggle: {fileID: 1081025224}
+--- !u!114 &1283943557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283943554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8136540a096c23248bf3c2c49a2f5af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1323627439
 GameObject:
   m_ObjectHideFlags: 0
@@ -8085,7 +8155,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1691274240}
-  m_LocalRotation: {x: -9.9520316e-11, y: 0.9989289, z: -0.046271365, w: -0.0000000021484934}
+  m_LocalRotation: {x: 9.952038e-11, y: 0.9989289, z: -0.046271365, w: 0.0000000021484947}
   m_LocalPosition: {x: 0, y: 3.15, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -9541,6 +9611,38 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 7754259555097382614, guid: ef6c0f3c22f2c4cc992d6c624fa72d03, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7754259555097382614, guid: ef6c0f3c22f2c4cc992d6c624fa72d03, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7754259555097382614, guid: ef6c0f3c22f2c4cc992d6c624fa72d03, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1283943556}
+    - target: {fileID: 7754259555097382614, guid: ef6c0f3c22f2c4cc992d6c624fa72d03, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7754259555097382614, guid: ef6c0f3c22f2c4cc992d6c624fa72d03, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetMute
+      objectReference: {fileID: 0}
+    - target: {fileID: 7754259555097382614, guid: ef6c0f3c22f2c4cc992d6c624fa72d03, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: QuantumTek.QuantumUI.QUI_SwitchToggle, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7754259555097382614, guid: ef6c0f3c22f2c4cc992d6c624fa72d03, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MusisManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7754259555097382614, guid: ef6c0f3c22f2c4cc992d6c624fa72d03, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef6c0f3c22f2c4cc992d6c624fa72d03, type: 3}
 --- !u!1 &2041869837
@@ -10081,7 +10183,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2125821085
 Transform:
   m_ObjectHideFlags: 0
