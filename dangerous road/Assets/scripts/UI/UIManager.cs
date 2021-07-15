@@ -28,7 +28,7 @@ public class UIManager: MonoBehaviour
             if (value < 0)
                 Debug.LogError("dist can't be less than 0");
             _dist = value;
-            _distDisplay.text = string.Format("Dist: {0}km", _dist.ToString("F1"));
+            _distDisplay.text = string.Format("{0}m", _dist.ToString("F0"));
         }
     }
 
@@ -41,13 +41,14 @@ public class UIManager: MonoBehaviour
             if (value < 0)
                 Debug.LogError("collected money can't be less than 0");
             _money = value;
-            _moneyDisplay.text = string.Format("Money: {0}", _money.ToString("C", _nfi));
+            _moneyDisplay.text = string.Format("{0}$", _money.ToString());
         }
     }
 
     private void OnEnable()
     {
         Car.clashWithObstacle += SetupSecondChanceOverlay;
+        Money = 0;
     }
 
     private void OnDisable()

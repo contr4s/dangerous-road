@@ -12,7 +12,7 @@ public class LoseOverlay : MonoBehaviour
 
     public void Setup(float dist, int money)
     {
-        _dist.text = $"{dist}km";
+        _dist.text = $"{dist:F0}m";
         _money.text = $"{money}$";
     }
 }

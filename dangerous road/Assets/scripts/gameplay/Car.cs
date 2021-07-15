@@ -101,9 +101,9 @@ public class Car: MonoBehaviour
             passedHundredMeters?.Invoke();
             if (_multiplier % 10 == 0)
                 passedOneKilometer?.Invoke();
-            uIManager.Dist += 0.1f;
             _multiplier++;
         }
+        uIManager.Dist = transform.position.z;
     }
 
     private void FixedUpdate()
