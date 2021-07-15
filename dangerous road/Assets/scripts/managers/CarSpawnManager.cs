@@ -30,6 +30,7 @@ public class CarSpawnManager: MonoBehaviour
             SpawnCar(CarSelectManager.CurrentCar);
         }
         canTurn = false;
+        _uIManager.SetActiveAllHudElements(false);
         StartCoroutine(WaitUntillClipPlayed());
     }
 
@@ -53,6 +54,7 @@ public class CarSpawnManager: MonoBehaviour
     {
         yield return new WaitForSeconds((float)_playableDirector.duration);
         yield return StartCoroutine(_soundManager.PlaySoundCoroutine(eSoundType.startEngine));
+        _uIManager.SetActiveAllHudElements(true);
         canTurn = true;
         StartCoroutine(_spawnedCar.Acelerate());
         _soundManager.PlaySound(eSoundType.engine);

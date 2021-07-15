@@ -130,12 +130,10 @@ public class Car: MonoBehaviour
             clashWithObstacle?.Invoke();
 
             if (!uIManager)
-                Debug.LogError("you must assign UIManager on the inspector");
+                Debug.LogError("you must assign UIManager to CarSpawnManager on the inspector");
             else
             {
-                uIManager.BlockButtons();
-                GameManager.S.moneyManager.Money += uIManager.Money;
-                SaveGameManager.Save();
+                uIManager.SetActiveAllHudElements(false);
             }
 
         }

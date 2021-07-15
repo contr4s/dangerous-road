@@ -13,7 +13,7 @@ public class UIManager: MonoBehaviour
     [SerializeField] private SecondChanseOverlay _secondChanceOverlay;
     [SerializeField] private float _delayBeforeSecondChanseOverlay = 2;
     [SerializeField] private float _delayAfterSecondChanseOverlay = 2;
-    [SerializeField] private Button[] _gameplayButtons;
+    [SerializeField] private RectTransform[] _hudElements;
     [SerializeField] private FollowCar _storm;
 
     readonly NumberFormatInfo _nfi = new CultureInfo("en-US", false).NumberFormat;
@@ -62,6 +62,8 @@ public class UIManager: MonoBehaviour
         //_storm.StartStorm();
         StartCoroutine(_storm.Chase());
         _loseOverlay.Setup(Dist, Money);
+        GameManager.S.moneyManager.Money += Money;
+        SaveGameManager.Save();
         StartCoroutine(SetupOverlayAfterDelay(_loseOverlay.gameObject, _delayAfterSecondChanseOverlay));
     }
 
@@ -79,9 +81,9 @@ public class UIManager: MonoBehaviour
             LevelManager.Pause();
     }
 
-    public void BlockButtons()
+    public void SetActiveAllHudElements(bool active)
     {
-        foreach (var button in _gameplayButtons)
-            button.gameObject.SetActive(false);
+        foreach (var button in _hudElements)
+            button.gameObject.SetActive(active);
     }
 }
