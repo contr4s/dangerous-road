@@ -20,7 +20,7 @@ namespace QuantumTek.QuantumUI
         [Tooltip("The list of option choices.")]
         public List<string> options;
         [Tooltip("The event invoked on changing the current option.")]
-        public UnityEvent onChangeOption;
+        public UnityEvent<int> onChangeOption;
         [HideInInspector] public int optionIndex;
         [HideInInspector] public string option;
 
@@ -54,7 +54,7 @@ namespace QuantumTek.QuantumUI
                 optionIndex = 0;
 
             SetOption(optionIndex);
-            onChangeOption.Invoke();
+            onChangeOption.Invoke(optionIndex);
         }
     }
 }

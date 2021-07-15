@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using QuantumTek.QuantumUI;
 using UnityEngine;
 
 public enum eTurnInputType
@@ -10,15 +11,19 @@ public enum eTurnInputType
 
 public abstract class InputManager: MonoBehaviour
 {
+    public static eTurnInputType turnInputType;
+
     [SerializeField] protected SwipeSO _swipeSO;
     [SerializeField] protected float swipeForceScale = 20;
     [SerializeField] protected float maxDistToSwipe = 150;
     [Range(0, 1)]
     [SerializeField] protected float carInputBound = .3f;
-    [SerializeField] private eTurnInputType _turnInputType = eTurnInputType.touch;
 
     protected Obstacle _targetObstacle;
     protected Camera _mainCam;
+
+    [SerializeField] private QUI_OptionList _optionList;
+    [SerializeField] private SerializableDictionary<int, eTurnInputType> _optionListParamsMap;
 
     private void Awake()
     {
@@ -35,12 +40,18 @@ public abstract class InputManager: MonoBehaviour
         CarSpawnManager.carSpawned -= Init;
     }
 
-    public void ChangeTurnInputType()
+    private void Start()
     {
-        if (_turnInputType == eTurnInputType.swipe)
-            _turnInputType = eTurnInputType.touch;
-        else
-            _turnInputType = eTurnInputType.swipe;
+        foreach (var pair in _optionListParamsMap)
+        {
+            if (pair.Value == turnInputType)
+                _optionList.SetOption(pair.Key);
+        }       
+    }
+
+    public void ChangeTurnInputType(int optionIndex)
+    {
+        turnInputType = _optionListParamsMap[optionIndex];
     }
 
     protected bool CheckIfCanSwipeObstacle(Vector2 mousePos, out Obstacle obstacle)
@@ -92,7 +103,7 @@ public abstract class InputManager: MonoBehaviour
     {
         if (!CanTurnCar(mousePos))
             return false;
-        if (_turnInputType == eTurnInputType.touch)
+        if (turnInputType == eTurnInputType.touch)
             return CarSpawnManager.TryTurn(mousePos.x > Screen.width / 2);
         else
         {

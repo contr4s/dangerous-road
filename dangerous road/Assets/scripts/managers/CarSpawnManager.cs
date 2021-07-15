@@ -29,6 +29,7 @@ public class CarSpawnManager: MonoBehaviour
         {
             SpawnCar(CarSelectManager.CurrentCar);
         }
+        canTurn = false;
         StartCoroutine(WaitUntillClipPlayed());
     }
 

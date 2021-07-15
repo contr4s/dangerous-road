@@ -16,12 +16,14 @@ public class LevelManager: MonoBehaviour {
     {
         Time.timeScale = 0;
         GameplaySoundManager.SetPauseToAllSounds(true);
+        CarSpawnManager.canTurn = false;
     }
 
     public static void UnPause()
     {
         Time.timeScale = 1;
         GameplaySoundManager.SetPauseToAllSounds(false);
+        CarSpawnManager.canTurn = true;
     }
 
     public static void LoadScene(string sceneName) {

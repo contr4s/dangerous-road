@@ -9,8 +9,9 @@ public class SaveFile
     public int money;
     public Car curSelectedCar;
     public List<CarParamsSO> carData = new List<CarParamsSO>();
-    public bool isSoundMuted;
-    public bool isMusicMuted;
+    public bool isSoundMuted = false;
+    public bool isMusicMuted = false;
+    public eTurnInputType turnInputType = eTurnInputType.touch;
 }
 
 public static class SaveGameManager
@@ -42,8 +43,6 @@ public static class SaveGameManager
         parameters.ResetParams();
         parameters.isPurchased = true;
         _saveFile.carData.Add(parameters);
-        _saveFile.isSoundMuted = false;
-        _saveFile.isMusicMuted = false;
     }
 
     public static void Save()
@@ -56,6 +55,7 @@ public static class SaveGameManager
         _saveFile.carData = CarSelectManager.CarData;
         _saveFile.isSoundMuted = GameplaySoundManager.muted;
         _saveFile.isMusicMuted = MusisManager.muted;
+        _saveFile.turnInputType = InputManager.turnInputType;
 
         string jsonSaveFile = JsonUtility.ToJson(_saveFile, true);
 
@@ -112,6 +112,7 @@ public static class SaveGameManager
         CarSelectManager.CarData = saveFile.carData;
         GameplaySoundManager.muted = saveFile.isSoundMuted;
         MusisManager.muted = saveFile.isMusicMuted;
+        InputManager.turnInputType = saveFile.turnInputType;
         LOCK = false;
     }
 }
