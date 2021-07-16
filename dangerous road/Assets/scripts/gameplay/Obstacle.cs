@@ -44,7 +44,6 @@ public class Obstacle: MonoBehaviour, IDestroyable
         uIManager.Points += acceleration;
         soundManager.PlaySound(eSoundType.obstacleSwipe);
         soundManager.ChangeSoundVolume(eSoundType.obstacleSwipe, Mathf.Lerp(0, 1, Mathf.InverseLerp(0, swipeSoundConst, acceleration)));
-        print(acceleration);
     }
 
     public void DestroyMe()

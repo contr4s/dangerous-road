@@ -22,4 +22,5 @@ MonoBehaviour:
   SpatialBlend: 0
   m_Clips:
   - {fileID: 8300000, guid: 1a9106e9c72c9b14e9284981f6e58b62, type: 3}
+  - {fileID: 8300000, guid: 32731678c405f914da92ef9ab5f4dd60, type: 3}
   curClip: {fileID: 8300000, guid: 1a9106e9c72c9b14e9284981f6e58b62, type: 3}

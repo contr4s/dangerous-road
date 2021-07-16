@@ -11,6 +11,8 @@ public enum eTurnInputType
 
 public abstract class InputManager: MonoBehaviour
 {
+    private const float delayBeforeStopObstacleSelectSound = .5f;
+
     public static eTurnInputType turnInputType;
 
     [SerializeField] protected SwipeSO _swipeSO;
@@ -94,7 +96,7 @@ public abstract class InputManager: MonoBehaviour
         _targetObstacle.AddForce(swipeForceScale, direction, _targetObstacle.transform.position.z - _mainCam.transform.position.z);
         StartCoroutine(_targetObstacle.DestroyAfterSwipe(_swipeSO.activeTimeAfterSwipe));
         _targetObstacle.SetupOutline(false);
-        _soundManager.StopSound(eSoundType.obsatacleSelect);
+        _soundManager.StopSoundAfterDelay(delayBeforeStopObstacleSelectSound, eSoundType.obsatacleSelect);
         _targetObstacle = null;
     }
 

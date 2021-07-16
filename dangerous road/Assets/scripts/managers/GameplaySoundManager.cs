@@ -87,6 +87,11 @@ public class GameplaySoundManager : MonoBehaviour
         _soundManager.StopSound(_sounds[type]);
     }
 
+    public void StopSoundAfterDelay(float delay, eSoundType soundType)
+    {
+        StartCoroutine(CommonFunctions.InvokeFuncAfterNSeconds(delay, () => StopSound(soundType)));
+    }
+
     public static void SetPauseToAllSounds(bool pause)
     {
         foreach(var sound in _soundsStaticCopy)
