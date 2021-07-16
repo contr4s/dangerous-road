@@ -12,7 +12,9 @@ public enum eSoundType {
     collision,
     sparks,
     coins,
-    tornado
+    tornado,
+    obsatacleSelect,
+    obstacleSwipe
 }
 
 [RequireComponent(typeof(SoundManager))]

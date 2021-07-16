@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c90b87ecf561357478c03bf20f5aba2e, type: 3}
+  m_Name: Collisions
+  m_EditorClassIdentifier: 
+  VolumeAmount: 1
+  VolumeID: Sound
+  LoopedSounds: 0
+  MinDistance: 0
+  MaxDistance: 500000
+  Pitch: 1
+  Priority: 256
+  SpatialBlend: 0
+  m_Clips:
+  - {fileID: 8300000, guid: c6b34fe4dd9dc284eb40ea13ef0bec7e, type: 3}
+  - {fileID: 8300000, guid: e5981dd2f0e5c354d9e6bf2fc2dd8959, type: 3}
+  - {fileID: 8300000, guid: c764f7ca3488a694792a7fc63587107c, type: 3}
+  - {fileID: 8300000, guid: d16636dc813ea6244818d99f700c6c84, type: 3}
+  curClip: {fileID: 8300000, guid: d16636dc813ea6244818d99f700c6c84, type: 3}

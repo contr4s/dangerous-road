@@ -31,6 +31,7 @@ public class ObstacleSpawner: Spawner<Obstacle>
 
     [SerializeField] private ObstacleVariant[] _variants;
     [SerializeField] private UIManager _uIManager;
+    [SerializeField] private GameplaySoundManager _soundManager;
 
     private void OnEnable()
     {
@@ -67,6 +68,7 @@ public class ObstacleSpawner: Spawner<Obstacle>
     protected override void InitObject(Obstacle gameObject)
     {
         gameObject.uIManager = _uIManager;
+        gameObject.soundManager = _soundManager;
     }
 
     private void ChangeComplexity(float percentage, ref int counter)

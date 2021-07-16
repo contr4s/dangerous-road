@@ -25,6 +25,8 @@ public abstract class InputManager: MonoBehaviour
     [SerializeField] private QUI_OptionList _optionList;
     [SerializeField] private SerializableDictionary<int, eTurnInputType> _optionListParamsMap;
 
+    [SerializeField] private GameplaySoundManager _soundManager;
+
     private void Awake()
     {
         _mainCam = Camera.main;
@@ -78,6 +80,7 @@ public abstract class InputManager: MonoBehaviour
             return;
         _targetObstacle = obstacle;
         _targetObstacle.SetupOutline(true);
+        _soundManager.PlaySound(eSoundType.obsatacleSelect);
     }
 
     protected abstract Vector3 CalculateSwipeDirection();
@@ -91,6 +94,7 @@ public abstract class InputManager: MonoBehaviour
         _targetObstacle.AddForce(swipeForceScale, direction, _targetObstacle.transform.position.z - _mainCam.transform.position.z);
         StartCoroutine(_targetObstacle.DestroyAfterSwipe(_swipeSO.activeTimeAfterSwipe));
         _targetObstacle.SetupOutline(false);
+        _soundManager.StopSound(eSoundType.obsatacleSelect);
         _targetObstacle = null;
     }
 

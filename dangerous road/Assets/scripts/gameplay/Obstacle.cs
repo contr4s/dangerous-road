@@ -4,7 +4,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Obstacle: MonoBehaviour, IDestroyable
 {
+    private const int swipeSoundConst = 40;
+
     public UIManager uIManager;
+    public GameplaySoundManager soundManager;
 
     [SerializeField] private Vector3[] _possibleRotations;
     [SerializeField] private GameObject _outline;
@@ -37,7 +40,11 @@ public class Obstacle: MonoBehaviour, IDestroyable
         direction.Normalize();
         var scaledForce = force / distToCam;
         _rigidbody.AddForce(direction * scaledForce, ForceMode.Impulse);
-        uIManager.Points += scaledForce / _rigidbody.mass;
+        var acceleration = scaledForce / _rigidbody.mass;
+        uIManager.Points += acceleration;
+        soundManager.PlaySound(eSoundType.obstacleSwipe);
+        soundManager.ChangeSoundVolume(eSoundType.obstacleSwipe, Mathf.Lerp(0, 1, Mathf.InverseLerp(0, swipeSoundConst, acceleration)));
+        print(acceleration);
     }
 
     public void DestroyMe()
