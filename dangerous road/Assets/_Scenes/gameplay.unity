@@ -2321,9 +2321,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _xAxisSpawnPositions:
-  - -3.5
+  - -4
   - 0
-  - 3.5
+  - 4
   _distanceToCam: 500
   _startPosition: {x: 0, y: 2, z: 50}
   _startStep: 70
@@ -2606,7 +2606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationSpeed: 400
-  _distToShowVfx: 35
+  _distToShowVfx: 0
   _explosionPools:
     array:
     - Key: 0
@@ -4049,7 +4049,7 @@ MonoBehaviour:
   _xPos: 0
   _changeXPos: 1
   _distToCar: 7
-  _UseCarRotationYAxis: 1
+  _UseCarRotationYAxis: 0
   _chaseSpeed: 0
 --- !u!114 &667607167
 MonoBehaviour:
@@ -4961,9 +4961,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _xAxisSpawnPositions:
-  - -3.5
+  - -4
   - 0
-  - 3.5
+  - 4
   _distanceToCam: 500
   _startPosition: {x: 0, y: 2, z: 50}
   _startStep: 75
