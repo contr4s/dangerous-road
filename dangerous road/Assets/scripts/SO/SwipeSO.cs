@@ -7,6 +7,6 @@ public class SwipeSO : ScriptableObject
 {
     public float minDistToSwipe = 15;
     public float distWhereObstacleHasNormalColliderSize = 40;
-    public float maxDistWhereSwipeIsPossible = 250;
+    public float distWhereObstacleHasMaxColliderSize = 150;
     public float activeTimeAfterSwipe = 10f;
 }

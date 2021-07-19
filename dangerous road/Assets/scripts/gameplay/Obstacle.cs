@@ -34,6 +34,7 @@ public class Obstacle: MonoBehaviour, IDestroyable
             transform.rotation = Quaternion.Euler(_possibleRotations[Random.Range(0, _possibleRotations.Length)]);
         else
             transform.rotation = Quaternion.identity;
+        _swipeCollider.size = new Vector3(_road.laneWidth, _colliderYAxisMaxSize, _defaultColliderSize.z);
         StartCoroutine(ControlSwipeColiderSize());
     }
 
@@ -80,10 +81,10 @@ public class Obstacle: MonoBehaviour, IDestroyable
         while (distToCam > _swipeSO.distWhereObstacleHasNormalColliderSize)
         {
             distToCam = transform.position.z - _mainCam.transform.position.z;
-            if (distToCam <= _swipeSO.maxDistWhereSwipeIsPossible)
+            if (distToCam <= _swipeSO.distWhereObstacleHasMaxColliderSize)
             {
                 var size = _defaultColliderSize;
-                var scaledDistToCam = Mathf.InverseLerp(_swipeSO.distWhereObstacleHasNormalColliderSize, _swipeSO.maxDistWhereSwipeIsPossible, distToCam);
+                var scaledDistToCam = Mathf.InverseLerp(_swipeSO.distWhereObstacleHasNormalColliderSize, _swipeSO.distWhereObstacleHasMaxColliderSize, distToCam);
                 size.y = Mathf.Lerp(_defaultColliderSize.y, _colliderYAxisMaxSize, scaledDistToCam);
                 size.x = Mathf.Lerp(_defaultColliderSize.x, _road.laneWidth, scaledDistToCam);
                 _swipeCollider.size = size;
