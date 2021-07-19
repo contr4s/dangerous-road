@@ -15,6 +15,8 @@ public abstract class InputManager: MonoBehaviour
 
     public static eTurnInputType turnInputType;
 
+    [SerializeField] private LayerMask _obstacleLayerMask = 64;
+
     [SerializeField] protected SwipeSO _swipeSO;
     [SerializeField] protected float swipeForceScale = 20;
     [SerializeField] protected float maxDistToSwipe = 150;
@@ -62,7 +64,7 @@ public abstract class InputManager: MonoBehaviour
     {
         obstacle = null;
         Ray ray = _mainCam.ScreenPointToRay(mousePos);
-        if (Physics.Raycast(ray, out RaycastHit hit, maxDistToSwipe))
+        if (Physics.Raycast(ray, out RaycastHit hit, maxDistToSwipe, _obstacleLayerMask))
         {
             if (hit.distance < _swipeSO.minDistToSwipe)
                 return false;

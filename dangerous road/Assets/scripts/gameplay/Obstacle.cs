@@ -6,17 +6,25 @@ public class Obstacle: MonoBehaviour, IDestroyable
 {
     private const int swipeSoundConst = 40;
 
-    public UIManager uIManager;
-    public GameplaySoundManager soundManager;
+    [HideInInspector] public UIManager uIManager;
+    [HideInInspector] public GameplaySoundManager soundManager;
 
     [SerializeField] private Vector3[] _possibleRotations;
     [SerializeField] private GameObject _outline;
 
+    [SerializeField] private RoadSO _road;
+    [SerializeField] private SwipeSO _swipeSO;
+    [SerializeField] private BoxCollider _swipeCollider;
+    [SerializeField] private Vector3 _defaultColliderSize;
+    [SerializeField] private float _colliderYAxisMaxSize = 10;
+
+    private Camera _mainCam;
     private Rigidbody _rigidbody;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _mainCam = Camera.main;
     }
 
     private void OnEnable()
@@ -26,6 +34,11 @@ public class Obstacle: MonoBehaviour, IDestroyable
             transform.rotation = Quaternion.Euler(_possibleRotations[Random.Range(0, _possibleRotations.Length)]);
         else
             transform.rotation = Quaternion.identity;
+        StartCoroutine(ControlSwipeColiderSize());
+    }
+
+    private void OnDisable()
+    {
         StopAllCoroutines();
     }
 
@@ -55,5 +68,27 @@ public class Obstacle: MonoBehaviour, IDestroyable
     {
         yield return new WaitForSeconds(activeTimeAfterSwipe);
         DestroyMe();
+    }
+
+    private IEnumerator ControlSwipeColiderSize()
+    {
+        if (_swipeCollider is null)
+            yield break;
+        if (!_swipeCollider.isTrigger)
+            Debug.LogWarning("swipe collider must be trigger");
+        var distToCam = transform.position.z;
+        while (distToCam > _swipeSO.distWhereObstacleHasNormalColliderSize)
+        {
+            distToCam = transform.position.z - _mainCam.transform.position.z;
+            if (distToCam <= _swipeSO.maxDistWhereSwipeIsPossible)
+            {
+                var size = _defaultColliderSize;
+                var scaledDistToCam = Mathf.InverseLerp(_swipeSO.distWhereObstacleHasNormalColliderSize, _swipeSO.maxDistWhereSwipeIsPossible, distToCam);
+                size.y = Mathf.Lerp(_defaultColliderSize.y, _colliderYAxisMaxSize, scaledDistToCam);
+                size.x = Mathf.Lerp(_defaultColliderSize.x, _road.laneWidth, scaledDistToCam);
+                _swipeCollider.size = size;
+            }
+            yield return null;
+        }
     }
 }

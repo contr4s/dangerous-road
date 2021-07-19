@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 7395798597144992037}
   - component: {fileID: 8190263740983950348}
   - component: {fileID: 9078568361476981432}
+  - component: {fileID: -246315078216522691}
   m_Layer: 6
   m_Name: Traffic cone 3
   m_TagString: obstacle
@@ -194,8 +195,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2909538269a58694bb0c537ba2a29ebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uIManager: {fileID: 0}
+  soundManager: {fileID: 0}
   _possibleRotations: []
   _outline: {fileID: 330042710}
+  _road: {fileID: 11400000, guid: 8202e88350b09db4e9b01e3811c0ed82, type: 2}
+  _swipeSO: {fileID: 11400000, guid: 65e40c922576e8f4ab740906009dffe2, type: 2}
+  _swipeCollider: {fileID: -246315078216522691}
+  _defaultColliderSize: {x: 0.19, y: 0.75, z: 0.16}
+  _colliderYAxisMaxSize: 10
 --- !u!65 &9078568361476981432
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -205,6 +213,19 @@ BoxCollider:
   m_GameObject: {fileID: 3880846462231170594}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.19, y: 0.75, z: 0.16}
+  m_Center: {x: 0, y: 0.38, z: 0}
+--- !u!65 &-246315078216522691
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3880846462231170594}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.19, y: 0.75, z: 0.16}

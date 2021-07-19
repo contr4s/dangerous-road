@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 4724158998304010321}
   - component: {fileID: 4724158998304010320}
   - component: {fileID: 4724158998304010323}
+  - component: {fileID: -2922646836183932933}
   m_Layer: 6
   m_Name: Short barrier
   m_TagString: obstacle
@@ -194,8 +195,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2909538269a58694bb0c537ba2a29ebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uIManager: {fileID: 0}
+  soundManager: {fileID: 0}
   _possibleRotations: []
   _outline: {fileID: 243196619}
+  _road: {fileID: 11400000, guid: 8202e88350b09db4e9b01e3811c0ed82, type: 2}
+  _swipeSO: {fileID: 11400000, guid: 65e40c922576e8f4ab740906009dffe2, type: 2}
+  _swipeCollider: {fileID: -2922646836183932933}
+  _defaultColliderSize: {x: 0.8, y: 0.9, z: 0.34}
+  _colliderYAxisMaxSize: 10
 --- !u!65 &4724158998304010323
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -209,3 +217,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.9, z: 0.34}
   m_Center: {x: 0, y: 0.44, z: 0}
+--- !u!65 &-2922646836183932933
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591935861062334939}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 0.5, z: 0.34}
+  m_Center: {x: 0, y: 0.25, z: 0}
