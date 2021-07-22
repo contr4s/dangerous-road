@@ -6,8 +6,8 @@ public class Obstacle: MonoBehaviour, IDestroyable
 {
     private const int swipeSoundConst = 40;
 
-    [HideInInspector] public UIManager uIManager;
-    [HideInInspector] public GameplaySoundManager soundManager;
+    public UIManager uIManager;
+    public GameplaySoundManager soundManager;
 
     [SerializeField] private Vector3[] _possibleRotations;
     [SerializeField] private GameObject _outline;

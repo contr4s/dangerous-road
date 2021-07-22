@@ -9,8 +9,10 @@ public struct TutorialTooltip
 {
     public string descriptionText;
     public Tooltip tooltip;
-    public RectTransform vfx;
+    public GameObject vfx;
     public float showingTime;
+    [Range(0, 1)]
+    public float timescaleInShowingTime;
     public float delayAfterTooltip;
 }
 
@@ -41,7 +43,7 @@ public class Tutorial : MonoBehaviour
             _background.gameObject.SetActive(true);
             var tooltip = _tooltips[i];
             tooltip.tooltip.Setup(tooltip.descriptionText, tooltip.vfx);
-            Time.timeScale = .5f;
+            Time.timeScale = tooltip.timescaleInShowingTime;
 
             yield return new WaitForSecondsRealtime(tooltip.showingTime);
 

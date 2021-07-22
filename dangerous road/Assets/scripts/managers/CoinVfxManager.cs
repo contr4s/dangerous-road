@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CoinVfxManager: MonoBehaviour
 {
-    public static List<Coin> allCoins;
+    public static List<Coin> allCoins = new List<Coin>();
 
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private float _distToShowVfx = 75;

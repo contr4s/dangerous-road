@@ -11,7 +11,7 @@ public enum eCoinType
 
 public class Coin: MonoBehaviour, IDestroyable
 {
-    [HideInInspector] public CoinVfxManager vfxManager;
+    public CoinVfxManager vfxManager;
 
     [SerializeField] private eCoinType _type;
     public eCoinType Type { get => _type; }
