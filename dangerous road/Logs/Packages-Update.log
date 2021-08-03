@@ -63,3 +63,13 @@ Update Mode: mergeDefaultDependencies
 
 The following packages were added:
   com.unity.visualeffectgraph@7.3.1
+
+=== Tue Aug  3 16:43:51 2021
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.collab-proxy from version 1.5.7 to 1.7.1
+  com.unity.ide.visualstudio from version 2.0.8 to 2.0.9
+  com.unity.test-framework from version 1.1.24 to 1.1.27
