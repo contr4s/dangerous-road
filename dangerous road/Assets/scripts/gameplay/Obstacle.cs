@@ -29,7 +29,8 @@ public class Obstacle: MonoBehaviour, IDestroyable
 
     private void OnEnable()
     {
-        _rigidbody.velocity = Vector3.zero;
+        _rigidbody.isKinematic = true;
+        _rigidbody.isKinematic = false;
         if (_possibleRotations.Length > 0)
             transform.rotation = Quaternion.Euler(_possibleRotations[Random.Range(0, _possibleRotations.Length)]);
         else
