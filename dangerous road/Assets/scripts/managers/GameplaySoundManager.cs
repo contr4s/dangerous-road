@@ -21,7 +21,7 @@ public enum eSoundType {
 public class GameplaySoundManager : MonoBehaviour
 {
     private static SoundManager _soundManager;
-    private static SerializableDictionary<eSoundType, SoundSet> _soundsStaticCopy;
+    private static SerializableDictionary<eSoundType, SoundSet> _soundsStaticCopy = new SerializableDictionary<eSoundType, SoundSet>();
     public static bool muted;
 
     [SerializeField] private SerializableDictionary<eSoundType, SoundSet> _sounds;

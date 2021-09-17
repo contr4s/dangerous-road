@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8751719598923425396}
   - component: {fileID: 5682277252216695249}
   - component: {fileID: 7583910348717579547}
+  - component: {fileID: 5413554549766371211}
   m_Layer: 7
   m_Name: Road(with trees)
   m_TagString: road
@@ -87,6 +88,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5413554549766371211
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8232450616192400590}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.728153, y: 0.010000125, z: 10}
+  m_Center: {x: -0.047534943, y: 0.0050000623, z: 0.004050255}
 --- !u!1001 &9151002070272723664
 PrefabInstance:
   m_ObjectHideFlags: 0
