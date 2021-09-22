@@ -42,4 +42,6 @@ external/
 #logs
 Logs/
 dangerous road/Logs
+Logs
+UserSettings
 *.log

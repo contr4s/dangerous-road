@@ -21,14 +21,16 @@ public class CarSpawnManager: MonoBehaviour
 
     private void Start()
     {
-        if (CarSelectManager.CurrentCar is null)
-        {
-            SpawnCar(_defaultCar);
-        }
-        else
-        {
-            SpawnCar(CarSelectManager.CurrentCar);
-        }
+        //temp
+        SpawnCar(_defaultCar);
+        //if (CarSelectManager.CurrentCar is null)
+        //{
+        //    SpawnCar(_defaultCar);
+        //}
+        //else
+        //{
+        //    SpawnCar(CarSelectManager.CurrentCar);
+        //}
         canTurn = false;
         _uIManager.SetActiveAllHudElements(false);
         StartCoroutine(WaitUntillClipPlayed());
