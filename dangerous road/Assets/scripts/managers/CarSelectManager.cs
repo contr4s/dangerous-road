@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.ComTypes;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,7 +14,9 @@ public struct SelectableCar
 }
 
 public class CarSelectManager: MonoBehaviour
-{   
+{
+    public const int MaxCarsAmount = 128;
+
     private static Car _currentCar;
     public static Car CurrentCar
     {
@@ -80,8 +83,14 @@ public class CarSelectManager: MonoBehaviour
                 CarData.Add(parameters);
             }               
         }
-        carData = CarData;
-        
+        for(int i = 0; i < CarData.Count;)
+        {
+            if (CarData[i] == null)
+                CarData.RemoveAt(i);
+            else
+                i++;
+        }
+        carData = CarData;     
     }
 
     private void OnEnable()
