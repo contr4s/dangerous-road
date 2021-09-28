@@ -1,0 +1,3 @@
+The purecorrosion and blue rusted metal .png used for the car texture was taken @
+
+http://www.tutorialsforblender3d.com/ and had to be removed due to licensing requirements
