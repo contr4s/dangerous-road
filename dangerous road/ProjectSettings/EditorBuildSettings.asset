@@ -9,9 +9,18 @@ EditorBuildSettings:
     path: Assets/_Scenes/MainMenu.unity
     guid: faf787d2f452cc24b85ca0ae8d7cd7b8
   - enabled: 1
-    path: Assets/_Scenes/Gameplay.unity
+    path: Assets/_Scenes/gameplay.unity
     guid: 23187d014bb874648be137cb9bffb1c0
   - enabled: 1
     path: Assets/_Scenes/Shop.unity
     guid: 4de37973d48cc6149b244ec229e0aae5
+  - enabled: 1
+    path: Assets/_Scenes/Main Menu(new).unity
+    guid: 00ede08ec8cf4794d8999be1593d34b4
+  - enabled: 1
+    path: Assets/_Scenes/gameplay(new models).unity
+    guid: 64d97a1656a59c6449a249f95bb1945c
+  - enabled: 1
+    path: Assets/_Scenes/tutorial.unity
+    guid: e7c720bf12edb8b43b9cc657898a758d
   m_configObjects: {}

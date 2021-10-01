@@ -26,6 +26,11 @@ public class LevelManager: MonoBehaviour {
         CarSpawnManager.canTurn = true;
     }
 
+    public static void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public static void LoadScene(string sceneName) {
         SceneManager.LoadScene(sceneName);
     }
@@ -37,12 +42,4 @@ public class LevelManager: MonoBehaviour {
     public static void CloseOverlay(GameObject overlay) {
         overlay.SetActive(false);
     }  
-
-    public static void ButtonUnlock(Button button) {
-        button.interactable = true;
-    }
-
-    public static void ButtonLock(Button button) {
-        button.interactable = false;
-    }
 }
