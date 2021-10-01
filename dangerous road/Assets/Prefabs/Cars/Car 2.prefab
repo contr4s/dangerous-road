@@ -613,15 +613,21 @@ MonoBehaviour:
   isLosed: 0
   parametrs: {fileID: 11400000, guid: e106b4bea57e63646a7f4f381303a1cd, type: 2}
   road: {fileID: 11400000, guid: 8202e88350b09db4e9b01e3811c0ed82, type: 2}
-  startPos: {x: 0, y: 1.15, z: 0}
   uIManager: {fileID: 0}
   wind: {fileID: 0}
-  canAccelerate: 0
+  soundManager: {fileID: 0}
+  startPos: {x: 0, y: 1.15, z: 0}
   _accelerationSpeed: 5
   _brakeSpeed: 10
-  view: {fileID: 1115758680}
+  _minEngineVolume: 0
+  _maxEngineVolume: 1
+  _minDriveVolume: 0.3
+  _maxDriveVolume: 0.5
   _sparksVFX: {fileID: 5665523570493114265}
   _exhaustVfx: {fileID: 7662899245007285391}
+  _exhaustEmmisionStart: 400
+  _exhaustEmmisionCoef1: 0.1
+  _exhaustEmmisionCoef2: 5
   _curSpeed: 0
 --- !u!1001 &4345236879387875621
 PrefabInstance:
@@ -681,6 +687,10 @@ PrefabInstance:
     - target: {fileID: 6202995625441432936, guid: 7a961187e4f408e46bea9985cfb8c86b, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202995625441432936, guid: 7a961187e4f408e46bea9985cfb8c86b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a961187e4f408e46bea9985cfb8c86b, type: 3}

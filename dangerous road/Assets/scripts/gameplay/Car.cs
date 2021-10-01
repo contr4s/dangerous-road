@@ -17,6 +17,7 @@ public class Car: MonoBehaviour
     public static Action passedHundredMeters;
     public static Action passedOneKilometer;
 
+    [HideInInspector]
     public bool isLosed;
 
     [Header("SO references")]
@@ -56,6 +57,7 @@ public class Car: MonoBehaviour
     private Queue<IEnumerator> _turnQueue = new Queue<IEnumerator>();
     private Coroutine _turnCoroutine;
 
+    [Header("Debug values")]
     [SerializeField] private float _curSpeed;
     private int _multiplier = 1;  
     private float _xPos;

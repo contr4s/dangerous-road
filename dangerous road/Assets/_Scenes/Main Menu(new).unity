@@ -1324,6 +1324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 698312058}
+  - component: {fileID: 698312059}
   m_Layer: 0
   m_Name: Cars
   m_TagString: Untagged
@@ -1352,6 +1353,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &698312059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698312057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc3649cffcc4a6840a2408f202799e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _allCars: {fileID: 11400000, guid: 5322c069f473b5f43a7e19a0bca05008, type: 2}
 --- !u!1 &704445522
 GameObject:
   m_ObjectHideFlags: 0
@@ -3006,7 +3020,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Shop
+          m_StringArgument: Shop(new)
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1311870549
@@ -3751,7 +3765,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1626825331
 Transform:
   m_ObjectHideFlags: 0

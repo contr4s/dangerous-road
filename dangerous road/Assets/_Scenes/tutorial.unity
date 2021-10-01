@@ -12063,6 +12063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd34be48d5f54cb40b95364451f3bca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _allCars: {fileID: 11400000, guid: 5322c069f473b5f43a7e19a0bca05008, type: 2}
   _defaultCar: {fileID: 1706507520081601989, guid: 1464c9ceab331f6449b8a83f821d960e, type: 3}
   _uIManager: {fileID: 980914216}
   _wind: {fileID: 2111123222}

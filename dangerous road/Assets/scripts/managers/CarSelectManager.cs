@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using TMPro;
 using UnityEngine;
@@ -17,13 +18,14 @@ public class CarSelectManager: MonoBehaviour
 {
     public const int MaxCarsAmount = 128;
 
-    private static Car _currentCar;
-    public static Car CurrentCar
+    private static string _currentCarID;
+    public static string CurrentCarID
     {
-        get => _currentCar;
+        get => _currentCarID;
         set
         {
-            _currentCar = value;
+            _currentCarID = value;
+            print(_currentCarID);
             SaveGameManager.Save();
         }
     }
@@ -34,9 +36,7 @@ public class CarSelectManager: MonoBehaviour
         get => _carData;
         set => _carData = value;
     }
-
-    [SerializeField] List<CarParamsSO> carData;
-
+    
     public static void ChangeData(CarParamsSO carParams)
     {
         for (int i = 0; i < CarData.Count; i++)
@@ -51,7 +51,8 @@ public class CarSelectManager: MonoBehaviour
         Debug.LogWarningFormat("there is no {0} in car data", carParams);
     }
 
-    [SerializeField] private SelectableCar[] _cars;
+    //[SerializeField] private SelectableCar[] _cars;
+    [SerializeField] private AllCarsSO _allCars;
 
     [SerializeField] private CarStatUI[] _stats;
     [SerializeField] private CarUnlockWindow _unlockWindow;
@@ -62,36 +63,25 @@ public class CarSelectManager: MonoBehaviour
     [SerializeField] private Button _unlockButton;
     [SerializeField] private TextMeshProUGUI _selectButtonText;
 
+    [Header("Debug values")]
+    [SerializeField] List<CarParamsSO> carData;
+
+    private readonly List<Car> _cars = new List<Car>();
     private int _curShowingCarIndex;
 
     private void Start()
     {
-        if (CurrentCar is null)
+        SpawnCars();
+        if (CurrentCarID is null)
         {
-            CurrentCar = _cars[0].prefab;
+            CurrentCarID = _allCars.allCars[0].parametrs.name;
+            ShowCar(0);
         }
         else
-            ShowCar(CurrentCar);
+           ShowCar(_allCars.FindCar(CurrentCarID));
 
-
-        foreach (var car in _cars)
-        {
-            var parameters = car.prefab.parametrs;
-            if (!CarData.Contains(parameters))
-            {
-                parameters.ResetParams();
-                CarData.Add(parameters);
-            }               
-        }
-        for(int i = 0; i < CarData.Count;)
-        {
-            if (CarData[i] == null)
-                CarData.RemoveAt(i);
-            else
-                i++;
-        }
-        carData = CarData;     
-    }
+        UpdateCarData();
+    }  
 
     private void OnEnable()
     {
@@ -103,9 +93,21 @@ public class CarSelectManager: MonoBehaviour
         _unlockWindow.CarUnlocked -= UnlockCurCar;
     }
 
+    private void SpawnCars()
+    {
+        foreach (var car in _allCars.allCars)
+        {
+            var view = Instantiate(car, transform);
+            view.transform.position = car.startPos;
+            view.enabled = false;
+            view.gameObject.SetActive(false);
+            _cars.Add(view);
+        }
+    }
+
     public void ShowNextCar()
     {
-        if (_curShowingCarIndex >= _cars.Length - 1)
+        if (_curShowingCarIndex >= _cars.Count - 1)
             return;
 
         ShowCar(_curShowingCarIndex + 1);
@@ -121,15 +123,15 @@ public class CarSelectManager: MonoBehaviour
 
     public void SelectCurShowingCar()
     {
-        CurrentCar = _cars[_curShowingCarIndex].prefab;
+        CurrentCarID = _cars[_curShowingCarIndex].parametrs.name;
         UpdateSelectButton();
     }
 
     private void ShowCar(Car car)
     {
-        for (int i = 0; i < _cars.Length; i++)
+        for (int i = 0; i < _cars.Count; i++)
         {
-            if (_cars[i].prefab == car)
+            if (_cars[i].parametrs.name == car.parametrs.name)
             {
                 ShowCar(i);
                 return;
@@ -140,33 +142,33 @@ public class CarSelectManager: MonoBehaviour
 
     private void ShowCar(int index)
     {
-        if (index < 0 || index >= _cars.Length)
+        if (index < 0 || index >= _cars.Count)
         {
             Debug.LogWarning("invalid car index");
             return;
         }
 
-        for (int i = 0; i < _cars.Length; i++)
+        for (int i = 0; i < _cars.Count; i++)
         {
-            _cars[i].view.gameObject.SetActive(i == index);
+            _cars[i].gameObject.SetActive(i == index);
             if (i == index)
             {
                 _curShowingCarIndex = i;
                 foreach (var stat in _stats)
                 {
-                    stat.CarParams = _cars[i].prefab.parametrs;
+                    stat.CarParams = _cars[i].parametrs;
                 }
             }
         }
 
-        _rightButton.interactable = (_curShowingCarIndex != _cars.Length - 1);
+        _rightButton.interactable = (_curShowingCarIndex != _cars.Count - 1);
         _leftButton.interactable = (_curShowingCarIndex != 0);
         UpdateButtonsWhichDependOnPurchaseStatus();
     }
 
     private void UpdateButtonsWhichDependOnPurchaseStatus()
     {
-        bool isPurchased = _cars[_curShowingCarIndex].prefab.parametrs.isPurchased;
+        bool isPurchased = _cars[_curShowingCarIndex].parametrs.isPurchased;
         _unlockButton.gameObject.SetActive(!isPurchased);
         _selectButton.gameObject.SetActive(isPurchased);
         foreach (var stat in _stats)
@@ -179,13 +181,13 @@ public class CarSelectManager: MonoBehaviour
         }
         else
         {
-            _unlockWindow.Setup(_cars[_curShowingCarIndex].prefab.parametrs);
+            _unlockWindow.Setup(_cars[_curShowingCarIndex].parametrs);
         }
     }
 
     private void UpdateSelectButton()
     {
-        if (CurrentCar == _cars[_curShowingCarIndex].prefab)
+        if (CurrentCarID == _cars[_curShowingCarIndex].parametrs.name)
         {
             _selectButton.interactable = false;
             _selectButtonText.text = "Selected";
@@ -199,8 +201,29 @@ public class CarSelectManager: MonoBehaviour
 
     private void UnlockCurCar()
     {
-        _cars[_curShowingCarIndex].prefab.parametrs.isPurchased = true;
-        ChangeData(_cars[_curShowingCarIndex].prefab.parametrs);
+        _cars[_curShowingCarIndex].parametrs.isPurchased = true;
+        ChangeData(_cars[_curShowingCarIndex].parametrs);
         UpdateButtonsWhichDependOnPurchaseStatus();
+    }
+
+    private void UpdateCarData()
+    {
+        foreach (var car in _cars)
+        {
+            var parameters = car.parametrs;
+            if (!CarData.Contains(parameters))
+            {
+                parameters.ResetParams();
+                CarData.Add(parameters);
+            }
+        }
+        for (int i = 0; i < CarData.Count;)
+        {
+            if (CarData[i] == null)
+                CarData.RemoveAt(i);
+            else
+                i++;
+        }
+        carData = CarData;
     }
 }

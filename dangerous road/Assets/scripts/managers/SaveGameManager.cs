@@ -7,7 +7,7 @@ using UnityEngine;
 public class SaveFile
 {
     public int money;
-    public Car curSelectedCar;
+    public string curSelectedCarID;
     public CarParamsSO[] carData = new CarParamsSO[CarSelectManager.MaxCarsAmount];
     public bool isSoundMuted = false;
     public bool isMusicMuted = false;
@@ -38,7 +38,7 @@ public static class SaveGameManager
     private static void InitSaveFile()
     {
         _saveFile = new SaveFile();
-        _saveFile.curSelectedCar = GameManager.DefaultCar;
+        _saveFile.curSelectedCarID = GameManager.DefaultCar.parametrs.name;
         var parameters = GameManager.DefaultCar.parametrs;
         parameters.ResetParams();
         parameters.isPurchased = true;
@@ -51,7 +51,7 @@ public static class SaveGameManager
             return;
 
         _saveFile.money = GameManager.S.moneyManager.Money;
-        _saveFile.curSelectedCar = CarSelectManager.CurrentCar;
+        _saveFile.curSelectedCarID = CarSelectManager.CurrentCarID;
         _saveFile.carData = CarSelectManager.CarData.ToArray();
         _saveFile.isSoundMuted = GameplaySoundManager.muted;
         _saveFile.isMusicMuted = MusisManager.muted;
@@ -108,7 +108,7 @@ public static class SaveGameManager
     {
         LOCK = true;
         GameManager.S.moneyManager.Money = saveFile.money;
-        CarSelectManager.CurrentCar = saveFile.curSelectedCar;
+        CarSelectManager.CurrentCarID = saveFile.curSelectedCarID;
         CarSelectManager.CarData = saveFile.carData.ToList();
         GameplaySoundManager.muted = saveFile.isSoundMuted;
         MusisManager.muted = saveFile.isMusicMuted;

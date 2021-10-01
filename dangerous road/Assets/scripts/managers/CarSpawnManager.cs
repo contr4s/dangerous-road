@@ -10,6 +10,7 @@ public class CarSpawnManager: MonoBehaviour
     public static Action<Car> carSpawned;
     public static bool canTurn = false;
 
+    [SerializeField] private AllCarsSO _allCars;
     [SerializeField] private Car _defaultCar;
     [SerializeField] private UIManager _uIManager;
     [SerializeField] private VisualEffect _wind;
@@ -21,16 +22,15 @@ public class CarSpawnManager: MonoBehaviour
 
     private void Start()
     {
-        //temp
-        SpawnCar(_defaultCar);
-        //if (CarSelectManager.CurrentCar is null)
-        //{
-        //    SpawnCar(_defaultCar);
-        //}
-        //else
-        //{
-        //    SpawnCar(CarSelectManager.CurrentCar);
-        //}
+        print(CarSelectManager.CurrentCarID);
+        if (string.IsNullOrEmpty(CarSelectManager.CurrentCarID))
+        {
+            SpawnCar(_defaultCar);
+        }
+        else
+        {
+            SpawnCar(_allCars.FindCar(CarSelectManager.CurrentCarID));
+        }
         canTurn = false;
         _uIManager.SetActiveAllHudElements(false);
         StartCoroutine(WaitUntillClipPlayed());
