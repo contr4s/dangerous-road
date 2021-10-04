@@ -22,7 +22,6 @@ public class CarSpawnManager: MonoBehaviour
 
     private void Start()
     {
-        print(CarSelectManager.CurrentCarID);
         if (string.IsNullOrEmpty(CarSelectManager.CurrentCarID))
         {
             SpawnCar(_defaultCar);

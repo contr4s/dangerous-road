@@ -47,4 +47,4 @@ MonoBehaviour:
     lvlUpPricePercentage: 20
     _curVal: 220
   purchasePrice: 20000
-  isPurchased: 1
+  isPurchased: 0

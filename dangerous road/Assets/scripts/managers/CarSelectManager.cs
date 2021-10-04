@@ -24,8 +24,7 @@ public class CarSelectManager: MonoBehaviour
         get => _currentCarID;
         set
         {
-            _currentCarID = value;
-            print(_currentCarID);
+            _currentCarID = value;            
             SaveGameManager.Save();
         }
     }
