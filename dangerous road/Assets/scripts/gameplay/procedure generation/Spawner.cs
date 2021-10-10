@@ -8,7 +8,7 @@ public abstract class Spawner<T> : MonoBehaviour where T : Component
     [SerializeField] protected float _distanceToCam;
 
     [SerializeField] protected Vector3 _startPosition;
-    [SerializeField] protected float _startStep;
+    [SerializeField] protected float _startStep = 50;
 
     protected float _lastSpawnedPos;
 
@@ -17,23 +17,26 @@ public abstract class Spawner<T> : MonoBehaviour where T : Component
         SpawnObjects(_startPosition.z, _distanceToCam, _startStep);       
     }
 
-    protected void SpawnObjects(float startPos, float lastPos, float step)
+    protected void SpawnObjects(float startPos, float lastPos, float step, float xPos = float.MaxValue)
     {
         float zPos = startPos;
         for (; zPos < lastPos; zPos += step)
         {
-            SpawnObject(zPos);
+            if (xPos == float.MaxValue)
+            {
+                SpawnObject(new Vector3(GetRandomXPos(), _startPosition.y, zPos));
+            }
+            else
+            {
+                SpawnObject(new Vector3(xPos, _startPosition.y, zPos));
+                SpawnObject(new Vector3(-xPos, _startPosition.y, zPos));
+            }
         }
         _lastSpawnedPos = zPos;
     }
 
     protected abstract ObjectPool<T> GetObjectPool();   
     protected virtual void InitObject(T gameObject) { }
-
-    private void SpawnObject(float zPos)
-    {
-        SpawnObject(new Vector3(GetRandomXPos(), _startPosition.y, zPos));
-    }
 
     private void SpawnObject(Vector3 position)
     {
