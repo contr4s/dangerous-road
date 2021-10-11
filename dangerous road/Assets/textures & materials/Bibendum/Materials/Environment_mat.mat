@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Environment_mat
   m_Shader: {fileID: 4800000, guid: 7ffc1bc2bbb1ef64f84b552b2d2f0619, type: 3}
-  m_ShaderKeywords: TCP2_DISABLE_WRAPPED_LIGHT TCP2_MOBILE TCP2_REFLECTIONS_FRESNEL
+  m_ShaderKeywords: TCP2_DISABLE_WRAPPED_LIGHT TCP2_MOBILE TCP2_RAMP_BANDS TCP2_REFLECTIONS_FRESNEL
     TCP2_UV_NORMALS_FULL _GLOSSYREFLECTIONS_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
@@ -145,7 +145,7 @@ Material:
     - _RampSmoothing: 0
     - _RampThreshold: 0.656
     - _RampThresholdOtherLights: 0.5
-    - _RampType: 0
+    - _RampType: 2
     - _ReceiveShadows: 1
     - _ReceiveShadowsOff: 1
     - _ReflectionMapType: 0
