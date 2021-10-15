@@ -4167,7 +4167,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 511038806}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: LoadSceneWithTransition
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
