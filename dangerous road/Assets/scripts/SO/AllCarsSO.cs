@@ -10,6 +10,10 @@ public class AllCarsSO : ScriptableObject
 
     public Car FindCar(string id)
     {
-        return allCars.First((car) => car.parametrs.name == id);
+        var car = allCars.FirstOrDefault((car) => car.parametrs.name == id);
+        if (car)
+            return allCars.First((car) => car.parametrs.name == id);
+        else
+            return GameManager.DefaultCar;
     }
 }
