@@ -12,24 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9a64e3b825c0f4bbcc654384507dcd, type: 3}
   m_Name: car 3
   m_EditorClassIdentifier: 
-  name: van
+  name: vag
   parametrs:
   - type: 0
     startVal: 30
-    curLvl: 2
+    curLvl: 1
     maxLvl: 10
     lvlUpValuePercentage: 10
     startUpgradePrice: 100
     lvlUpPricePercentage: 20
-    _curVal: 33
+    _curVal: 30
   - type: 1
-    startVal: 6
-    curLvl: 2
+    startVal: 5
+    curLvl: 1
     maxLvl: 10
     lvlUpValuePercentage: 10
     startUpgradePrice: 100
     lvlUpPricePercentage: 20
-    _curVal: 6.6
+    _curVal: 5
   - type: 2
     startVal: 10000
     curLvl: 1

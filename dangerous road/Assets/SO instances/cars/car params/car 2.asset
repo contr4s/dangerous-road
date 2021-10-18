@@ -12,24 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9a64e3b825c0f4bbcc654384507dcd, type: 3}
   m_Name: car 2
   m_EditorClassIdentifier: 
-  name: wagon
+  name: volga
   parametrs:
   - type: 0
-    startVal: 40
-    curLvl: 2
-    maxLvl: 10
-    lvlUpValuePercentage: 10
-    startUpgradePrice: 75
-    lvlUpPricePercentage: 20
-    _curVal: 44
-  - type: 1
-    startVal: 8
+    startVal: 33
     curLvl: 1
     maxLvl: 10
     lvlUpValuePercentage: 10
     startUpgradePrice: 75
     lvlUpPricePercentage: 20
-    _curVal: 8
+    _curVal: 33
+  - type: 1
+    startVal: 6
+    curLvl: 1
+    maxLvl: 10
+    lvlUpValuePercentage: 10
+    startUpgradePrice: 75
+    lvlUpPricePercentage: 20
+    _curVal: 6
   - type: 2
     startVal: 3000
     curLvl: 1
@@ -40,11 +40,11 @@ MonoBehaviour:
     _curVal: 3000
   - type: 3
     startVal: 120
-    curLvl: 3
+    curLvl: 1
     maxLvl: 10
     lvlUpValuePercentage: 10
     startUpgradePrice: 75
     lvlUpPricePercentage: 20
-    _curVal: 145.2
+    _curVal: 120
   purchasePrice: 500
   isPurchased: 1

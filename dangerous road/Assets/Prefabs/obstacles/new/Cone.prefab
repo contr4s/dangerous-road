@@ -120,7 +120,7 @@ MonoBehaviour:
   _outline: {fileID: 5344156307259553810}
   _road: {fileID: 11400000, guid: 9af2511de7a6e014ebf3c6393257f4d8, type: 2}
   _swipeSO: {fileID: 11400000, guid: 65e40c922576e8f4ab740906009dffe2, type: 2}
-  _swipeCollider: {fileID: 1050458218666247475, guid: fe750b4692936c14a94f4b98c709040e, type: 3}
+  _swipeCollider: {fileID: -5188258423662783902}
   _defaultColliderSize: {x: 0.68, y: 0.96, z: 0.68}
   _colliderYAxisMaxSize: 10
 --- !u!65 &1540620445163233076
@@ -148,7 +148,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2, y: 8, z: 0.68263227}
-  m_Center: {x: 0, y: 4, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5344156307259553810
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8a9dbf9e30732b4da8ad78f635e8a3d, type: 3}
   m_Name: default swipe
   m_EditorClassIdentifier: 
-  swipeTime: 0.1
-  swipeForceScale: 2000
-  maxDistToSwipe: 150
-  minDistToSwipe: 15
+  minDistToSwipe: 10
+  distWhereObstacleHasNormalColliderSize: 10
+  distWhereObstacleHasMaxColliderSize: 100
+  activeTimeAfterSwipe: 10

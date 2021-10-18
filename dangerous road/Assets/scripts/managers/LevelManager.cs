@@ -33,6 +33,11 @@ public class LevelManager: MonoBehaviour {
 
     public static void LoadScene(string sceneName) {
         SceneManager.LoadScene(sceneName);
+    }    
+
+    public static void LoadSceneWithTransition(string sceneName)
+    {
+        Loader.LoadSceneWithTransition(sceneName);
     }
 
     public static void OpenOverlay(GameObject overlay) {

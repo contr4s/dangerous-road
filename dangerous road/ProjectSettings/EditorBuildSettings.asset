@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/_Scenes/Shop.unity
     guid: 4de37973d48cc6149b244ec229e0aae5
   - enabled: 1
+    path: Assets/_Scenes/Boot Scene.unity
+    guid: 47081bb77522d7e4b9b9c77b2dfc0782
+  - enabled: 1
     path: Assets/_Scenes/Main Menu(new).unity
     guid: 00ede08ec8cf4794d8999be1593d34b4
   - enabled: 1
@@ -26,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Shop(new).unity
     guid: 294de7e6a488fbb4993a4621a8d24636
+  - enabled: 1
+    path: Assets/_Scenes/Loading Screen.unity
+    guid: a437e09992cc4d94985eebc57ed2892c
   m_configObjects: {}
