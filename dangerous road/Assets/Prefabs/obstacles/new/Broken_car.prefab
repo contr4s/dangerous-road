@@ -204,7 +204,7 @@ MonoBehaviour:
   _road: {fileID: 11400000, guid: 9af2511de7a6e014ebf3c6393257f4d8, type: 2}
   _swipeSO: {fileID: 11400000, guid: 65e40c922576e8f4ab740906009dffe2, type: 2}
   _swipeCollider: {fileID: 1115521208616041625}
-  _defaultColliderSize: {x: 0.15, y: 0.1, z: 0.28}
+  _defaultColliderSize: {x: 0.15, y: 0.1, z: 0.05}
   _colliderYAxisMaxSize: 0.1
 --- !u!65 &848050387688542568
 BoxCollider:
@@ -230,5 +230,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.15099344, y: 0.1, z: 0.28}
+  m_Size: {x: 0.15099344, y: 0.1, z: 0.4}
   m_Center: {x: 0.0006811246, y: 0.00010031089, z: 0.025124978}
