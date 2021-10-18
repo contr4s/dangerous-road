@@ -201,7 +201,7 @@ MonoBehaviour:
   _outline: {fileID: 4849586884076299836}
   _road: {fileID: 11400000, guid: 9af2511de7a6e014ebf3c6393257f4d8, type: 2}
   _swipeSO: {fileID: 11400000, guid: 65e40c922576e8f4ab740906009dffe2, type: 2}
-  _swipeCollider: {fileID: 1050458218666247475, guid: fe750b4692936c14a94f4b98c709040e, type: 3}
+  _swipeCollider: {fileID: 9178507807158222806}
   _defaultColliderSize: {x: 2.3, y: 1.2, z: 0.87}
   _colliderYAxisMaxSize: 10
 --- !u!65 &8247944396169766889
@@ -229,4 +229,4 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3, y: 8, z: 2}
-  m_Center: {x: 0, y: 4, z: -0.11269058}
+  m_Center: {x: 0, y: 0, z: -0.11269058}

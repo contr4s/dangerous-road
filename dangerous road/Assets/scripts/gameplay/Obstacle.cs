@@ -35,7 +35,7 @@ public class Obstacle: MonoBehaviour, IDestroyable
             transform.rotation = Quaternion.Euler(_possibleRotations[Random.Range(0, _possibleRotations.Length)]);
         else
             transform.rotation = Quaternion.identity;
-        _swipeCollider.size = new Vector3(_road.laneWidth, _colliderYAxisMaxSize, _defaultColliderSize.z);
+        _swipeCollider.size = new Vector3(_defaultColliderSize.x, _colliderYAxisMaxSize, _defaultColliderSize.z);
         StartCoroutine(ControlSwipeColiderSize());
     }
 
