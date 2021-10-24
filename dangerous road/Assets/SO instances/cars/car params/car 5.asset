@@ -12,32 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9a64e3b825c0f4bbcc654384507dcd, type: 3}
   m_Name: car 5
   m_EditorClassIdentifier: 
-  name: taxi
+  name: drag
   parametrs:
   - type: 0
-    startVal: 60
+    startVal: 40
     curLvl: 1
     maxLvl: 10
     lvlUpValuePercentage: 10
     startUpgradePrice: 125
     lvlUpPricePercentage: 20
-    _curVal: 60
+    _curVal: 40
   - type: 1
-    startVal: 15
+    startVal: 10
     curLvl: 1
     maxLvl: 10
     lvlUpValuePercentage: 10
     startUpgradePrice: 125
     lvlUpPricePercentage: 20
-    _curVal: 15
+    _curVal: 10
   - type: 2
     startVal: 6000
-    curLvl: 2
+    curLvl: 1
     maxLvl: 10
     lvlUpValuePercentage: 10
     startUpgradePrice: 125
     lvlUpPricePercentage: 20
-    _curVal: 6600
+    _curVal: 6000
   - type: 3
     startVal: 175
     curLvl: 1

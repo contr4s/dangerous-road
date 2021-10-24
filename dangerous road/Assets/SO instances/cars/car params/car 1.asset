@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9a64e3b825c0f4bbcc654384507dcd, type: 3}
   m_Name: car 1
   m_EditorClassIdentifier: 
-  name: volga
+  name: wip car
   parametrs:
   - type: 0
     startVal: 30

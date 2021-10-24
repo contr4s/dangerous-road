@@ -12,24 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9a64e3b825c0f4bbcc654384507dcd, type: 3}
   m_Name: car 6
   m_EditorClassIdentifier: 
-  name: police
+  name: dodge
   parametrs:
   - type: 0
-    startVal: 75
+    startVal: 45
     curLvl: 1
     maxLvl: 10
     lvlUpValuePercentage: 10
     startUpgradePrice: 150
     lvlUpPricePercentage: 20
-    _curVal: 75
+    _curVal: 45
   - type: 1
-    startVal: 20
+    startVal: 12
     curLvl: 1
     maxLvl: 10
     lvlUpValuePercentage: 10
     startUpgradePrice: 150
     lvlUpPricePercentage: 20
-    _curVal: 20
+    _curVal: 12
   - type: 2
     startVal: 10000
     curLvl: 1
@@ -40,11 +40,11 @@ MonoBehaviour:
     _curVal: 10000
   - type: 3
     startVal: 200
-    curLvl: 2
+    curLvl: 1
     maxLvl: 10
     lvlUpValuePercentage: 10
     startUpgradePrice: 150
     lvlUpPricePercentage: 20
-    _curVal: 220
+    _curVal: 200
   purchasePrice: 20000
   isPurchased: 0
