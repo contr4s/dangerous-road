@@ -15,6 +15,7 @@ public abstract class InputManager: MonoBehaviour
 
     public static eTurnInputType turnInputType;
 
+    [SerializeField] protected SpawnedObjectsManager spawnedObjectsManager;
     [SerializeField] private LayerMask _obstacleLayerMask = 64;
 
     [SerializeField] protected SwipeSO _swipeSO;

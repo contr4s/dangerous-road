@@ -7866,7 +7866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &432442722
 Transform:
   m_ObjectHideFlags: 0
@@ -7893,6 +7893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b6fc9dcefa365b4dbab8916280e0682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnedObjectsManager: {fileID: 1209023106}
   _obstacleLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -12933,7 +12934,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1373284338
 Transform:
   m_ObjectHideFlags: 0
@@ -12960,6 +12961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22be8167a4dc6e24e8b3ac1c9e0b1abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnedObjectsManager: {fileID: 1209023106}
   _obstacleLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -12975,7 +12977,6 @@ MonoBehaviour:
     - Key: 1
       Value: 1
   _soundManager: {fileID: 1330108848}
-  spawnedObjectsManager: {fileID: 1209023106}
 --- !u!1 &1376056003
 GameObject:
   m_ObjectHideFlags: 0

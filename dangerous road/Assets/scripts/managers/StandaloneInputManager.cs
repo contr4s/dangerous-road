@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class StandaloneInputManager: InputManager
 {
-    [SerializeField] private SpawnedObjectsManager spawnedObjectsManager;
     private Vector3 _prevTouchPos;
 
     void Update()
@@ -30,7 +29,6 @@ public class StandaloneInputManager: InputManager
         else if (Input.GetMouseButtonUp(0))
         {
             SwipeOutObstacle();
-            //TryTurnCar(Input.mousePosition);
         }
        
     }
