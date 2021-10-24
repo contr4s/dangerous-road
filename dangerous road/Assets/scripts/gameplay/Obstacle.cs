@@ -12,11 +12,9 @@ public class Obstacle: MonoBehaviour, IDestroyable
     [SerializeField] private Vector3[] _possibleRotations;
     [SerializeField] private GameObject _outline;
 
-    [SerializeField] private RoadSO _road;
     [SerializeField] private SwipeSO _swipeSO;
     [SerializeField] private BoxCollider _swipeCollider;
     [SerializeField] private Vector3 _defaultColliderSize;
-    [SerializeField] private float _colliderYAxisMaxSize = 10;
 
     private Vector3 _maxColliderSize;
     private Camera _mainCam;
@@ -37,7 +35,6 @@ public class Obstacle: MonoBehaviour, IDestroyable
         else
             transform.rotation = Quaternion.identity;
         _maxColliderSize = _swipeCollider.size;
-        //_swipeCollider.size = new Vector3(_defaultColliderSize.x, _colliderYAxisMaxSize, _defaultColliderSize.z);
         StartCoroutine(ControlSwipeColiderSize());
     }
 
@@ -86,10 +83,7 @@ public class Obstacle: MonoBehaviour, IDestroyable
             distToCam = transform.position.z - _mainCam.transform.position.z;
             if (distToCam <= _swipeSO.distWhereObstacleHasMaxColliderSize)
             {
-                //var size = _defaultColliderSize;
                 var scaledDistToCam = Mathf.InverseLerp(_swipeSO.distWhereObstacleHasNormalColliderSize, _swipeSO.distWhereObstacleHasMaxColliderSize, distToCam);
-                //size.y = Mathf.Lerp(_defaultColliderSize.y, _colliderYAxisMaxSize, scaledDistToCam);
-                //size.x = Mathf.Lerp(_defaultColliderSize.x, _road.laneWidth, scaledDistToCam);
                 var size = Vector3.Lerp(_defaultColliderSize, _maxColliderSize, scaledDistToCam);
                 _swipeCollider.size = size;
             }
