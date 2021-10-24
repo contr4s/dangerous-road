@@ -10,8 +10,10 @@ public class StandaloneInputManager: InputManager
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (CanTurnCar(Input.mousePosition))
-                _prevTouchPos = Input.mousePosition;           
+            if (IsMousePosInCarInputBounds(Input.mousePosition))
+            {
+                SwapLanes();
+            }
         }
         else if (Input.GetMouseButton(0))
         {
@@ -27,8 +29,8 @@ public class StandaloneInputManager: InputManager
         else if (Input.GetMouseButtonUp(0))
         {
             SwipeOutObstacle();
-            TryTurnCar(Input.mousePosition);
         }
+       
     }
 
     protected override Vector3 CalculateSwipeDirection()
@@ -37,5 +39,13 @@ public class StandaloneInputManager: InputManager
         direction.z = 0;
         direction.Normalize();
         return direction;
+    }
+
+    private void SwapLanes()
+    {
+        if (Input.mousePosition.x > Screen.width / 2)
+            spawnedObjectsManager.SwapLanes(2);
+        else
+            spawnedObjectsManager.SwapLanes(0);
     }
 }

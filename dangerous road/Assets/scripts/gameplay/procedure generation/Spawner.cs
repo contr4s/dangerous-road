@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Spawner<T> : MonoBehaviour where T : Component
-{   
+{
+    [SerializeField] SpawnedObjectsManager _manager;
     [SerializeField] protected float[] _xAxisSpawnPositions;
     [SerializeField] protected float _distanceToCam;
 
@@ -38,6 +39,8 @@ public abstract class Spawner<T> : MonoBehaviour where T : Component
     protected abstract ObjectPool<T> GetObjectPool();   
     protected virtual void InitObject(T gameObject) { }
 
+    protected abstract bool IsSpawnedOnRoad { get; }
+
     private void SpawnObject(Vector3 position)
     {
         var spawnedObject = GetObjectPool().GetAvailableObject();
@@ -45,6 +48,10 @@ public abstract class Spawner<T> : MonoBehaviour where T : Component
         InitObject(spawnedObject);
         spawnedObject.transform.position = position;
         spawnedObject.gameObject.SetActive(true);
+        if (IsSpawnedOnRoad)
+        {
+            spawnedObject.transform.SetParent(_manager.FindAppropriateLane(position));
+        }
     }
 
     private float GetRandomXPos()

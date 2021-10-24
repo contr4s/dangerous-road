@@ -115,9 +115,6 @@ public class Car: MonoBehaviour
     private void FixedUpdate()
     {
         _rigidbody.MovePosition(new Vector3(_xPos, startPos.y, CalculateZPos()));
-
-        //wind.SetFloat("Speed", _rigidbody.velocity.z);
-        //wind.SetFloat("Spawn rate", _rigidbody.velocity.z * windRate);
     }
 
     private void OnCollisionEnter(Collision collision)

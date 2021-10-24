@@ -15,6 +15,7 @@ public abstract class InputManager: MonoBehaviour
 
     public static eTurnInputType turnInputType;
 
+    [SerializeField] protected SpawnedObjectsManager spawnedObjectsManager;
     [SerializeField] private LayerMask _obstacleLayerMask = 64;
 
     [SerializeField] protected SwipeSO _swipeSO;
@@ -105,6 +106,10 @@ public abstract class InputManager: MonoBehaviour
     protected bool CanTurnCar(Vector2 mousePos)
     {
         return (mousePos.y / Screen.height < carInputBound) && CarSpawnManager.canTurn;
+    }
+    protected bool IsMousePosInCarInputBounds(Vector2 mousePos)
+    {
+        return mousePos.y / Screen.height < carInputBound;
     }
 
     protected bool TryTurnCar(Vector2 mousePos)
