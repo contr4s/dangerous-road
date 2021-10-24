@@ -106,6 +106,10 @@ public abstract class InputManager: MonoBehaviour
     {
         return (mousePos.y / Screen.height < carInputBound) && CarSpawnManager.canTurn;
     }
+    protected bool IsMousePosInCarInputBounds(Vector2 mousePos)
+    {
+        return mousePos.y / Screen.height < carInputBound;
+    }
 
     protected bool TryTurnCar(Vector2 mousePos)
     {

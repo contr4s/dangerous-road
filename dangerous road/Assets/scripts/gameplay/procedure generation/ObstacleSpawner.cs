@@ -33,6 +33,8 @@ public class ObstacleSpawner: Spawner<Obstacle>
     [SerializeField] private UIManager _uIManager;
     [SerializeField] private GameplaySoundManager _soundManager;
 
+    protected override bool IsSpawnedOnRoad => true;
+
     private void OnEnable()
     {
         _step = _startStep;

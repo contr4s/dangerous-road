@@ -17,6 +17,8 @@ public class EnviromentChunkSpawner: Spawner<Transform>
     private EnviromentChunk[] _chunks;
     [SerializeField] private float _xPos;
 
+    protected override bool IsSpawnedOnRoad => false;
+
     private void OnEnable()
     {
         Car.passedHundredMeters += Spawn;
