@@ -7956,6 +7956,8 @@ MonoBehaviour:
   swipeForceScale: 20
   maxDistToSwipe: 150
   carInputBound: 0.45
+  maxWeight: 900
+  farDist: 150
   _optionList: {fileID: 75030765}
   _optionListParamsMap:
     array:
@@ -12979,6 +12981,8 @@ MonoBehaviour:
   swipeForceScale: 20
   maxDistToSwipe: 150
   carInputBound: 0.45
+  maxWeight: 900
+  farDist: 150
   _optionList: {fileID: 75030765}
   _optionListParamsMap:
     array:
