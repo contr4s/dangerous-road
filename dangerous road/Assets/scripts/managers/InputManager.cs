@@ -18,14 +18,19 @@ public abstract class InputManager: MonoBehaviour
     [SerializeField] protected SpawnedObjectsManager spawnedObjectsManager;
     [SerializeField] private LayerMask _obstacleLayerMask = 64;
 
+    [Header("Swipe Params")]
     [SerializeField] protected SwipeSO _swipeSO;
     [SerializeField] protected float swipeForceScale = 20;
     [SerializeField] protected float maxDistToSwipe = 150;
+    [Header("Lanes Swap Params")]
     [Range(0, 1)]
     [SerializeField] protected float carInputBound = .3f;
+    [SerializeField] protected float maxWeight = 1000;
+    [SerializeField] protected float farDist = 300;
 
     protected Obstacle _targetObstacle;
     protected Camera _mainCam;
+    protected Car _car;
 
     [SerializeField] private QUI_OptionList _optionList;
     [SerializeField] private SerializableDictionary<int, eTurnInputType> _optionListParamsMap;
@@ -127,6 +132,7 @@ public abstract class InputManager: MonoBehaviour
 
     private void Init(Car car)
     {
+        _car = car;
         if (car.parametrs.TryFindParam(eCarParameterType.swipeForce, out var param))
             swipeForceScale = param.CurVal;
         else

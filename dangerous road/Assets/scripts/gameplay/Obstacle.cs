@@ -6,6 +6,8 @@ public class Obstacle: MonoBehaviour, IDestroyable
 {
     private const int swipeSoundConst = 40;
 
+    public float Weight => _rigidbody.mass;
+
     public UIManager uIManager;
     public GameplaySoundManager soundManager;
 

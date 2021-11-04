@@ -41,6 +41,7 @@ public class ObstacleSpawner: Spawner<Obstacle>
         Car.passedHundredMeters += Spawn;
         Car.passedHundredMeters += () => ChangeComplexity(complexityPercentage100m, ref _hundredMetersCounter);
         Car.passedOneKilometer += () => ChangeComplexity(complexityPercentage1km, ref _kilometerCounter);
+        OnSpawn += (obstacle) => _manager.ObstaclesOnLane[obstacle.transform.parent.gameObject].Add(obstacle);
     }
 
     private void OnDisable()

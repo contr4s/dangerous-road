@@ -53,8 +53,8 @@ public class MobileInputManager: InputManager
     private void SwapLanes(Vector2 touchPos)
     {
         if (touchPos.x > Screen.width / 2)
-            spawnedObjectsManager.SwapLanes(2);
+            spawnedObjectsManager.TrySwapLanes(2, maxWeight, _car.transform.position.z, _car.transform.position.z + farDist);
         else
-            spawnedObjectsManager.SwapLanes(0);
+            spawnedObjectsManager.TrySwapLanes(0, maxWeight, _car.transform.position.z, _car.transform.position.z + farDist);
     }
 }
