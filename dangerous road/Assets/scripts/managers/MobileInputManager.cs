@@ -31,7 +31,6 @@ public class MobileInputManager: InputManager
                     _prevTouchPos = touch.position;
                     SetupTargetObstacle(obstacle);
                 }
-
             }
             else if (touch.phase == TouchPhase.Ended)
             {

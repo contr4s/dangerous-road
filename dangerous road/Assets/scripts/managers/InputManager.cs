@@ -101,7 +101,14 @@ public abstract class InputManager: MonoBehaviour
             return;
 
         var direction = CalculateSwipeDirection();
+        if (direction == Vector3.zero)
+        {
+            direction.x = Random.value;
+            direction.y = Random.value;
+            direction.Normalize();
+        }
         _targetObstacle.AddForce(swipeForceScale, direction, _targetObstacle.transform.position.z - _mainCam.transform.position.z);
+        _targetObstacle.transform.SetParent(transform.root);
         StartCoroutine(_targetObstacle.DestroyAfterSwipe(_swipeSO.activeTimeAfterSwipe));
         _targetObstacle.SetupOutline(false);
         _soundManager.StopSoundAfterDelay(delayBeforeStopObstacleSelectSound, eSoundType.obsatacleSelect);
