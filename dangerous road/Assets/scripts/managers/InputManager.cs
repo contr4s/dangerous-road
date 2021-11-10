@@ -15,21 +15,28 @@ public abstract class InputManager: MonoBehaviour
 
     public static eTurnInputType turnInputType;
 
+    [SerializeField] protected SpawnedObjectsManager spawnedObjectsManager;
     [SerializeField] private LayerMask _obstacleLayerMask = 64;
 
+    [Header("Swipe Params")]
     [SerializeField] protected SwipeSO _swipeSO;
     [SerializeField] protected float swipeForceScale = 20;
     [SerializeField] protected float maxDistToSwipe = 150;
+    [Header("Lanes Swap Params")]
     [Range(0, 1)]
     [SerializeField] protected float carInputBound = .3f;
+    [SerializeField] protected float maxWeight = 1000;
+    [SerializeField] protected float farDist = 300;
 
     protected Obstacle _targetObstacle;
     protected Camera _mainCam;
+    protected Car _car;
 
     [SerializeField] private QUI_OptionList _optionList;
     [SerializeField] private SerializableDictionary<int, eTurnInputType> _optionListParamsMap;
 
     [SerializeField] private GameplaySoundManager _soundManager;
+    [SerializeField] private Transform _obstaclesAnchor;
 
     private void Awake()
     {
@@ -95,7 +102,14 @@ public abstract class InputManager: MonoBehaviour
             return;
 
         var direction = CalculateSwipeDirection();
+        if (direction == Vector3.zero)
+        {
+            direction.x = Random.Range(-1, 1);
+            direction.y = Random.value;
+            direction.Normalize();
+        }
         _targetObstacle.AddForce(swipeForceScale, direction, _targetObstacle.transform.position.z - _mainCam.transform.position.z);
+        _targetObstacle.transform.SetParent(_obstaclesAnchor);
         StartCoroutine(_targetObstacle.DestroyAfterSwipe(_swipeSO.activeTimeAfterSwipe));
         _targetObstacle.SetupOutline(false);
         _soundManager.StopSoundAfterDelay(delayBeforeStopObstacleSelectSound, eSoundType.obsatacleSelect);
@@ -105,6 +119,10 @@ public abstract class InputManager: MonoBehaviour
     protected bool CanTurnCar(Vector2 mousePos)
     {
         return (mousePos.y / Screen.height < carInputBound) && CarSpawnManager.canTurn;
+    }
+    protected bool IsMousePosInCarInputBounds(Vector2 mousePos)
+    {
+        return mousePos.y / Screen.height < carInputBound;
     }
 
     protected bool TryTurnCar(Vector2 mousePos)
@@ -122,6 +140,7 @@ public abstract class InputManager: MonoBehaviour
 
     private void Init(Car car)
     {
+        _car = car;
         if (car.parametrs.TryFindParam(eCarParameterType.swipeForce, out var param))
             swipeForceScale = param.CurVal;
         else

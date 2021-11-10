@@ -33,12 +33,15 @@ public class ObstacleSpawner: Spawner<Obstacle>
     [SerializeField] private UIManager _uIManager;
     [SerializeField] private GameplaySoundManager _soundManager;
 
+    protected override bool IsSpawnedOnRoad => true;
+
     private void OnEnable()
     {
         _step = _startStep;
         Car.passedHundredMeters += Spawn;
         Car.passedHundredMeters += () => ChangeComplexity(complexityPercentage100m, ref _hundredMetersCounter);
         Car.passedOneKilometer += () => ChangeComplexity(complexityPercentage1km, ref _kilometerCounter);
+        OnSpawn += (obstacle) => _manager.ObstaclesOnLane[obstacle.transform.parent.gameObject].Add(obstacle);
     }
 
     private void OnDisable()

@@ -8,6 +8,8 @@ public class TerrainSpawner: Spawner<Terrain>
 
     [SerializeField] private float _distToCover;
 
+    protected override bool IsSpawnedOnRoad => false;
+
     private void OnEnable()
     {
         Car.passedOneKilometer += Spawn;

@@ -12,6 +12,7 @@ public class FollowCar: MonoBehaviour
     [SerializeField] private float _distToCar;
     [SerializeField] private bool _UseCarRotationYAxis = false;
     [SerializeField] private float _chaseSpeed = 0;
+    [SerializeField] private float _chaseOffset = 40;
 
     private Car _car;
 
@@ -48,12 +49,12 @@ public class FollowCar: MonoBehaviour
 
     public IEnumerator Chase()
     {
-        while (_distToCar > 0)
+        while (_distToCar > _chaseOffset)
         {
             _distToCar -= _chaseSpeed * Time.deltaTime;
             yield return null;
         }
-        _distToCar = 0;
+        _distToCar = _chaseOffset;
     }
 
     private void Init(Car car)
