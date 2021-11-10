@@ -7,9 +7,11 @@ public class Obstacle: MonoBehaviour, IDestroyable
     private const int swipeSoundConst = 40;
 
     public float Weight => _rigidbody.mass;
+    public bool HasBeenSwipedAway { get; set; }
 
-    public UIManager uIManager;
-    public GameplaySoundManager soundManager;
+    public SpawnedObjectsManager SpawnedObjectsManager { get; set; }
+    public UIManager UIManager { get; set; }
+    public GameplaySoundManager SoundManager { get; set; }
 
     [SerializeField] private Vector3[] _possibleRotations;
     [SerializeField] private GameObject _outline;
@@ -30,6 +32,11 @@ public class Obstacle: MonoBehaviour, IDestroyable
 
     private void OnEnable()
     {
+        Init();
+    }
+
+    protected virtual void Init()
+    {
         _rigidbody.isKinematic = true;
         _rigidbody.isKinematic = false;
         if (_possibleRotations.Length > 0)
@@ -38,11 +45,6 @@ public class Obstacle: MonoBehaviour, IDestroyable
             transform.rotation = Quaternion.identity;
         _maxColliderSize = _swipeCollider.size;
         StartCoroutine(ControlSwipeColiderSize());
-    }
-
-    private void OnDisable()
-    {
-        StopAllCoroutines();
     }
 
     public void SetupOutline(bool active)
@@ -57,9 +59,9 @@ public class Obstacle: MonoBehaviour, IDestroyable
         var scaledForce = force / distToCam;
         _rigidbody.AddForce(direction * scaledForce, ForceMode.Impulse);
         var acceleration = scaledForce / _rigidbody.mass;
-        uIManager.Points += acceleration;
-        soundManager.PlaySound(eSoundType.obstacleSwipe);
-        soundManager.ChangeSoundVolume(eSoundType.obstacleSwipe, Mathf.Lerp(0, 1, Mathf.InverseLerp(0, swipeSoundConst, acceleration)));
+        UIManager.Points += acceleration;
+        SoundManager.PlaySound(eSoundType.obstacleSwipe);
+        SoundManager.ChangeSoundVolume(eSoundType.obstacleSwipe, Mathf.Lerp(0, 1, Mathf.InverseLerp(0, swipeSoundConst, acceleration)));
     }
 
     public void DestroyMe()

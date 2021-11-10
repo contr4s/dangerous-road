@@ -112,6 +112,7 @@ public abstract class InputManager: MonoBehaviour
         _targetObstacle.transform.SetParent(_obstaclesAnchor);
         StartCoroutine(_targetObstacle.DestroyAfterSwipe(_swipeSO.activeTimeAfterSwipe));
         _targetObstacle.SetupOutline(false);
+        _targetObstacle.HasBeenSwipedAway = true;
         _soundManager.StopSoundAfterDelay(delayBeforeStopObstacleSelectSound, eSoundType.obsatacleSelect);
         _targetObstacle = null;
     }

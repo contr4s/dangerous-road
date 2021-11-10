@@ -70,8 +70,9 @@ public class ObstacleSpawner: Spawner<Obstacle>
 
     protected override void InitObject(Obstacle gameObject)
     {
-        gameObject.uIManager = _uIManager;
-        gameObject.soundManager = _soundManager;
+        gameObject.UIManager = _uIManager;
+        gameObject.SoundManager = _soundManager;
+        gameObject.SpawnedObjectsManager = _manager;
     }
 
     private void ChangeComplexity(float percentage, ref int counter)
