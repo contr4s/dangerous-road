@@ -36,6 +36,7 @@ public abstract class InputManager: MonoBehaviour
     [SerializeField] private SerializableDictionary<int, eTurnInputType> _optionListParamsMap;
 
     [SerializeField] private GameplaySoundManager _soundManager;
+    [SerializeField] private Transform _obstaclesAnchor;
 
     private void Awake()
     {
@@ -103,12 +104,12 @@ public abstract class InputManager: MonoBehaviour
         var direction = CalculateSwipeDirection();
         if (direction == Vector3.zero)
         {
-            direction.x = Random.value;
+            direction.x = Random.Range(-1, 1);
             direction.y = Random.value;
             direction.Normalize();
         }
         _targetObstacle.AddForce(swipeForceScale, direction, _targetObstacle.transform.position.z - _mainCam.transform.position.z);
-        _targetObstacle.transform.SetParent(transform.root);
+        _targetObstacle.transform.SetParent(_obstaclesAnchor);
         StartCoroutine(_targetObstacle.DestroyAfterSwipe(_swipeSO.activeTimeAfterSwipe));
         _targetObstacle.SetupOutline(false);
         _soundManager.StopSoundAfterDelay(delayBeforeStopObstacleSelectSound, eSoundType.obsatacleSelect);
