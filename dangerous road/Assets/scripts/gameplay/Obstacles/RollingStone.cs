@@ -19,8 +19,8 @@ public class RollingStone : Obstacle
         var waitTime = new WaitForSeconds(_timeDelay);
         while (true)
         {
-            yield return StartCoroutine(Move(CalculateTargetPosition()));
             yield return waitTime;
+            yield return StartCoroutine(Move(CalculateTargetPosition()));           
         }
     }
 

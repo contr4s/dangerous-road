@@ -80,7 +80,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4849586884076299836}
-  m_Mesh: {fileID: -2616060985062068708, guid: 9a15d658565619c4f8b8203d50928da4, type: 3}
+  m_Mesh: {fileID: 8612550524105999422, guid: 9a15d658565619c4f8b8203d50928da4, type: 3}
 --- !u!1 &8629004081424209486
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,8 +195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2909538269a58694bb0c537ba2a29ebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uIManager: {fileID: 0}
-  soundManager: {fileID: 0}
   _possibleRotations: []
   _outline: {fileID: 4849586884076299836}
   _swipeSO: {fileID: 11400000, guid: 65e40c922576e8f4ab740906009dffe2, type: 2}
