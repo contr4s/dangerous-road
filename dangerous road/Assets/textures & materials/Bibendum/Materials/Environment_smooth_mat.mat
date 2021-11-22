@@ -7,11 +7,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Environment_mat
+  m_Name: Environment_smooth_mat
   m_Shader: {fileID: 4800000, guid: be2047d1a26caa648abd11ac15e31752, type: 3}
   m_ShaderKeywords: CURVEDWORLD_BEND_ID_1 CURVEDWORLD_BEND_TYPE_CLASSICRUNNER_Z_POSITIVE
     TCP2_DISABLE_WRAPPED_LIGHT TCP2_RAMP_BANDS TCP2_REFLECTIONS_FRESNEL TCP2_UV_NORMALS_FULL
-    _GLOSSYREFLECTIONS_OFF
+    _GLOSSYREFLECTIONS_OFF _RECEIVE_SHADOWS_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -147,12 +147,12 @@ Material:
     - _RampSmooth: 0.2
     - _RampSmoothAdd: 0.75
     - _RampSmoothOtherLights: 0.5
-    - _RampSmoothing: 0.061
-    - _RampThreshold: 0.625
+    - _RampSmoothing: 0.214
+    - _RampThreshold: 0.259
     - _RampThresholdOtherLights: 0.5
     - _RampType: 2
     - _ReceiveShadows: 1
-    - _ReceiveShadowsOff: 1
+    - _ReceiveShadowsOff: 0
     - _ReflectionMapType: 0
     - _ReflectionSmoothness: 0.5
     - _RenderingMode: 0
