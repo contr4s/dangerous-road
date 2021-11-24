@@ -228,5 +228,9 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
+<<<<<<< HEAD
+  m_Size: {x: 2.093091, y: 6.4661818, z: 0.68}
+=======
   m_Size: {x: 2.60682, y: 5.057168, z: 0.87}
+>>>>>>> remotes/origin/main
   m_Center: {x: 0, y: 0.38, z: 0}

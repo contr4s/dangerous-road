@@ -76,7 +76,6 @@ public class UIManager: MonoBehaviour
     {
         LevelManager.UnPause();
         _secondChanceOverlay.gameObject.SetActive(false);
-        //_storm.StartStorm();
         StartCoroutine(_storm.Chase());
         _loseOverlay.Setup(Dist, Money, Points);
         GameManager.S.moneyManager.Money += Money;

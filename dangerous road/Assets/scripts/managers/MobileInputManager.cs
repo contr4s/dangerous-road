@@ -14,13 +14,14 @@ public class MobileInputManager: InputManager
             var touch = Input.GetTouch(i);
             if (touch.phase == TouchPhase.Began)
             {
-                if (CanTurnCar(touch.position))
-                    _prevTouchPos = touch.position;
+                if (IsMousePosInCarInputBounds(touch.position))
+                {
+                    SwapLanes(touch.position);
+                }
             }
             else if (touch.phase == TouchPhase.Ended)
             {
                 _curTouchPos = touch.position;
-                TryTurnCar(touch.position);
             }               
 
             if (_targetObstacle is null)
@@ -30,7 +31,6 @@ public class MobileInputManager: InputManager
                     _prevTouchPos = touch.position;
                     SetupTargetObstacle(obstacle);
                 }
-
             }
             else if (touch.phase == TouchPhase.Ended)
             {
@@ -47,5 +47,13 @@ public class MobileInputManager: InputManager
         direction.y = _curTouchPos.y - _prevTouchPos.y;
         direction.z = 0;
         return direction.normalized;
+    }
+
+    private void SwapLanes(Vector2 touchPos)
+    {
+        if (touchPos.x > Screen.width / 2)
+            spawnedObjectsManager.TrySwapLanes(2, maxWeight, _car.transform.position.z, _car.transform.position.z + farDist);
+        else
+            spawnedObjectsManager.TrySwapLanes(0, maxWeight, _car.transform.position.z, _car.transform.position.z + farDist);
     }
 }

@@ -50,7 +50,6 @@ public class CarSelectManager: MonoBehaviour
         Debug.LogWarningFormat("there is no {0} in car data", carParams);
     }
 
-    //[SerializeField] private SelectableCar[] _cars;
     [SerializeField] private AllCarsSO _allCars;
 
     [SerializeField] private CarStatUI[] _stats;

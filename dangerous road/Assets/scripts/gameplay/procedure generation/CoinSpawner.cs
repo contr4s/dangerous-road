@@ -13,6 +13,8 @@ public class CoinSpawner: Spawner<Coin>
     [Range(0, 100)]
     public float complexityPercentage1km = 10;
 
+    protected override bool IsSpawnedOnRoad => true;
+
     private void OnEnable()
     {
         _step = _startStep;

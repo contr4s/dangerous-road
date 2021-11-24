@@ -6,6 +6,8 @@ public class RoadSpawner: Spawner<Transform>
 {
     [SerializeField] private RoadPool _roadPool;
 
+    protected override bool IsSpawnedOnRoad => true;
+
     private void OnEnable()
     {
         Car.passedHundredMeters += Spawn;
