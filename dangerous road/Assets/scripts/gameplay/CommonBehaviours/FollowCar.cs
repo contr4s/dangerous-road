@@ -18,12 +18,12 @@ public class FollowCar: MonoBehaviour
 
     private void OnEnable()
     {
-        CarSpawnManager.carSpawned += Init;
+        CarSpawnManager.CarSpawned += Init;
     }
 
     private void OnDisable()
     {
-        CarSpawnManager.carSpawned -= Init;
+        CarSpawnManager.CarSpawned -= Init;
     }
 
     private void LateUpdate()

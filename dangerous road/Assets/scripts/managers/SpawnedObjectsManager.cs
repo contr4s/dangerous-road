@@ -29,7 +29,7 @@ public class SpawnedObjectsManager: MonoBehaviour
             return Lanes[0].transform;
         else
         {
-            Debug.LogError($"can't find lane for this x position: {position}");
+            Debug.LogWarning($"can't find lane for this x position: {position}");
             return null;
         }
     }  

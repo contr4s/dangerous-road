@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.VFX;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody), typeof(BoxCollider))]
 public class Car: MonoBehaviour
 {
     public const string obstacleTag = "obstacle";
@@ -63,8 +63,10 @@ public class Car: MonoBehaviour
     private float _xPos;
     private float _prevDist = 0;
 
-    private Rigidbody _rigidbody;
+    [SerializeField] private MeshRenderer[] _meshRenderers;
 
+    private Rigidbody _rigidbody;
+    private BoxCollider _collider;
     
     public float CurSpeed
     {
@@ -81,6 +83,7 @@ public class Car: MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _collider = GetComponent<BoxCollider>();
     }
 
     private void Start()
@@ -97,7 +100,7 @@ public class Car: MonoBehaviour
     }
 
     private void Update()
-    {
+    {        
         var passedDist = transform.position.z;
         var distDelta = passedDist - _prevDist;
         _prevDist = passedDist;
@@ -181,6 +184,20 @@ public class Car: MonoBehaviour
             Turn(1);
         else
             Turn(-1);
+    }
+
+    public void ChangeInvisibleState(bool invisible)
+    {
+        _collider.enabled = !invisible;
+        foreach (var mr in _meshRenderers)
+        {
+            foreach (var mat in mr.materials)
+            {
+                var color = mat.color;
+                float a = invisible ? 0.5f : 1;
+                mat.color = new Color(color.r, color.g, color.b, a);
+            }
+        }
     }
 
     private IEnumerator Brake()

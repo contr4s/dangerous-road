@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using QuantumTek.QuantumUI;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public enum eTurnInputType
 {
@@ -11,7 +12,7 @@ public enum eTurnInputType
 
 public abstract class InputManager: MonoBehaviour
 {
-    private const float delayBeforeStopObstacleSelectSound = .5f;
+    public const float DelayBeforeStopObstacleSelectSound = .5f;
 
     public static eTurnInputType turnInputType;
 
@@ -45,12 +46,12 @@ public abstract class InputManager: MonoBehaviour
 
     private void OnEnable()
     {
-        CarSpawnManager.carSpawned += Init;
+        CarSpawnManager.CarSpawned += Init;
     }
 
     private void OnDisable()
     {
-        CarSpawnManager.carSpawned -= Init;
+        CarSpawnManager.CarSpawned -= Init;
     }
 
     private void Start()
@@ -113,7 +114,7 @@ public abstract class InputManager: MonoBehaviour
         StartCoroutine(_targetObstacle.DestroyAfterSwipe(_swipeSO.activeTimeAfterSwipe));
         _targetObstacle.SetupOutline(false);
         _targetObstacle.HasBeenSwipedAway = true;
-        _soundManager.StopSoundAfterDelay(delayBeforeStopObstacleSelectSound, eSoundType.obsatacleSelect);
+        _soundManager.StopSoundAfterDelay(DelayBeforeStopObstacleSelectSound, eSoundType.obsatacleSelect);
         _targetObstacle = null;
     }
 
@@ -123,6 +124,8 @@ public abstract class InputManager: MonoBehaviour
     }
     protected bool IsMousePosInCarInputBounds(Vector2 mousePos)
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return false;
         return mousePos.y / Screen.height < carInputBound;
     }
 

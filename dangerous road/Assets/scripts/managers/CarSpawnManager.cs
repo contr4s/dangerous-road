@@ -7,7 +7,7 @@ using UnityEngine.VFX;
 
 public class CarSpawnManager: MonoBehaviour
 {
-    public static Action<Car> carSpawned;
+    public static event Action<Car> CarSpawned;
     public static bool canTurn = false;
 
     [SerializeField] private AllCarsSO _allCars;
@@ -18,7 +18,8 @@ public class CarSpawnManager: MonoBehaviour
     [SerializeField] PlayableDirector _playableDirector;
     [SerializeField] GameplaySoundManager _soundManager;
 
-    private static Car _spawnedCar;   
+    private static Car _spawnedCar;
+    public static Car SpawnedCar { get => _spawnedCar; }
 
     private void Start()
     {
@@ -48,7 +49,7 @@ public class CarSpawnManager: MonoBehaviour
         _spawnedCar.uIManager = _uIManager;
         _spawnedCar.wind = _wind;
         _spawnedCar.soundManager = _soundManager;
-        carSpawned?.Invoke(_spawnedCar);
+        CarSpawned?.Invoke(_spawnedCar);
     }
 
     private IEnumerator WaitUntillClipPlayed()
