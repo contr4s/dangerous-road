@@ -148,7 +148,7 @@ Material:
     - _RampSmoothAdd: 0.75
     - _RampSmoothOtherLights: 0.5
     - _RampSmoothing: 0.061
-    - _RampThreshold: 0.625
+    - _RampThreshold: 0.5
     - _RampThresholdOtherLights: 0.5
     - _RampType: 2
     - _ReceiveShadows: 1
